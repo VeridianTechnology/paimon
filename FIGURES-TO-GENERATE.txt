@@ -1,0 +1,48 @@
+PAIMON LABS — FIGURES TO GENERATE
+
+Save finished assets in web/public/figures/ using the filenames below.
+These are optional next-round assets. The current site already uses your supplied artwork.
+Priority: 01 first, then 02 and 03. 04 and 05 are optional.
+
+ART DIRECTION
+A scientific folio from a ceremonial technology institute. Antique copperplate engraving, anatomical precision, and the quiet authority of an archival laboratory plate. Draw on ceremonial geometry and the architectural solemnity of the Vatican, with the experimental intelligence of Bell Labs. Restrained, mysterious, exact. Avoid fantasy-game imagery, cartoon cobras, generic glowing brains, circuit-board stock art, and literal religious or occult logos. No text, lettering, numbers, signatures, or watermarks; the website supplies all labels.
+Palette: ink aubergine #34203F, deep purple #291231, soft violet #E8DFEE, muted purple #83558E, restrained magenta #983E7E, ivory-white linework.
+
+01 — THE SERPENT AT THE GATE
+Filename: 01-cobra-threshold.png
+Format: portrait 4:5, at least 1600 x 2000 pixels; transparent PNG preferred.
+Use: replace the cropped wallpaper in the main arched hero plate.
+Description: A single elegant cobra rising vertically from a low, compact coil, head slightly turned left. Intricate, anatomically plausible scales and fine engraved white linework. Its posture conveys alertness and restraint. Entire cobra visible, with generous negative space around head and tail, no base, no lettering, no symbols. A restrained violet wash inside the engraved body is acceptable. Keep the shape tall and slender, centered within the middle 70% of the image so it survives an architectural arch crop.
+
+02 — THE INSTRUMENT OF INQUIRY
+Filename: 02-instrument-of-inquiry.webp
+Format: landscape 3:2, at least 2400 x 1600 pixels.
+Use: future research/editorial feature next to the thesis.
+Description: An imagined mid-century laboratory bench inside an austere vaulted stone room. One precise metal optical instrument stands beneath a suspended circular glass element, with delicate measurement lines and a small violet point of light. Strong composition, tactile materials, long shadows. Editorial architectural photography blended with archival scientific illustration. Deep aubergine shadows, pale lavender light, one subtle magenta accent. No people, recognizable brands, screens with text, or religious icons. Treat this as conceptual art, not a photograph of Paimon Labs' actual facilities.
+
+03 — THREE COMMITMENTS (A MATCHED TRIPTYCH)
+Filenames: 03a-develop.png, 03b-protect.png, 03c-welcome.png
+Format: three separate square transparent PNGs, at least 1200 x 1200 pixels each.
+Use: optional small engraved figures above the three practice statements.
+Description: Make three companion engravings with identical line weight, scale, and ivory-white ink on transparency.
+  Develop: an open mechanical seed, precise concentric metal shells revealing a small luminous core. Suggest making and emergence, not a biological anatomy claim.
+  Protect: a cobra curled in a protective circle around a single small point of light. Calm vigilance; no aggression, fangs, weapons, or horror.
+  Welcome: two distinct arcs approaching without touching, framing a small opening of light. A deliberately abstract study of encounter, symmetrical but not identical.
+Keep all three minimal enough to read at 100–160 pixels wide. No words or numbered labels.
+
+04 — THE THRESHOLD
+Filename: 04-threshold.webp
+Format: panoramic 21:9, at least 2800 x 1200 pixels.
+Use: future replacement for the closing horizon wallpaper.
+Description: A monumental but spare arched doorway in a dark, purple-black space. Beyond it, an almost white lavender horizon and a very small suggestion of a rising serpent. Engraved detail in the arch, subtle optical/scientific geometry. Soft magenta at the meeting of dark and light. Keep the left half quiet and dark for live website copy; place the doorway in the right half. No text, people, crosses, seals, or watermarks.
+
+05 — PRIMARY COBRA MARK
+Filename: 05-cobra-mark.png
+Format: transparent PNG at least 1600 x 1600 pixels; also supply a clean vector SVG if available.
+Use: future header seal and favicon replacing the temporary typographic P favicon.
+Description: A simplified emblem based on the supplied coiled cobra logo. One raised cobra, two clean coils, a clear head silhouette, and restrained scale detail. Single-color aubergine version plus an ivory version. Legible at small sizes. No background, platform, glow, wordmark, ornamental border, or extra iconography. This should feel like the seal of a serious research institution with ceremonial roots.
+
+INTEGRATION NOTES
+Keep the original high-resolution artwork outside the site as a master copy.
+These assets are not auto-loaded: adding the files provides the artwork for a subsequent integration pass.
+Do not generate CrumbWaffle product renders yet; its physical design has not been specified.
