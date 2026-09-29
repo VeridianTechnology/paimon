@@ -1,0 +1,6 @@
+Generated with the built-in image generation tool, referencing /Users/nik/Documents/Paimon/Wallpaper/05.png.
+
+Create a single square favicon master for Paimon Labs based on the supplied white cobra logo. Simplify this exact raised left-facing cobra and compact coiled base into a bold clean ivory-white emblem on a solid deep aubergine #34203f square background. Retain the recognizable left-facing head, rising curved neck and coiled base silhouette; remove fine scale texture and tongue and use only 3 to 5 thick negative-space interior lines, so the icon remains readable at 16 and 32 pixels. Center the whole cobra with 10% safe margins. Flat two-color graphic, crisp boundaries, no gradients, shadows, lettering, decorative border, or mockup. One icon only, square 1024x1024.
+
+Master: cobra-favicon-master.png
+Web sizes packaged using sips; ICO contains the 16 and 32 pixel PNGs.
