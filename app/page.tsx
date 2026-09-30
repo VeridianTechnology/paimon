@@ -39,10 +39,13 @@ export default function Home() {
             <p id="film-description">A 30-second introduction to Paimon Labs and the questions guiding our work.</p>
           </div>
           <figure className="film-frame">
-            <video controls playsInline preload="none" poster="/images/paimon-film-poster.jpg" aria-describedby="film-description">
-              <source src="/videos/paimon-labs-introduction.mp4" type="video/mp4" />
-              <a href="/videos/paimon-labs-introduction.mp4">Watch the Paimon Labs introduction</a>
-            </video>
+            <div className="media-plate media-plate-dark">
+              <video controls playsInline preload="none" poster="/images/paimon-film-poster.jpg" aria-describedby="film-description">
+                <source src="/videos/paimon-labs-introduction.mp4" type="video/mp4" />
+                <a href="/videos/paimon-labs-introduction.mp4">Watch the Paimon Labs introduction</a>
+              </video>
+              <span className="media-ornament" aria-hidden="true"><i /><i /><i /><i /></span>
+            </div>
             <figcaption><span>PAIMON LABS / FILM 001</span><span>Develop. Protect. Welcome.</span></figcaption>
           </figure>
         </section>
@@ -62,7 +65,7 @@ export default function Home() {
             <h2 id="instruments-title">Intelligence.<br /><em>On your terms.</em></h2>
             <div className="instrument-snippet"><span className="eyebrow">OUR FIRST FRONTIER / CRUMBWAFFLE</span><h3>Your own AI.<br />A place to keep it.</h3><p>Private, upgradeable AI boxes for homes and small businesses. A local assistant and a personal server, built around hardware you can keep, control, and change.</p><a className="text-link" href={crumbwaffleUrl}>Meet CrumbWaffle <span aria-hidden="true">↗</span></a></div>
           </div>
-          <figure className="instrument-family"><img src="/images/crumbwaffle-family.png" width="1536" height="1024" loading="lazy" alt="Four cream CrumbWaffle hardware concepts: Private, the smaller Home, Standard, and Enterprise" /><figcaption><span>FOUR PROPOSED MODELS. ONE PRINCIPLE: OWNERSHIP.</span><span>A Paimon Labs instrument.</span></figcaption></figure>
+          <figure className="instrument-family"><div className="media-plate media-plate-light"><img src="/images/crumbwaffle-family.png" width="1536" height="1024" loading="lazy" alt="Four cream CrumbWaffle hardware concepts: Private, the smaller Home, Standard, and Enterprise" /><span className="media-ornament" aria-hidden="true"><i /><i /><i /><i /></span></div><figcaption><span>FOUR PROPOSED MODELS. ONE PRINCIPLE: OWNERSHIP.</span><span>A Paimon Labs instrument.</span></figcaption></figure>
           <div className="instrument-models">
             {[
               { name: 'Private', price: '$649', use: 'A personal starting point for home routines and a local server.', spec: 'Ryzen 5 8600G · 16 GB DDR5 · 256 GB SSD', graphics: 'Integrated graphics · empty PCIe GPU bay' },

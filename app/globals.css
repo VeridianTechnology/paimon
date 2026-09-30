@@ -43,5 +43,21 @@
 .film-frame video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #10091c; object-fit: cover; }
 .film-frame figcaption { color: #c5a9ce; border-bottom: 1px solid #c3a4cb4a; padding: 19px 0; }
 .film-frame figcaption span:last-child { color: #ead7ef; }
+
+/* The film and product study share a fine, engraved plate frame. */
+.media-plate { --plate-ink: #70477f; --plate-line: #70477f66; position: relative; padding: 14px; border: 1px solid var(--plate-ink); background: #e9ddec; box-shadow: inset 0 0 0 4px #e9ddec, inset 0 0 0 5px var(--plate-line); }
+.media-plate-dark { --plate-ink: #b996c8; --plate-line: #b996c877; background: #291231; box-shadow: inset 0 0 0 4px #291231, inset 0 0 0 5px var(--plate-line); }
+.media-plate > img, .media-plate > video { position: relative; z-index: 1; }
+.media-ornament { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.media-ornament::before, .media-ornament::after { content: ''; position: absolute; left: 50%; width: 5px; height: 5px; border: 1px solid var(--plate-ink); background: currentColor; transform: translateX(-50%) rotate(45deg); }
+.media-ornament::before { top: 4px; }
+.media-ornament::after { bottom: 4px; }
+.media-plate-light .media-ornament { color: #e9ddec; }
+.media-plate-dark .media-ornament { color: #291231; }
+.media-ornament i { position: absolute; width: 26px; height: 26px; border-color: var(--plate-ink); border-style: solid; }
+.media-ornament i:nth-child(1) { top: 6px; left: 6px; border-width: 1px 0 0 1px; }
+.media-ornament i:nth-child(2) { top: 6px; right: 6px; border-width: 1px 1px 0 0; }
+.media-ornament i:nth-child(3) { bottom: 6px; right: 6px; border-width: 0 1px 1px 0; }
+.media-ornament i:nth-child(4) { bottom: 6px; left: 6px; border-width: 0 0 1px 1px; }
 @media(min-width:1600px) { .intro-film { padding-left: max(4.5%,calc((100vw - 1500px)/2)); padding-right: max(4.5%,calc((100vw - 1500px)/2)); } }
-@media(max-width:650px) { .intro-film { padding: 52px 6% 55px; } .film-heading { display: block; margin-bottom: 23px; } .film-heading h2 { font-size: 43px; } .film-heading > p { margin-top: 13px; font-size: 14px; } .film-frame figcaption { flex-direction: column; gap: 7px; } }
+@media(max-width:650px) { .intro-film { padding: 52px 6% 55px; } .film-heading { display: block; margin-bottom: 23px; } .film-heading h2 { font-size: 43px; } .film-heading > p { margin-top: 13px; font-size: 14px; } .film-frame figcaption { flex-direction: column; gap: 7px; } .media-plate { padding: 9px; } .media-ornament i { width: 18px; height: 18px; } }
