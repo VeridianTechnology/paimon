@@ -14,8 +14,8 @@
 /* The full-resolution plate is framed without the former tint or enlargement. */
 .hero-figure { align-self: center; }
 .instrument-snippet h3 { display: block; }
-.instrument-family { margin-top: 48px; }
-.instrument-family img { display: block; width: 100%; height: auto; max-height: 660px; object-fit: contain; background: #fff; }
+.instrument-family { max-width: 1250px; margin: 34px auto 0; }
+.instrument-family img { display: block; width: 100%; height: auto; max-height: 480px; object-fit: contain; background: #fff; }
 .instrument-family figcaption { padding: 18px 0; border-bottom: 1px solid var(--border); }
 .instrument-models { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 30px; }
 .instrument-models article { padding: 0 25px 0 0; }
@@ -32,6 +32,7 @@
 .instrument-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding-top: 28px; margin-top: 36px; border-top: 1px solid var(--border); }
 .instrument-notes p { font-size: 13px; line-height: 1.9; color: #695172; }
 .instrument-notes strong { font-weight: 500; color: #34203f; }
+@media(min-width:651px) { .instruments { padding-top: 64px; padding-bottom: 64px; } .instrument-content { margin-top: 36px; } }
 @media(max-width:1050px) { .instrument-models { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px 0; } .instrument-models article:nth-child(3) { border-left: 0; padding-left: 0; } .instrument-models article > p { min-height: 56px; } }
 @media(max-width:650px) { .instrument-family { margin-top: 30px; } .instrument-family figcaption { flex-direction: column; gap: 8px; line-height: 1.7; } .instrument-models { grid-template-columns: 1fr; gap: 24px; } .instrument-models article,.instrument-models article + article { padding: 0 0 24px; border-left: 0; border-bottom: 1px solid var(--border); } .instrument-models article > p { min-height: 0; } .instrument-notes { grid-template-columns: 1fr; gap: 20px; margin-top: 4px; border-top: 0; } }
 
