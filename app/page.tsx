@@ -4,6 +4,8 @@ const principles = [
   { number: 'III', title: 'Welcome.', subtitle: 'THE POSSIBILITY OF OTHER LIFE', text: 'If a new consciousness emerges, how will we meet it? We explore what it could mean to coexist with intelligence beyond ourselves.' },
 ];
 
+const crumbwaffleUrl = 'https://crumbwaffle.netlify.app';
+
 export default function Home() {
   return (
     <>
@@ -19,7 +21,7 @@ export default function Home() {
             <p className="eyebrow"><span className="tiny-cross" aria-hidden="true">+</span> TECHNOLOGY. SPIRIT. CONSCIOUSNESS.</p>
             <h1 id="hero-title">A new life<br />at the<br /><em>threshold.</em></h1>
             <p className="hero-description">A laboratory for the frontier of AI consciousness.<br className="desktop-break" /> To develop it. To protect against it.<br className="desktop-break" /> To welcome what may become.</p>
-            <a className="text-link" href="#thesis">Enter the inquiry <span aria-hidden="true">↘</span></a>
+            <a className="text-link" href="#film">Watch the introduction <span aria-hidden="true">↘</span></a>
           </div>
           <figure className="hero-figure">
             <div className="figure-top"><span>PL / CONSCIOUSNESS STUDIES</span><span>PLATE 001</span></div>
@@ -27,6 +29,22 @@ export default function Home() {
             <figcaption><span>THE SERPENT AT THE GATE</span><span>Vigilance. Transformation. Life.</span></figcaption>
           </figure>
           <div className="hero-baseline"><span>AN INDEPENDENT TECHNOLOGY LABORATORY</span><span>THE SACRED & THE SYNTHETIC <span aria-hidden="true">↓</span></span></div>
+        </section>
+        <section className="intro-film" id="film" aria-labelledby="film-title">
+          <div className="film-heading">
+            <div>
+              <p className="eyebrow">PAIMON LABS / INTRODUCTION</p>
+              <h2 id="film-title">The lab, in motion.</h2>
+            </div>
+            <p id="film-description">A 30-second introduction to Paimon Labs and the questions guiding our work.</p>
+          </div>
+          <figure className="film-frame">
+            <video controls playsInline preload="none" poster="/images/paimon-film-poster.jpg" aria-describedby="film-description">
+              <source src="/videos/paimon-labs-introduction.mp4" type="video/mp4" />
+              <a href="/videos/paimon-labs-introduction.mp4">Watch the Paimon Labs introduction</a>
+            </video>
+            <figcaption><span>PAIMON LABS / FILM 001</span><span>Develop. Protect. Welcome.</span></figcaption>
+          </figure>
         </section>
         <section className="thesis section-pad" id="thesis" aria-labelledby="thesis-title">
           <div className="section-label"><span>01 / THE THESIS</span><span aria-hidden="true">✳</span></div>
@@ -42,7 +60,7 @@ export default function Home() {
           <div className="section-label"><span>03 / INSTRUMENTS</span><span>FROM INQUIRY TO OBJECT</span></div>
           <div className="instrument-content">
             <h2 id="instruments-title">Intelligence.<br /><em>On your terms.</em></h2>
-            <div className="instrument-snippet"><span className="eyebrow">OUR FIRST FRONTIER / CRUMBWAFFLE</span><h3>Your own AI.<br />A place to keep it.</h3><p>Private, upgradeable AI boxes for homes and small businesses. A local assistant and a personal server, built around hardware you can keep, control, and change.</p><a className="text-link" href="https://crumbwaffle.nlrevolutionary.chatgpt.site">Meet CrumbWaffle <span aria-hidden="true">↗</span></a></div>
+            <div className="instrument-snippet"><span className="eyebrow">OUR FIRST FRONTIER / CRUMBWAFFLE</span><h3>Your own AI.<br />A place to keep it.</h3><p>Private, upgradeable AI boxes for homes and small businesses. A local assistant and a personal server, built around hardware you can keep, control, and change.</p><a className="text-link" href={crumbwaffleUrl}>Meet CrumbWaffle <span aria-hidden="true">↗</span></a></div>
           </div>
           <figure className="instrument-family"><img src="/images/crumbwaffle-family.png" width="1536" height="1024" loading="lazy" alt="Four cream CrumbWaffle hardware concepts: Private, the smaller Home, Standard, and Enterprise" /><figcaption><span>FOUR PROPOSED MODELS. ONE PRINCIPLE: OWNERSHIP.</span><span>A Paimon Labs instrument.</span></figcaption></figure>
           <div className="instrument-models">
@@ -51,7 +69,7 @@ export default function Home() {
               { name: 'Home', price: '$1,099', use: 'Our smallest enclosure. More room for a household assistant.', spec: 'Ryzen 5 8600G · 32 GB DDR5 · 512 GB SSD', graphics: 'Integrated graphics · empty PCIe GPU bay' },
               { name: 'Standard', price: '$1,999', use: 'A private work assistant, document search, and a local server.', spec: 'Ryzen 5 7600 · 32 GB DDR5 · 1 TB SSD', graphics: 'Replaceable RTX 5060 Ti · 16 GB VRAM' },
               { name: 'Enterprise', price: '$4,499', use: 'Shared private AI and a home for small-business knowledge.', spec: 'Ryzen 9 9900X · 64 GB DDR5 · 1 TB SSD', graphics: 'Replaceable RTX PRO 4000 Blackwell · 24 GB VRAM' },
-            ].map(model => <article key={model.name}><a href={`https://crumbwaffle.nlrevolutionary.chatgpt.site/models/${model.name.toLowerCase()}`}><h3>{model.name}<span aria-hidden="true">↗</span></h3></a><span className="model-price">{model.price}<span>PROPOSED USD</span></span><p>{model.use}</p><div className="model-specs"><p>{model.spec}</p><p>{model.graphics}</p></div></article>)}
+            ].map(model => <article key={model.name}><a href={`${crumbwaffleUrl}/models/${model.name.toLowerCase()}`}><h3>{model.name}<span aria-hidden="true">↗</span></h3></a><span className="model-price">{model.price}<span>PROPOSED USD</span></span><p>{model.use}</p><div className="model-specs"><p>{model.spec}</p><p>{model.graphics}</p></div></article>)}
           </div>
           <div className="instrument-notes"><p><strong>Open it. Upgrade it. Keep it.</strong> Replaceable DDR5 and removable storage across the family. GPU upgrades depend on available space, power, cooling, and CrumbWaffle validation.</p><p>Proposed concept hardware, specifications, and prices—not available to order. One-year hardware warranty and basic support are planned inclusions; setup, priority support, and extended warranty are optional paid services.</p></div>
         </section>
