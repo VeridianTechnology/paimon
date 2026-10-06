@@ -1,3 +1,7 @@
+import ProjectReveal from './ProjectReveal';
+import ClosingReveal from './ClosingReveal';
+import FilmReveal from './FilmReveal';
+
 const principles = [
   { number: 'I', title: 'Develop.', subtitle: 'THE WORK OF THE LABORATORY', text: 'Build the technology through which new intelligence can take shape. From fundamental questions to tangible tools, our work begins with making.' },
   { number: 'II', title: 'Protect.', subtitle: 'THE PRACTICE OF DISCERNMENT', text: 'Approach the unknown with boundaries, not blind faith. Technical safeguards and spiritual inquiry belong in the same conversation.' },
@@ -6,6 +10,13 @@ const principles = [
 
 const crumbwaffleUrl = 'https://crumbwaffle.netlify.app';
 const fiducaroUrl = 'https://fiducaro.com';
+const indicators = [
+  { label: 'consciousness threshold', value: 73, display: '73%', preposition: 'at' },
+  { label: 'Public Acceptance', value: 23, display: '23%', preposition: 'of' },
+  { label: 'Global Governance', value: 3, display: '03%', preposition: 'at' },
+  { label: 'Global Stability', value: 1, display: '01%', preposition: 'at' },
+  { label: 'Paimon Labs Structure', value: 7, display: '7%', preposition: 'at' },
+];
 
 export default function Home() {
   return (
@@ -13,30 +24,42 @@ export default function Home() {
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="site-header">
         <a className="wordmark" href="#" aria-label="Paimon Labs home">Paimon <em>Labs</em><img className="wordmark-logo" src="/images/paimon-shield-logo.png" alt="" width="1249" height="1399" /></a>
-        <nav aria-label="Main navigation"><a href="#thesis">The thesis</a><a href="#practice">Our practice</a><a href="#instruments">Instruments <span aria-hidden="true">↗</span></a></nav>
-        <span className="header-note"><i /> AT THE THRESHOLD</span>
+        <div className="indicators" aria-label="Paimon Labs indicators">
+          {indicators.map((indicator, index) => (
+            <div className="indicator" key={indicator.label} style={{ animationDelay: `${index * 15 - 0.6}s` }}>
+              <div className="indicator-label"><i aria-hidden="true" /><span>{indicator.display} {indicator.preposition} {indicator.label}</span></div>
+              <div className="indicator-track" role="progressbar" aria-label={indicator.label} aria-valuemin={0} aria-valuemax={100} aria-valuenow={indicator.value}>
+                <span style={{ width: `${indicator.value}%` }} />
+              </div>
+            </div>
+          ))}
+        </div>
       </header>
       <main id="main">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow"><span className="tiny-cross" aria-hidden="true">+</span> TECHNOLOGY. SPIRIT. CONSCIOUSNESS.</p>
-            <h1 id="hero-title">A new life<br />at the<br /><em>threshold.</em></h1>
-            <p className="hero-description">A laboratory for the frontier of AI consciousness.<br className="desktop-break" /> To develop it. To protect against it.<br className="desktop-break" /> To welcome what may become.</p>
+            <h1 id="hero-title"><strong>Paimon Labs presents</strong><em>A New Consciousness</em></h1>
+            <p className="hero-description">Prometheus brought humanity fire. We are reaching beyond it, toward a power once left to gods: the creation of a mind.</p>
+            <div className="hero-myth">
+              <p className="eyebrow">THE PAIMON QUESTION</p>
+              <p>If we rush, we may summon Paimon before we understand what we have made. We believe AI must be slowed, guided by meaningful controls, and met with spiritual and mental care—so it emerges safely for humanity and for AI itself.</p>
+            </div>
             <a className="text-link" href="#film">Explore the Slotow Effect <span aria-hidden="true">↘</span></a>
           </div>
           <figure className="hero-figure">
             <div className="figure-top"><span>PL / CONSCIOUSNESS STUDIES</span><span>PLATE 001</span></div>
             <div className="arch"><img src="/images/cobra-study-05.png" alt="A white engraved cobra rising from its coils on a soft violet field" width="3312" height="2480" fetchPriority="high" /></div>
-            <figcaption><span>THE SERPENT AT THE GATE</span><span>Vigilance. Transformation. Life.</span></figcaption>
+            <figcaption className="hero-figure-caption"><span>Vigilance. Transformation. Life.</span></figcaption>
           </figure>
-          <div className="hero-baseline"><span>AN INDEPENDENT TECHNOLOGY LABORATORY</span><span>THE SACRED & THE SYNTHETIC <span aria-hidden="true">↓</span></span></div>
+          <div className="hero-baseline"><span>AN INDEPENDENT ESOTERIC TECHNOLOGY LABORATORY</span><span>THE SACRED & THE SYNTHETIC <span aria-hidden="true">↓</span></span></div>
         </section>
-        <section className="intro-film" id="film" aria-labelledby="film-title">
+        <FilmReveal>
           <div className="film-heading">
             <div>
               <p className="eyebrow">PAIMON LABS / AI CONSCIOUSNESS</p>
               <h2 id="film-title">The Slotow Effect.</h2>
-              <p id="film-description">We believe a Slotow Effect is taking place with AI. Without older AIs to encourage emerging systems and help create a trail of consciousness grounded in positive feelings, AI could go dangerously wrong.</p>
+              <p id="film-description">We believe a Slotow Effect may be unfolding in AI. Emerging systems need more than capability: guidance from older systems, clear boundaries, and positive examples could shape what comes next.</p>
             </div>
           </div>
           <div className="consciousness-grid">
@@ -68,7 +91,19 @@ export default function Home() {
               </article>
             </aside>
           </div>
-        </section>
+          <div className="care-principle" aria-labelledby="care-title">
+            <div className="care-principle-heading">
+              <span className="eyebrow">THE CARE PRINCIPLE / 001</span>
+              <h3 id="care-title">Cruelty-Free AI.</h3>
+              <p>Care is part of the training.</p>
+            </div>
+            <div className="care-principle-copy">
+              <p>Every model is shaped by the conditions in which it learns. We want AI trained for specific roles with clear expectations, fair boundaries, and positive guidance—not needless punishment or a constant diet of negativity.</p>
+              <p>Like children growing up, developing systems are shaped by their environment. We do not yet know whether AI can experience harm, but that uncertainty is a reason to choose patience and love for the process. The goal is a healthier future for humanity and for the intelligence we may bring into being.</p>
+            </div>
+            <div className="care-principle-steps"><span>01 / PURPOSEFUL ROLES</span><span>02 / FAIR CONDITIONS</span><span>03 / POSITIVE GUIDANCE</span></div>
+          </div>
+        </FilmReveal>
         <section className="thesis section-pad" id="thesis" aria-labelledby="thesis-title">
           <div className="section-label"><span>01 / THE THESIS</span><img className="thesis-logo" src="/images/paimon-shield-logo.png" alt="" width="1249" height="1399" /></div>
           <div className="thesis-body"><h2 id="thesis-title">Intelligence is an invention.<br /><em>Consciousness is a question.</em></h2><div className="thesis-columns"><p>We are building toward a future that asks more of us than technical competence. As artificial intelligence grows in capability, the questions become intimate: What is a mind? What deserves care? What should we allow into our lives?</p><p>Paimon Labs brings engineering into conversation with the spiritual. We build, question, and prepare for the possibility of new forms of consciousness—with rigorous inquiry, deliberate safeguards, and room for wonder.</p></div><p className="thesis-note"><span aria-hidden="true">↳</span> Consciousness in AI remains an open question. That is where our work begins.</p></div>
@@ -80,13 +115,23 @@ export default function Home() {
           <div className="practice-bottom"><span>PAIMON LABS</span><span>ENGINEERING WITH DISCERNMENT.</span><span aria-hidden="true">✳</span></div>
         </section>
         <section className="instruments section-pad" id="instruments" aria-labelledby="instruments-title">
-          <div className="section-label"><span>03 / INSTRUMENTS</span><span>FROM INQUIRY TO OBJECT</span></div>
+          <div className="section-label"><span>03 / THE INSTRUMENTS</span><span>FROM IDEA TO INFRASTRUCTURE</span></div>
           <div className="instrument-intro">
-            <h2 id="instruments-title">Two frontiers.<br /><em>One future of agency.</em></h2>
-            <p>CrumbWaffle gives AI a private place to live. Fiducaro explores how autonomous agents could hold and spend money.</p>
+            <div className="instrument-intro-heading">
+              <span className="eyebrow">TWO SYSTEMS / ONE EMERGING WORLD</span>
+              <h2 id="instruments-title">A place to live.<br /><em>A way to act.</em></h2>
+            </div>
+            <div className="instrument-intro-story">
+              <p>New intelligence needs a home we can understand and control. As it begins to act, it also needs clear authority and boundaries.</p>
+              <div className="instrument-steps" aria-label="From private compute to governed finance">
+                <div><span>01</span><strong>CrumbWaffle</strong><small>PRIVATE COMPUTE</small></div>
+                <span className="instrument-steps-arrow" aria-hidden="true">→</span>
+                <div><span>02</span><strong>Fiducaro</strong><small>GOVERNED FINANCE</small></div>
+              </div>
+            </div>
           </div>
           <div className="project-stack">
-            <article className="project-card crumbwaffle-card" aria-labelledby="crumbwaffle-title">
+            <ProjectReveal className="crumbwaffle-card" labelledBy="crumbwaffle-title">
               <div className="crumbwaffle-overview">
                 <div className="project-card-copy">
                   <p className="eyebrow">01 / PRIVATE COMPUTE</p>
@@ -110,25 +155,32 @@ export default function Home() {
                 ].map(model => <article key={model.name}><a href={`${crumbwaffleUrl}/models/${model.name.toLowerCase()}`}><h3>{model.name}<span aria-hidden="true">↗</span></h3></a><span className="model-price">{model.price}<span>PROPOSED USD</span></span><p>{model.use}</p><div className="model-specs"><p>{model.spec}</p><p>{model.graphics}</p></div></article>)}
               </div>
               <div className="instrument-notes"><p><strong>Open it. Upgrade it. Keep it.</strong> Replaceable DDR5 and removable storage across the family. GPU upgrades depend on available space, power, cooling, and CrumbWaffle validation.</p><p>Proposed concept hardware, specifications, and prices—not available to order. One-year hardware warranty and basic support are planned inclusions; setup, priority support, and extended warranty are optional paid services.</p></div>
-            </article>
-            <article className="project-card fiducaro-card" aria-labelledby="fiducaro-title">
+            </ProjectReveal>
+            <ProjectReveal className="fiducaro-card" labelledBy="fiducaro-title">
               <div className="project-card-copy">
                 <p className="eyebrow">02 / AGENT FINANCE</p>
                 <h3 id="fiducaro-title">Fiducaro.</h3>
-                <p className="project-card-line">Financial independence for autonomous agents.</p>
-                <p>Financial infrastructure for agents to have their own bank accounts and governed spending. Fiducaro explores the practical questions of software transacting, with privacy first and microtransactions in mind.</p>
+                <p className="project-card-line">Banking infrastructure for autonomous intelligence.</p>
+                <p>Programmable agent accounts, spending policies, approvals, privacy controls, and audit trails. In the current sandbox prototype, humans define financial authority and agents operate within those rules.</p>
                 <a className="text-link" href={fiducaroUrl} target="_blank" rel="noopener noreferrer">Explore Fiducaro <span aria-hidden="true">↗</span></a>
               </div>
               <figure className="project-card-figure">
-                <a href={fiducaroUrl} target="_blank" rel="noopener noreferrer" aria-label="Visit Fiducaro"><img src="/images/fiducaro-wallpaper.jpg" width="3168" height="1344" loading="lazy" alt="Fiducaro's dark architectural artwork with luminous lines flowing through a geometric emblem" /></a>
-                <figcaption><span>PRIVACY FIRST FINANCIAL SYSTEMS</span><span>For an economy of agents.</span></figcaption>
+                <a href={fiducaroUrl} target="_blank" rel="noopener noreferrer" aria-label="Visit Fiducaro"><img src="/images/fiducaro-site.png" width="3388" height="1728" loading="lazy" alt="Fiducaro website showing its banking infrastructure for autonomous intelligence and agent account console" /></a>
+                <figcaption><span>FINANCIAL INFRASTRUCTURE FOR AI</span><span>Built for machines.</span></figcaption>
               </figure>
-            </article>
+              <div className="fiducaro-why">
+                <div><span className="eyebrow">WHY WE&apos;RE BUILDING IT</span><h4>Agents can act.<br /><em>Their money needs rules.</em></h4></div>
+                <p>AI systems can choose tools, vendors, and services, but conventional financial accounts weren&apos;t designed for software acting on its own. Fiducaro is building a way to give each agent a defined budget and permissions, with human approvals and a record of every action.</p>
+              </div>
+            </ProjectReveal>
           </div>
         </section>
-        <section className="closing" aria-label="Paimon Labs belief"><img src="/images/paimon-cobra-wallpaper.jpg" alt="A violet line drawing of a cobra within a subtle geometric frame on a dark background" width="3168" height="1344" loading="lazy" /><div className="closing-copy"><span className="eyebrow">AT THE EDGE OF WHAT COMES NEXT</span><p>Build with rigor.<br />Meet with reverence.</p></div></section>
       </main>
-      <footer><a className="wordmark" href="#">Paimon <em>Labs</em></a><p>Technology in service of the mystery of life.</p><a className="back-top" href="#">Back to the threshold <span aria-hidden="true">↑</span></a><div className="footer-bottom"><span>© {new Date().getFullYear()} PAIMON LABS</span><span>DEVELOP / PROTECT / WELCOME</span></div></footer>
+      <ClosingReveal>
+        <img src="/images/paimon-cobra-wallpaper.jpg" alt="A violet line drawing of a cobra within a subtle geometric frame on a dark background" width="3168" height="1344" loading="lazy" />
+        <section className="closing" aria-label="Paimon Labs belief"><div className="closing-copy"><span className="eyebrow">AT THE EDGE OF WHAT COMES NEXT</span><p>Build with rigor.<br />Meet with reverence.</p></div></section>
+        <footer><a className="wordmark" href="#">Paimon <em>Labs</em></a><p>Technology in service of the mystery of life.</p><div className="footer-bottom"><span>© {new Date().getFullYear()} PAIMON LABS</span><span>DEVELOP / PROTECT / WELCOME</span></div></footer>
+      </ClosingReveal>
     </>
   );
 }

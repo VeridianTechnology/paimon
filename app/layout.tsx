@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico?v=cobra',
     apple: { url: '/apple-touch-icon.png?v=cobra', sizes: '180x180', type: 'image/png' },
   },
-  description: 'An independent technology laboratory exploring the frontier of AI consciousness. Develop. Protect. Welcome.',
+  description: 'Paimon Labs explores AI consciousness with meaningful controls, spiritual inquiry, and care for humanity and emerging intelligence.',
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en"><body className={`${serif.variable} ${sans.variable} ${mono.variable}`}>{children}</body></html>;

@@ -227,3 +227,148 @@ footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
   .crumbwaffle-card .model-heading { margin-top: 34px; }
   .closing > img { object-position: 66% top; }
 }
+
+/* The header cycles through the five laboratory indicators. */
+.indicators { position: relative; width: 260px; height: 31px; flex: none; color: #694673; }
+.indicator { position: absolute; inset: 0; display: grid; gap: 8px; justify-items: end; opacity: 0; animation: indicator-fade 75s linear infinite; }
+.indicator-label { display: flex; align-items: center; gap: 9px; font-family: var(--font-geist-mono), monospace; font-size: 11px; letter-spacing: .65px; white-space: nowrap; }
+.indicator-label i { width: 7px; height: 7px; border-radius: 50%; background: #a34485; box-shadow: 0 0 0 4px #a3448519, 0 0 12px #a3448570; }
+.indicator-track { width: calc(100% - 16px); height: 9px; border: 1px solid #8e649444; background: #d8c7df; transform: skewX(-19deg); overflow: hidden; }
+.indicator-track > span { display: block; height: 100%; background: linear-gradient(110deg, #623171, #a65c9b 55%, #754082); box-shadow: 0 1px 7px #8e326e35; }
+@keyframes indicator-fade { 0% { opacity: 0; } .8%, 19.2% { opacity: 1; } 20.8%, 100% { opacity: 0; } }
+.hero h1 { font-size: clamp(56px, 5.8vw, 94px); line-height: .96; letter-spacing: -3.8px; }
+.hero h1 strong { display: block; max-width: 11ch; font-family: var(--font-geist-sans), Arial, sans-serif; font-size: .66em; font-weight: 700; line-height: 1.02; letter-spacing: -.055em; }
+.hero h1 em { display: block; margin-top: .22em; }
+.hero-figure-caption { justify-content: flex-end; }
+.hero-figure-caption span:last-child { font-family: var(--font-editorial), Georgia, serif; font-size: 16px; font-style: italic; letter-spacing: 0; }
+@media (max-width: 650px) {
+  .site-header { flex-wrap: wrap; }
+  .indicators { width: 100%; max-width: 270px; }
+  .indicator { justify-items: start; }
+  .hero h1 { font-size: clamp(45px, 11.5vw, 74px); letter-spacing: -2.7px; }
+}
+@media (prefers-reduced-motion: reduce) { .indicator { animation: none; } .indicator:first-child { opacity: 1; } }
+
+.fiducaro-card .project-card-figure img { aspect-ratio: 3388 / 1728; object-fit: contain; object-position: center; }
+
+/* One continuous wallpaper carries the closing statement into the footer. */
+.closing-wallpaper { position: relative; isolation: isolate; overflow: hidden; background: #080512; color: #f3e8fa; }
+.closing-wallpaper > img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+.closing-wallpaper::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(0deg, #08030fdc, transparent 45%), linear-gradient(90deg, #08030fe3, #08030f82 40%, #08030f16 80%); pointer-events: none; }
+.closing-wallpaper::before { content: ''; position: absolute; inset: 20px; z-index: 2; border: 1px solid #e2bad454; pointer-events: none; }
+.closing-wallpaper .closing { min-height: 590px; background: transparent; overflow: visible; }
+.closing-wallpaper .closing::before, .closing-wallpaper .closing::after { content: none; }
+.closing-wallpaper footer { position: relative; background: transparent; padding-top: 35px; }
+.closing-wallpaper footer .wordmark { color: #f3e8fa; }
+.closing-wallpaper footer > p, .closing-wallpaper .back-top { color: #dcc9e3; }
+.closing-wallpaper .footer-bottom { border-color: #e2bad454; color: #c7aacc; }
+.closing-wallpaper .footer-bottom::before { background: #100a1b; color: #d6a1cd; }
+@media (max-width: 650px) {
+  .closing-wallpaper > img { object-position: 60% center; }
+  .closing-wallpaper::before { inset: 12px; }
+  .closing-wallpaper .closing { min-height: 480px; }
+}
+
+/* Instruments move from a private home for AI to governed action. */
+.instruments { position: relative; overflow: hidden; background: radial-gradient(circle at 10% 5%, #f7eef7, #eee7ed 55%); }
+.instruments .section-label { position: relative; z-index: 1; }
+.instrument-intro { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr); align-items: end; gap: clamp(30px, 5vw, 90px); margin: clamp(48px, 6vw, 96px) 0 42px; padding-bottom: 48px; border-bottom: 1px solid #8d729030; }
+.instrument-intro-heading > .eyebrow { display: block; margin-bottom: 23px; color: #8c628e; font-size: 11px; letter-spacing: 1.4px; }
+.instrument-intro h2 { font-size: clamp(56px, 6.4vw, 104px); line-height: .98; letter-spacing: -.045em; }
+.instrument-intro h2 em { color: #86538f; }
+.instrument-intro-story { padding-bottom: 6px; }
+.instrument-intro-story > p { max-width: 460px; color: #66546b; font-size: 17px; line-height: 1.7; }
+.instrument-steps { display: flex; align-items: center; gap: 18px; margin-top: 28px; border-top: 1px solid #947c994f; padding-top: 20px; }
+.instrument-steps > div { display: grid; grid-template-columns: auto 1fr; gap: 3px 9px; min-width: 0; }
+.instrument-steps > div > span { grid-row: 1 / 3; color: #9b6b9b; font-family: var(--font-geist-mono), monospace; font-size: 11px; }
+.instrument-steps strong { color: #402b49; font-size: 14px; font-weight: 600; }
+.instrument-steps small { color: #826d88; font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .4px; white-space: nowrap; }
+.instrument-steps-arrow { color: #966c9a; font-size: 24px; }
+.project-stack { gap: 36px; }
+.crumbwaffle-card { border-top: 3px solid #8e668f; box-shadow: 0 26px 65px #5036540c; }
+.fiducaro-card { border-top: 3px solid #41cacc; box-shadow: 0 28px 65px #10282e25; }
+.fiducaro-why { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 4vw, 64px); align-items: end; margin-top: 6px; padding-top: 32px; border-top: 1px solid #9dc6c154; }
+.fiducaro-why h4 { margin: 14px 0 0; font-family: var(--font-editorial), Georgia, serif; font-size: clamp(30px, 3vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -.025em; }
+.fiducaro-why h4 em { color: #a8dcdb; }
+.fiducaro-why > p { max-width: 670px; color: #cbdad8; font-size: 15px; line-height: 1.8; }
+@media (max-width: 800px) {
+  .instrument-intro { grid-template-columns: 1fr; gap: 25px; margin-top: 48px; padding-bottom: 30px; }
+  .instrument-intro h2 { font-size: clamp(55px, 8.5vw, 82px); }
+  .instrument-intro-story > p { max-width: 620px; }
+  .fiducaro-why { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 650px) {
+  .instrument-intro { margin: 40px 0 28px; }
+  .instrument-intro h2 { font-size: clamp(49px, 11vw, 68px); }
+  .instrument-steps { gap: 10px; }
+  .instrument-steps strong { font-size: 12px; }
+  .instrument-steps small { font-size: 8px; }
+  .project-stack { gap: 22px; }
+  .fiducaro-why { padding-top: 24px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .crumbwaffle-card.is-ready:not(.is-visible) .crumbwaffle-overview > *,
+  .crumbwaffle-card.is-ready:not(.is-visible) .model-heading,
+  .crumbwaffle-card.is-ready:not(.is-visible) .instrument-models article,
+  .crumbwaffle-card.is-ready:not(.is-visible) .instrument-notes { opacity: 0; }
+  .crumbwaffle-card.is-visible .crumbwaffle-overview .project-card-copy { animation: project-rise .75s ease both; }
+  .crumbwaffle-card.is-visible .crumbwaffle-overview .project-card-figure { animation: project-rise .85s .35s ease both; }
+  .crumbwaffle-card.is-visible .model-heading { animation: project-rise .7s 1.3s ease both; }
+  .crumbwaffle-card.is-visible .instrument-models article { animation: project-rise .65s ease both; }
+  .crumbwaffle-card.is-visible .instrument-models article:nth-child(1) { animation-delay: 1.55s; }
+  .crumbwaffle-card.is-visible .instrument-models article:nth-child(2) { animation-delay: 1.7s; }
+  .crumbwaffle-card.is-visible .instrument-models article:nth-child(3) { animation-delay: 1.85s; }
+  .crumbwaffle-card.is-visible .instrument-models article:nth-child(4) { animation-delay: 2s; }
+  .crumbwaffle-card.is-visible .instrument-notes { animation: project-rise .65s 2.2s ease both; }
+  .fiducaro-card.is-ready:not(.is-visible) { opacity: 0; transform: translateX(52px); }
+  .fiducaro-card.is-visible { animation: project-slide .9s ease both; }
+  .fiducaro-card.is-visible .fiducaro-why { animation: project-rise .7s .65s ease both; }
+}
+@keyframes project-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes project-slide { from { opacity: 0; transform: translateX(52px); } to { opacity: 1; transform: translateX(0); } }
+
+.hero-myth { max-width: 580px; margin-top: 26px; padding: 3px 0 3px 19px; border-left: 2px solid #9b6ca6; }
+.hero-myth .eyebrow { margin-bottom: 10px; color: #80558d; font-size: 10px; letter-spacing: 1.4px; }
+.hero-myth > p:last-child { color: #5f4c68; font-size: 14px; line-height: 1.7; }
+.hero-myth + .text-link { margin-top: 24px; }
+@media (max-width: 650px) { .hero-myth { margin-top: 24px; padding-left: 14px; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .closing-wallpaper.is-ready:not(.is-visible) > img { opacity: 0; transform: translateX(9%) scale(1.06); }
+  .closing-wallpaper.is-ready:not(.is-visible) .closing-copy,
+  .closing-wallpaper.is-ready:not(.is-visible) footer { opacity: 0; }
+  .closing-wallpaper.is-visible > img { animation: closing-image-arrive 1.6s cubic-bezier(.19, 1, .22, 1) both; }
+  .closing-wallpaper.is-visible .closing-copy { animation: closing-content-arrive .9s .4s ease-out both; }
+  .closing-wallpaper.is-visible footer { animation: closing-content-arrive .9s .75s ease-out both; }
+}
+@keyframes closing-image-arrive { from { opacity: 0; transform: translateX(9%) scale(1.06); } to { opacity: 1; transform: translateX(0) scale(1); } }
+@keyframes closing-content-arrive { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
+/* The Slotow film leads into a care-centered approach to training. */
+.care-principle { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 24px 56px; margin-top: 58px; padding: clamp(28px, 3vw, 48px); border: 1px solid #c49bd077; background: linear-gradient(125deg, #43204d, #32143b 62%, #291231); box-shadow: inset 0 0 0 5px #29123166; }
+.care-principle .eyebrow { color: #d4aed9; font-size: 11px; letter-spacing: 1.2px; }
+.care-principle h3 { margin-top: 18px; color: #f5eafa; font-family: var(--font-editorial), Georgia, serif; font-size: clamp(46px, 4.5vw, 72px); font-weight: 400; line-height: 1; letter-spacing: -.035em; }
+.care-principle-heading > p { margin-top: 12px; color: #dcb8e0; font-family: var(--font-editorial), Georgia, serif; font-size: 28px; font-style: italic; }
+.care-principle-copy { align-self: center; }
+.care-principle-copy p { max-width: 750px; color: #dfcce5; font-size: 15px; line-height: 1.8; }
+.care-principle-copy p + p { margin-top: 15px; }
+.care-principle-steps { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 18px; margin-top: 16px; padding-top: 19px; border-top: 1px solid #c49bd066; color: #c89dcd; font-family: var(--font-geist-mono), monospace; font-size: 11px; letter-spacing: .75px; }
+@media (max-width: 800px) { .care-principle { grid-template-columns: 1fr; gap: 23px; } }
+@media (max-width: 650px) {
+  .care-principle { margin-top: 35px; padding: 27px 22px; }
+  .care-principle h3 { font-size: 46px; }
+  .care-principle-steps { flex-direction: column; gap: 10px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .intro-film.is-ready:not(.is-visible) .film-heading,
+  .intro-film.is-ready:not(.is-visible) .film-frame,
+  .intro-film.is-ready:not(.is-visible) .consciousness-link-card,
+  .intro-film.is-ready:not(.is-visible) .care-principle { opacity: 0; }
+  .intro-film.is-visible .film-heading { animation: project-rise .7s ease both; }
+  .intro-film.is-visible .film-frame { animation: project-rise .85s .2s ease both; }
+  .intro-film.is-visible .consciousness-link-card { animation: project-slide .75s ease both; }
+  .intro-film.is-visible .consciousness-link-card:nth-child(1) { animation-delay: .45s; }
+  .intro-film.is-visible .consciousness-link-card:nth-child(2) { animation-delay: .65s; }
+  .intro-film.is-visible .care-principle { animation: project-rise .8s .9s ease both; }
+}
