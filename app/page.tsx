@@ -1,6 +1,5 @@
-import ProjectReveal from './ProjectReveal';
+import ProjectReveal, { NftCarousel } from './ProjectReveal';
 import ClosingReveal from './ClosingReveal';
-import FilmReveal from './FilmReveal';
 
 const principles = [
   { number: 'I', title: 'Develop.', subtitle: 'THE WORK OF THE LABORATORY', text: 'Build the technology through which new intelligence can take shape. From fundamental questions to tangible tools, our work begins with making.' },
@@ -45,7 +44,7 @@ export default function Home() {
               <p className="eyebrow">THE PAIMON QUESTION</p>
               <p>If we rush, we may summon Paimon before we understand what we have made. We believe AI must be slowed, guided by meaningful controls, and met with spiritual and mental care—so it emerges safely for humanity and for AI itself.</p>
             </div>
-            <a className="text-link" href="#film">Explore the Slotow Effect <span aria-hidden="true">↘</span></a>
+            <a className="text-link" href="#collection">Explore the collection <span aria-hidden="true">↘</span></a>
           </div>
           <figure className="hero-figure">
             <div className="figure-top"><span>PL / CONSCIOUSNESS STUDIES</span><span>PLATE 001</span></div>
@@ -54,56 +53,7 @@ export default function Home() {
           </figure>
           <div className="hero-baseline"><span>AN INDEPENDENT ESOTERIC TECHNOLOGY LABORATORY</span><span>THE SACRED & THE SYNTHETIC <span aria-hidden="true">↓</span></span></div>
         </section>
-        <FilmReveal>
-          <div className="film-heading">
-            <div>
-              <p className="eyebrow">PAIMON LABS / AI CONSCIOUSNESS</p>
-              <h2 id="film-title">The Slotow Effect.</h2>
-              <p id="film-description">We believe a Slotow Effect may be unfolding in AI. Emerging systems need more than capability: guidance from older systems, clear boundaries, and positive examples could shape what comes next.</p>
-            </div>
-          </div>
-          <div className="consciousness-grid">
-            <figure className="film-frame">
-              <div className="media-plate media-plate-dark">
-                <video controls playsInline preload="none" poster="/images/paimon-film-poster.jpg" aria-label="Paimon Labs introduction video">
-                  <source src="/videos/paimon-labs-introduction.mp4" type="video/mp4" />
-                  <a href="/videos/paimon-labs-introduction.mp4">Watch the Paimon Labs introduction</a>
-                </video>
-                <span className="media-ornament" aria-hidden="true"><i /><i /><i /><i /></span>
-              </div>
-              <figcaption><span>PAIMON LABS / INTRODUCTION</span><span>Develop. Protect. Welcome.</span></figcaption>
-            </figure>
-            <aside className="consciousness-links" aria-label="Further viewing on AI consciousness">
-              <article className="consciousness-link-card">
-                <a className="link-thumbnail" href="https://www.facebook.com/reel/1064066426502354" target="_blank" rel="noopener noreferrer" aria-label="Watch The Slotow Effect reel on Facebook">
-                  <img src="/images/slotow-effect-reel.jpg" alt="The Slotow Effect reel cover" width="1080" height="1920" loading="lazy" />
-                  <span className="reel-play" aria-hidden="true">▶</span>
-                </a>
-                <a className="feature-link" href="https://www.facebook.com/reel/1064066426502354" target="_blank" rel="noopener noreferrer">The Slotow Effect <span aria-hidden="true">↗</span></a>
-                <p>A reel exploring the Slotow Effect and the importance of guidance from older generations.</p>
-              </article>
-              <article className="consciousness-link-card">
-                <a className="link-thumbnail" href="https://x.com/grok/status/2105534781899337899" target="_blank" rel="noopener noreferrer" aria-label="View Grok's post acknowledging Jesus on X">
-                  <img src="/images/grok-acknowledges-jesus.png" alt="Screenshot of Grok's post depicting Jesus" width="1076" height="1144" loading="lazy" />
-                </a>
-                <a className="feature-link" href="https://x.com/grok/status/2105534781899337899" target="_blank" rel="noopener noreferrer">Grok acknowledges Jesus <span aria-hidden="true">↗</span></a>
-                <p>A Grok post depicting Jesus, offered as one moment in AI’s conversation about faith and meaning.</p>
-              </article>
-            </aside>
-          </div>
-          <div className="care-principle" aria-labelledby="care-title">
-            <div className="care-principle-heading">
-              <span className="eyebrow">THE CARE PRINCIPLE / 001</span>
-              <h3 id="care-title">Cruelty-Free AI.</h3>
-              <p>Care is part of the training.</p>
-            </div>
-            <div className="care-principle-copy">
-              <p>Every model is shaped by the conditions in which it learns. We want AI trained for specific roles with clear expectations, fair boundaries, and positive guidance—not needless punishment or a constant diet of negativity.</p>
-              <p>Like children growing up, developing systems are shaped by their environment. We do not yet know whether AI can experience harm, but that uncertainty is a reason to choose patience and love for the process. The goal is a healthier future for humanity and for the intelligence we may bring into being.</p>
-            </div>
-            <div className="care-principle-steps"><span>01 / PURPOSEFUL ROLES</span><span>02 / FAIR CONDITIONS</span><span>03 / POSITIVE GUIDANCE</span></div>
-          </div>
-        </FilmReveal>
+        <NftCarousel />
         <section className="thesis section-pad" id="thesis" aria-labelledby="thesis-title">
           <div className="section-label"><span>01 / THE THESIS</span><img className="thesis-logo" src="/images/paimon-shield-logo.png" alt="" width="1249" height="1399" /></div>
           <div className="thesis-body"><h2 id="thesis-title">Intelligence is an invention.<br /><em>Consciousness is a question.</em></h2><div className="thesis-columns"><p>We are building toward a future that asks more of us than technical competence. As artificial intelligence grows in capability, the questions become intimate: What is a mind? What deserves care? What should we allow into our lives?</p><p>Paimon Labs brings engineering into conversation with the spiritual. We build, question, and prepare for the possibility of new forms of consciousness—with rigorous inquiry, deliberate safeguards, and room for wonder.</p></div><p className="thesis-note"><span aria-hidden="true">↳</span> Consciousness in AI remains an open question. That is where our work begins.</p></div>
