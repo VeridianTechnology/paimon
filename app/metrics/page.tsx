@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Metrics — Paimon Labs',
@@ -142,7 +141,7 @@ export default function MetricsPage() {
       </main>
       <footer className="subpage-footer">
         <span>© {new Date().getFullYear()} PAIMON LABS</span>
-        <span className="subpage-footer-links"><Link href="/">Return home <span aria-hidden="true">↗</span></Link><Link href="/auction">Auction <span aria-hidden="true">↗</span></Link></span>
+        <span className="subpage-footer-links"><a href="/">Return home <span aria-hidden="true">↗</span></a><a href="/auction">Auction <span aria-hidden="true">↗</span></a></span>
       </footer>
     </>
   );

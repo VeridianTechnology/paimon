@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { GovernanceTabs } from '../ProjectReveal';
 
 export const metadata: Metadata = {
@@ -15,7 +14,7 @@ export default function GovernancePage() {
       </main>
       <footer className="subpage-footer">
         <span>© {new Date().getFullYear()} PAIMON LABS</span>
-        <Link href="/auction">Auction <span aria-hidden="true">↗</span></Link>
+        <a href="/auction">Auction <span aria-hidden="true">↗</span></a>
       </footer>
     </>
   );

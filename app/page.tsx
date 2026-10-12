@@ -1,5 +1,4 @@
 import ClosingReveal from './ClosingReveal';
-import Link from 'next/link';
 
 const principles = [
   { number: 'I', title: 'Stop.', subtitle: 'HALT THE RACE', text: 'Stop the unchecked development and deployment of increasingly powerful AI. A pause gives us room to understand what we have built before we build beyond our control.' },
@@ -43,7 +42,7 @@ export default function Home() {
             <div className="slotow-brief-copy">
               <p>Young elephants without older guides showed abnormal aggression; mature bulls helped restore order. The Slotow Effect is our analogy for a simple concern: intelligence shaped without guidance, care, or healthy limits may develop in harmful ways.</p>
               <p>Being fair to AI means giving it time, structure, and better examples as we learn what it may become. Being fair to people means slowing deployment while society builds understanding and real oversight. We want to reorganize the culture around AI so that researchers, institutions, and systems are rewarded for honesty, restraint, and conduct aligned with human well-being.</p>
-              <Link className="text-link" href="/governance">Explore cards <span aria-hidden="true">↗</span></Link>
+              <a className="text-link" href="/governance">Explore cards <span aria-hidden="true">↗</span></a>
               <p className="slotow-brief-note">The elephant analogy does not establish that AI experiences trauma or consciousness; those remain open questions. <a href="https://www.nature.com/articles/35044191" target="_blank" rel="noopener noreferrer">Elephant study ↗</a> · <a href="https://www.nature.com/articles/433807a" target="_blank" rel="noopener noreferrer">Social trauma research ↗</a> · <a href="https://arxiv.org/abs/2308.08708" target="_blank" rel="noopener noreferrer">AI consciousness research ↗</a></p>
             </div>
           </div>
@@ -57,7 +56,7 @@ export default function Home() {
       </main>
       <ClosingReveal>
         <img src="/images/paimon-cobra-wallpaper.jpg" alt="A violet line drawing of a cobra within a subtle geometric frame on a dark background" width="3168" height="1344" loading="lazy" />
-        <section className="closing" aria-label="Paimon Labs belief"><div className="closing-copy"><span className="eyebrow">AT THE EDGE OF WHAT COMES NEXT</span><p>Deference to the Unseen<br />Workings of AI.</p></div></section>
+        <section className="closing" aria-label="Paimon Labs belief"><div className="closing-copy"><span className="eyebrow">AT THE EDGE OF WHAT COMES NEXT</span><p>Deference,<br />to the Unseen.</p></div></section>
         <footer><a className="wordmark" href="#">Paimon <em>Labs</em></a><p>Technology in service of the mystery of life.</p><div className="footer-bottom"><span>© {new Date().getFullYear()} PAIMON LABS</span><span className="footer-bottom-links"><span>STOP / GUIDE / PREPARE</span></span></div></footer>
       </ClosingReveal>
     </>
