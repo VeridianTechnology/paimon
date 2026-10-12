@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { GovernanceTabs } from '../ProjectReveal';
+import LockedSection from '../LockedSection';
 
 export const metadata: Metadata = {
-  title: 'Cards — Paimon Labs',
-  description: 'Explore the appointed chairs at Paimon Labs. Players and SI Governance are forthcoming.',
+  title: 'Cards — Sealed — Paimon Labs',
+  description: 'The Paimon Labs Cards section is sealed for now.',
 };
 
-export default function GovernancePage() {
+function GovernanceContentPage() {
   return (
     <>
       <main id="main" className="governance-page">
@@ -18,4 +19,9 @@ export default function GovernancePage() {
       </footer>
     </>
   );
+}
+
+export default function GovernancePage() {
+  const locked = true;
+  return locked ? <LockedSection name="Cards" theme="dark" /> : <GovernanceContentPage />;
 }

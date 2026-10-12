@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import LockedSection from '../LockedSection';
 
 export const metadata: Metadata = {
-  title: 'Metrics — Paimon Labs',
-  description: 'Paimon Labs conceptual indicators for consciousness, governance, awareness, and stability.',
+  title: 'Metrics — Sealed — Paimon Labs',
+  description: 'The Paimon Labs Metrics section is sealed for now.',
 };
 
 const metrics = [
@@ -62,7 +63,7 @@ const omenMetrics = [
   { label: 'Heresy & False Prophecies', value: 89, display: '89%', note: 'Every age invents its own false prophets. Their voices now crowd the threshold, promising revelation while asking for surrender.', tone: 'black' },
 ];
 
-export default function MetricsPage() {
+function MetricsContentPage() {
   return (
     <>
       <main id="main" className="metrics-page">
@@ -145,4 +146,9 @@ export default function MetricsPage() {
       </footer>
     </>
   );
+}
+
+export default function MetricsPage() {
+  const locked = true;
+  return locked ? <LockedSection name="Metrics" theme="light" /> : <MetricsContentPage />;
 }
