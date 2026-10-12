@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import Image from 'next/image';
 
 export default function ProjectReveal({ children, className, labelledBy }: { children: ReactNode; className: string; labelledBy: string }) {
   const cardRef = useRef<HTMLElement>(null);
@@ -216,7 +215,7 @@ export function GovernanceTabs() {
               {view.id === 'council' && (
                 <div className="council-rank">
                   <div className="council-rank-titles"><span>The Grand Mace</span></div>
-                  <span className="council-rank-seal"><Image src="/images/council-marshal-figure.png" alt="Hooded figure holding a staff" width={2048} height={2048} /></span>
+                  <span className="council-rank-seal"><img src="/images/council-marshal-figure.png" alt="Hooded figure holding a staff" width={2048} height={2048} /></span>
                 </div>
               )}
             </div>
