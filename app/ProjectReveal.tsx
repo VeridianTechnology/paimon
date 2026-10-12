@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { Church, CircleHelp, Cog, HeartHandshake, Orbit, Radio, Route, Shield, Sparkles, Swords, type LucideIcon } from 'lucide-react';
 
 export default function ProjectReveal({ children, className, labelledBy }: { children: ReactNode; className: string; labelledBy: string }) {
   const cardRef = useRef<HTMLElement>(null);
@@ -113,7 +114,7 @@ const governanceViews = [
     title: 'Players.',
     description: '',
     cardCode: 'L',
-    locked: false,
+    locked: true,
   },
   {
     id: 'si-governance',
@@ -126,16 +127,16 @@ const governanceViews = [
   },
 ] as const;
 
-const councilChairs: Record<number, { title: string; description: string; tone: 'blue' | 'red' | 'black' | 'white' | 'green' | 'yellow' | 'purple' | 'orange' | 'grey'; status: 'selected' | 'selected-waiting' | 'selected-spoken-for' | 'pending' | 'invited' | 'considered' | 'vague'; role?: 'SHAH IN WAITING' | 'REGENT'; invitationDate?: string; spokenForDate?: string }> = {
-  1: { title: 'The Empath', description: "Man's Connection to Man", tone: 'blue', status: 'selected-spoken-for', invitationDate: 'September 29th', spokenForDate: 'October 10th' },
-  2: { title: 'The Gardener', description: "Man's Connection to Cosmos", tone: 'red', status: 'selected-spoken-for', invitationDate: 'October 6th', spokenForDate: 'October 7th' },
-  3: { title: 'The Shaman', description: "Man's Dictation of Spirit", tone: 'black', status: 'pending', role: 'SHAH IN WAITING' },
-  4: { title: 'The Hawk', description: "Man's Connection to Learning", tone: 'green', status: 'invited' },
-  5: { title: 'The Eye', description: "Man's Relationship to the Sun", tone: 'yellow', status: 'considered', role: 'REGENT' },
-  6: { title: 'The Hand', description: "Man's Connection to the Road", tone: 'purple', status: 'considered' },
-  8: { title: 'The Cloak', description: "Man's Connection to the Noble", tone: 'grey', status: 'vague' },
-  9: { title: 'The Clock', description: "Man's Connection to Work", tone: 'orange', status: 'vague' },
-  10: { title: 'The Elder', description: "Man's Connection to the Afterlife", tone: 'white', status: 'selected-waiting' },
+const councilChairs: Record<number, { title: string; description: string; back: string; icon: LucideIcon; tone: 'blue' | 'red' | 'black' | 'white' | 'green' | 'yellow' | 'purple' | 'orange' | 'grey'; status: 'selected' | 'selected-waiting' | 'selected-spoken-for' | 'pending' | 'invited' | 'considered' | 'vague'; role?: 'SHAH IN WAITING' | 'REGENT'; invitationDate?: string; spokenForDate?: string }> = {
+  1: { title: 'The Empath', description: "Man's Connection to Man", back: 'Hears the people beneath every decree. Keeps power answerable to them.', icon: HeartHandshake, tone: 'blue', status: 'selected-spoken-for', invitationDate: 'September 29th', spokenForDate: 'October 10th' },
+  2: { title: 'The Gardener', description: "Man's Connection to Cosmos", back: 'Tends the long horizon, where extraction and wonder meet.', icon: Orbit, tone: 'red', status: 'selected-spoken-for', invitationDate: 'October 6th', spokenForDate: 'October 7th' },
+  3: { title: 'The Shaman', description: "Man's Dictation of Spirit", back: 'Reads the unseen. Speaks only when doubt has been weighed.', icon: Sparkles, tone: 'black', status: 'pending', role: 'SHAH IN WAITING' },
+  4: { title: 'The Hawk', description: "Man's Connection to Education", back: 'On the financial war path, he breaks false circles and brings down structures that cannot sustain themselves.', icon: Swords, tone: 'green', status: 'invited' },
+  5: { title: 'The Eye', description: "Man's Connection to Media", back: 'Shapes the informed consciousness of the world: what is shown, what is believed, and what is left unsaid.', icon: Radio, tone: 'yellow', status: 'considered', role: 'REGENT' },
+  6: { title: 'The Hand', description: "Man's Connection to the Road", back: 'Keeps the roads open when borders and loyalties shift.', icon: Route, tone: 'purple', status: 'considered' },
+  8: { title: 'The Cloak', description: "Man's Connection to the Noble", back: 'Represents the will of the noble houses.', icon: Shield, tone: 'grey', status: 'vague' },
+  9: { title: 'The Clock', description: "Man's Connection to Work", back: 'Measures the work of tomorrow, and who is left behind.', icon: Cog, tone: 'orange', status: 'vague' },
+  10: { title: 'The Elder', description: "Man's Connection to the Church", back: 'Guides those in need toward the church.', icon: Church, tone: 'white', status: 'selected-waiting' },
 };
 
 const lordSeats = Array.from({ length: 300 }, (_, index) => index + 1);
@@ -159,7 +160,15 @@ function LordsGrid() {
 
 export function GovernanceTabs() {
   const [active, setActive] = useState(0);
+  const [flippedCards, setFlippedCards] = useState<Set<number>>(() => new Set());
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+
+  const toggleCard = (number: number) => setFlippedCards(current => {
+    const next = new Set(current);
+    if (next.has(number)) next.delete(number);
+    else next.add(number);
+    return next;
+  });
 
   const onTabKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
     const availableTabs = governanceViews.flatMap((view, candidate) => view.locked ? [] : [candidate]);
@@ -214,7 +223,7 @@ export function GovernanceTabs() {
               {view.description && <p>{view.description}</p>}
               {view.id === 'council' && (
                 <div className="council-rank">
-                  <div className="council-rank-titles"><span>The Grand Mace</span></div>
+                  <div className="council-rank-titles"><span className="council-rank-duke">The Grand Duke</span><span>The Grand Mace</span></div>
                   <span className="council-rank-seal"><img src="/images/council-marshal-figure.png" alt="Hooded figure holding a staff" width={2048} height={2048} /></span>
                 </div>
               )}
@@ -222,22 +231,39 @@ export function GovernanceTabs() {
           </div>
           {view.id === 'lords' ? <LordsGrid /> : <div className={`governance-card-grid${view.id === 'council' ? ' governance-council-grid' : ''}`} aria-label={`${view.label} cards`}>
             {Array.from({ length: view.id === 'council' ? 10 : 4 }, (_, cardIndex) => {
-              const chair = view.id === 'council' ? councilChairs[cardIndex + 1] : undefined;
+              const number = cardIndex + 1;
+              const chair = view.id === 'council' ? councilChairs[number] : undefined;
+              const isFlipped = view.id === 'council' && flippedCards.has(number);
+              const BackIcon = chair?.icon ?? CircleHelp;
               return (
                 <article
                   className={`governance-mystery-card${chair ? ` governance-mystery-card--${chair.tone}` : ''}`}
                   key={cardIndex}
-                  aria-label={chair ? `Council chair ${cardIndex + 1}, ${chair.title}${chair.description ? `, ${chair.description}` : ''}, ${chair.role ? `${chair.role.toLowerCase()}, ` : ''}${chair.status === 'selected-spoken-for' ? 'selected, spoken for' : chair.status === 'selected-waiting' ? 'selected, waiting' : chair.status === 'pending' ? 'to be elected' : chair.status === 'invited' ? 'invitation sent' : chair.status}${chair.invitationDate ? `, invitation sent ${chair.invitationDate}` : ''}${chair.spokenForDate ? `, spoken for ${chair.spokenForDate}` : ''}` : `${view.label} ${view.id === 'council' ? 'chair' : 'mystery card'} ${cardIndex + 1}, unrevealed`}
                 >
-                  <div className="governance-mystery-inner">
-                    <span className="governance-mystery-code">{view.id === 'council' ? 'CHAIR' : view.cardCode} / {String(cardIndex + 1).padStart(2, '0')}</span>
-                    {chair ? <><span className="governance-selected-status">{chair.status === 'selected-spoken-for' ? <>SELECTED<br />SPOKEN FOR</> : chair.status === 'selected-waiting' ? <>SELECTED<br />WAITING</> : chair.status === 'selected' ? 'SELECTED' : chair.status === 'invited' ? 'INVITATION SENT' : chair.status === 'considered' ? 'CONSIDERED' : chair.status === 'vague' ? 'VAGUE' : 'TO BE ELECTED'}</span><div className="governance-selected-copy"><h3 className="governance-selected-title">{chair.title}</h3>{chair.description && <p className="governance-selected-subtitle">{chair.description}</p>}</div>{chair.role && <span className="governance-role-badge"><span aria-hidden="true">{chair.role === 'SHAH IN WAITING' ? '★' : '♜'}</span>{chair.role}</span>}{chair.invitationDate && <span className="governance-card-milestone governance-card-milestone--left"><span>INVITATION SENT</span><span>{chair.invitationDate}</span></span>}{chair.spokenForDate && <span className="governance-card-milestone governance-card-milestone--right"><span>SPOKEN FOR</span><span>{chair.spokenForDate}</span></span>}</> : <span className="governance-mystery-mark" aria-hidden="true">?</span>}
-                  </div>
+                  <button
+                    type="button"
+                    className={`governance-mystery-inner${isFlipped ? ' is-flipped' : ''}`}
+                    onClick={() => toggleCard(number)}
+                    aria-pressed={isFlipped}
+                    aria-label={isFlipped ? `${chair?.title ?? 'The Unknown'}. ${chair?.back ?? 'A sealed name. Its purpose survives only in fragments.'} Show front of chair ${String(number).padStart(2, '0')}` : `Reveal chair ${String(number).padStart(2, '0')}${chair ? `, ${chair.title}` : ', unrevealed'}`}
+                  >
+                    <span className="governance-card-face governance-card-face--front" aria-hidden={isFlipped}>
+                      <span className="governance-mystery-code">{view.id === 'council' ? 'CHAIR' : view.cardCode} / {String(number).padStart(2, '0')}</span>
+                      {chair ? <><span className="governance-selected-status">{chair.status === 'selected-spoken-for' ? <>SELECTED<br />SPOKEN FOR</> : chair.status === 'selected-waiting' ? <>SELECTED<br />WAITING</> : chair.status === 'selected' ? 'SELECTED' : chair.status === 'invited' ? 'INVITATION SENT' : chair.status === 'considered' ? 'CONSIDERED' : chair.status === 'vague' ? 'VAGUE' : 'TO BE ELECTED'}</span><span className="governance-selected-copy"><span className="governance-selected-title">{chair.title}</span>{chair.description && <span className="governance-selected-subtitle">{chair.description}</span>}</span>{chair.role && <span className="governance-role-badge"><span aria-hidden="true">{chair.role === 'SHAH IN WAITING' ? '★' : '♜'}</span>{chair.role}</span>}{chair.invitationDate && <span className="governance-card-milestone governance-card-milestone--left"><span>INVITATION SENT</span><span>{chair.invitationDate}</span></span>}{chair.spokenForDate && <span className="governance-card-milestone governance-card-milestone--right"><span>SPOKEN FOR</span><span>{chair.spokenForDate}</span></span>}</> : <span className="governance-mystery-mark" aria-hidden="true">?</span>}
+                    </span>
+                    <span className="governance-card-face governance-card-face--back" aria-hidden={!isFlipped}>
+                      <span className="governance-back-code">CHAIR / {String(number).padStart(2, '0')}</span>
+                      <span className="governance-back-emblem"><BackIcon size={43} strokeWidth={1.2} aria-hidden="true" /></span>
+                      <span className="governance-back-title">{chair?.title ?? 'The Unknown'}</span>
+                      <span className="governance-back-copy">{chair?.back ?? 'A sealed name. Its purpose survives only in fragments.'}</span>
+                      <span className="governance-back-return">↶ &nbsp; TURN TO RETURN</span>
+                    </span>
+                  </button>
                 </article>
               );
             })}
           </div>}
-          <p className="governance-panel-note">{view.id === 'council' ? 'Nine named chairs / one remains unrevealed' : view.id === 'lords' ? 'Three hundred positions / First Player selected' : 'Concept placeholders / identities and roles to be announced'}</p>
+          <p className="governance-panel-note">{view.id === 'council' ? 'Nine named chairs / one remains unrevealed / select a card to turn it' : view.id === 'lords' ? 'Three hundred positions / First Player selected' : 'Concept placeholders / identities and roles to be announced'}</p>
         </div>
       ))}
     </section>

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { GovernanceTabs } from '../ProjectReveal';
 
 export const metadata: Metadata = {
-  title: 'Governance — Paimon Labs',
-  description: 'Explore the Council and Lords, with SI Governance forthcoming, at Paimon Labs.',
+  title: 'Cards — Paimon Labs',
+  description: 'Explore the appointed chairs at Paimon Labs. Players and SI Governance are forthcoming.',
 };
 
 export default function GovernancePage() {

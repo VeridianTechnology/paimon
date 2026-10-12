@@ -85,7 +85,7 @@ export default function MetricsPage() {
             <div className="metrics-council-focus-copy">
               <p className="eyebrow">COUNCIL FOCUS / THE HUMAN CONDITION</p>
               <h4>Humanity is falling short.</h4>
-              <p>Our power has grown faster than our care for one another and the earth. The Council calls for spiritual and mental awareness, and for consumer awareness of what we buy, use, and discard. Equality and prosperity will require shared dignity, clearer judgment, and the will to leave more than we take.</p>
+              <p>Our power has grown faster than our care for one another and the earth. We need deeper spiritual and mental awareness, along with greater care in what we buy, use, and discard. Equality and prosperity require shared dignity, clearer judgment, and the will to leave more than we take.</p>
               <div className="metrics-council-pillars">
                 <span><b>01 / SPIRIT</b>Rekindle reverence and compassion.</span>
                 <span><b>02 / MIND</b>Choose discernment over noise.</span>
