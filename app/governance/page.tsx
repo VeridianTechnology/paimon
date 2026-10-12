@@ -4,7 +4,7 @@ import { GovernanceTabs } from '../ProjectReveal';
 
 export const metadata: Metadata = {
   title: 'Governance — Paimon Labs',
-  description: 'Explore the proposed Council, Ministers, and SI Governance structure at Paimon Labs.',
+  description: 'Explore the Council and Lords, with SI Governance forthcoming, at Paimon Labs.',
 };
 
 export default function GovernancePage() {

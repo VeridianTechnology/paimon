@@ -27,7 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <Link className="wordmark" href="/" aria-label="Paimon Labs home">Paimon <em>Labs</em><img className="wordmark-logo" src="/images/paimon-shield-logo.png" alt="" width="1249" height="1399" /></Link>
       <nav className="site-nav" aria-label="Main navigation">
         <Link href="/">Home</Link>
-        <Link href="/governance">Governance</Link>
+        <Link href="/governance">Cards</Link>
         <Link href="/metrics">Metrics</Link>
       </nav>
     </header>

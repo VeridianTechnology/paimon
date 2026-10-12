@@ -395,54 +395,77 @@ body:has(.metrics-page) .site-nav a[href="/metrics"] { color: #8e326e; border-co
 .metrics-summary-critical .metrics-summary-kicker,.metrics-summary-critical h2,.metrics-summary-critical strong { color: #ad293c; }
 .metrics-summary-critical .metric-track { border-color: #bf45486b; background: #edc6c9; }
 .metrics-summary-critical .metric-track > span { background: linear-gradient(90deg, #f3c53f 0%, #e88e39 48%, #bb2f44 100%); }
-.metrics-summary-orange { margin-top: 17px; border-color: #d88855a3; background: linear-gradient(110deg, #fff4e5, #f8dfc9); }
-.metrics-summary-orange .metrics-summary-kicker,.metrics-summary-orange h2,.metrics-summary-orange strong { color: #a84b20; }
-.metrics-summary-orange .metric-track { border-color: #d8885580; background: #efcdb3; }
-.metrics-summary-orange .metric-track > span { background: linear-gradient(90deg, #eab64a, #e48132 65%, #b94c26); }
 .metrics-summary-human { margin-top: 17px; background: #e7ddea; }
-.metrics-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 12px 0 60px; }
+.metrics-summary-positive { margin-top: 12px; border-color: #9abc9a8a; background: linear-gradient(110deg, #f4fbf1, #e8f3e5); }
+.metrics-summary-positive .metrics-summary-kicker { color: #a43b4d; }
+.metrics-summary-positive h2,.metrics-summary-positive strong { color: #3f6948; }
+.metrics-summary-positive .metric-track { border-color: #85ac8970; background: #d5e7d2; }
+.metrics-summary-positive .metric-track > span { background: linear-gradient(90deg, #3d754e, #80ae72); }
 .metric-card { min-width: 0; padding: 19px 21px 22px; border: 1px solid #8c71933d; background: #f8f4f9; }
 .metric-card-top { display: flex; justify-content: space-between; gap: 16px; color: #927a98; font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
 .metric-card h2 { min-height: 1.9em; margin-top: 22px; color: #3c2944; font-size: clamp(27px, 2.2vw, 36px); line-height: 1.05; }
 .metric-card strong { display: block; margin-top: 8px; color: #673875; font-family: var(--font-editorial), Georgia, serif; font-size: clamp(50px, 5vw, 72px); font-weight: 400; line-height: 1; }
 .metric-track { height: 9px; margin-top: 14px; border: 1px solid #8e649444; background: #e3d6e7; transform: skewX(-19deg); overflow: hidden; }
 .metric-track > span { display: block; height: 100%; background: linear-gradient(110deg, #623171, #a65c9b 55%, #754082); }
-.metrics-alert-heading { border-color: #d88855a8; color: #9f562d; }
-.metrics-alert-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+.metric-card-ai { display: flex; flex-direction: column; border-color: #9d85a56b; background: linear-gradient(145deg, #faf6fb, #eee5f0); }
+.metric-ai-label { display: inline-flex; align-items: center; gap: 8px; }
+.metric-ai-label svg { width: 17px; height: 17px; flex: none; }
+.metric-card-ai .metric-track { flex: none; }
+.metric-card-ai > p { margin-top: 15px; padding-top: 13px; border-top: 1px solid #9a7ca34d; color: #68546e; font-size: 14px; line-height: 1.55; }
+.metric-card-ai-orange { border-color: #d88855a3; background: linear-gradient(145deg, #fff4e5, #f8dfc9); }
+.metric-card-ai-orange .metric-card-top,.metric-card-ai-orange h2,.metric-card-ai-orange strong { color: #a84b20; }
+.metric-card-ai-orange .metric-critical-warning { color: #ad293c; }
+.metric-card-ai-orange .metric-track { border-color: #d8885580; background: #efcdb3; }
+.metric-card-ai-orange .metric-track > span { background: linear-gradient(90deg, #eab64a, #e48132 65%, #b94c26); }
+.metric-card-ai-orange > p { border-color: #d8885566; color: #885438; }
 .metric-card-red { border-color: #c8606b8a; background: linear-gradient(145deg, #fff5f5, #f5e5e8); }
 .metric-card-red .metric-card-top { color: #a43b4d; }
-.metric-card-red .metric-status { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
-.metric-card-red .metric-status i { width: 8px; height: 8px; border-radius: 50%; background: #c8354d; box-shadow: 0 0 0 4px #c8354d1c; }
 .metric-card-red h2 { min-height: 0; color: #5e2733; }
 .metric-card-red strong { color: #b42e48; }
 .metric-card-red .metric-track { border-color: #b42e484f; background: #efd1d7; }
 .metric-card-red .metric-track > span { background: #c8354d; }
 .metric-card-red > p { max-width: 530px; margin-top: 15px; padding-top: 13px; border-top: 1px solid #ba69735c; color: #713f4a; font-size: 14px; line-height: 1.55; }
-.metrics-human-heading { margin-top: 60px; }
 .metrics-human-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
 .metric-card-human { display: flex; flex-direction: column; }
 .metric-card-human .metric-card-top { color: #866c8e; }
 .metric-card-human .metric-track { flex: none; }
 .metric-card-human > p { margin-top: 15px; padding-top: 13px; border-top: 1px solid #9a7ca34d; color: #68546e; font-size: 14px; line-height: 1.55; }
-.metric-card-black { border-color: #18131d; background: linear-gradient(145deg, #332737, #130d18); }
-.metric-card-black { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 7px 20px; }
-.metric-card-black .metric-card-top { grid-column: 1 / -1; }
-.metric-card-black h2 { min-height: 0; margin-top: 7px; }
-.metric-card-black strong { margin-top: 0; }
-.metric-card-black .metric-track,.metric-card-black > p { grid-column: 1 / -1; }
-.metric-card-black .metric-track { margin-top: 5px; }
-.metric-card-black .metric-card-top { color: #d3b0b8; }
-.metric-card-black h2,.metric-card-black strong { color: #f4e8f3; }
-.metric-card-black .metric-track { border-color: #a991ae85; background: #5b4a5e; }
-.metric-card-black .metric-track > span { background: linear-gradient(90deg, #784457, #d0a7b1); }
-.metric-card-black > p { border-color: #c9b0cc5c; color: #d5c1d5; }
+.metric-card-human { border-color: #9abc9a8a; background: linear-gradient(145deg, #f4fbf1, #e8f3e5); }
+.metric-card-human .metric-card-top { color: #6d8b70; }
+.metric-critical-warning { color: #a43b4d; font-weight: 700; }
+.metric-card-human h2,.metric-card-human strong { color: #3f6948; }
+.metric-card-human .metric-track { border-color: #85ac8970; background: #d5e7d2; }
+.metric-card-human .metric-track > span { background: linear-gradient(90deg, #3d754e, #80ae72); }
+.metric-card-human > p { border-color: #8fad8c66; color: #4e6b53; }
+.metrics-council-focus { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 30px; margin-top: 17px; padding: 27px 30px; border: 1px solid #8c71935c; background: linear-gradient(120deg, #f7f1f8, #e8dce9); }
+.metrics-council-sigil { display: grid; place-items: center; align-self: start; width: 100px; height: 100px; border-radius: 50%; background: #3b2942; color: #d5b9df; box-shadow: 0 8px 24px #3b294227; }
+.metrics-council-sigil svg { width: 72px; height: 72px; }
+.metrics-council-focus-copy > .eyebrow { color: #8b5b91; font-size: 10px; letter-spacing: 1.2px; }
+.metrics-council-focus-copy h4 { margin-top: 6px; color: #3c2944; font-family: var(--font-editorial), Georgia, serif; font-size: clamp(34px, 3vw, 46px); font-weight: 400; line-height: 1.08; }
+.metrics-council-focus-copy > p:not(.eyebrow) { max-width: 1000px; margin-top: 13px; color: #65536b; font-size: 15px; line-height: 1.7; }
+.metrics-council-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 21px; padding-top: 17px; border-top: 1px solid #8c719344; }
+.metrics-council-pillars span { color: #65536b; font-size: 13px; line-height: 1.5; }
+.metrics-council-pillars b { display: block; margin-bottom: 5px; color: #74547d; font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 500; letter-spacing: 1px; }
+.metric-card-omen h4 { min-height: 1.9em; margin-top: 22px; color: #5e2733; font-family: var(--font-editorial), Georgia, serif; font-size: clamp(27px, 2.2vw, 36px); font-weight: 400; line-height: 1.05; }
+.metric-card-omen > p { margin-top: 15px; padding-top: 13px; border-top: 1px solid #ba69735c; color: #713f4a; font-size: 14px; line-height: 1.55; }
+.metric-card-omen-black { border-color: #18131d; background: linear-gradient(145deg, #332737, #130d18); }
+.metric-card-omen-black .metric-card-top { color: #d3b0b8; }
+.metric-card-omen-black .metric-critical-warning { color: #f0a3ae; }
+.metric-card-omen-black h4,.metric-card-omen-black strong { color: #f4e8f3; }
+.metric-card-omen-black .metric-track { border-color: #a991ae85; background: #5b4a5e; }
+.metric-card-omen-black .metric-track > span { background: linear-gradient(90deg, #784457, #d0a7b1); }
+.metric-card-omen-black > p { border-color: #c9b0cc5c; color: #d5c1d5; }
 @media (min-width: 1600px) { .metrics-hero,.metrics-content { padding-left: max(4.5%,calc((100vw - 1500px)/2)); padding-right: max(4.5%,calc((100vw - 1500px)/2)); } }
-@media (max-width: 1100px) { .metrics-grid,.metrics-alert-grid,.metrics-human-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1100px) { .metrics-human-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 650px) {
   .metrics-hero { padding: 65px 6% 48px; }
   .metrics-hero h1 { font-size: 72px; }
   .metrics-content { padding: 0 6% 65px; }
-  .metrics-grid,.metrics-alert-grid,.metrics-human-grid { grid-template-columns: 1fr; }
+  .metrics-council-focus { grid-template-columns: 1fr; gap: 18px; padding: 23px; }
+  .metrics-council-sigil { width: 78px; height: 78px; }
+  .metrics-council-sigil svg { width: 56px; height: 56px; }
+  .metrics-council-pillars { grid-template-columns: 1fr; gap: 12px; }
+  .metrics-human-grid { grid-template-columns: 1fr; }
   .metric-card h2 { min-height: 0; margin-top: 20px; }
   .metrics-section-heading { font-size: 9px; }
 }
@@ -530,6 +553,9 @@ body:has(.metrics-page) .site-nav a[href="/metrics"] { color: #8e326e; border-co
 .governance-tab-list button + button { border-left: 1px solid #785f803d; }
 .governance-tab-list button span { align-self: start; margin-top: 7px; color: #9b7da4; font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: 1px; }
 .governance-tab-list button:hover { color: #5f356b; background: #ffffff4d; }
+.governance-tab-list button:disabled { opacity: .45; cursor: not-allowed; }
+.governance-tab-list button:disabled:hover { color: #806b88; background: transparent; }
+.governance-tab-lock { flex: none; width: 16px; height: 16px; margin-left: auto; }
 .governance-tab-list button[aria-selected="true"] { border-bottom-color: #8e326e; color: #3c2146; }
 .governance-tab-list button:focus-visible { outline: 2px solid #8e326e; outline-offset: -5px; }
 .governance-panel { padding-top: 60px; }
@@ -550,10 +576,12 @@ body:has(.metrics-page) .site-nav a[href="/metrics"] { color: #8e326e; border-co
 .governance-mystery-code { position: absolute; top: 22px; left: 22px; color: #eeebef; font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: 1px; }
 .governance-mystery-mark { color: #e7e5e9; font-family: var(--font-geist-sans), Arial, sans-serif; font-size: clamp(90px, 10vw, 170px); font-weight: 300; line-height: 1; }
 .governance-selected-status { position: absolute; top: 22px; right: 18px; color: #f7edf8; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 600; letter-spacing: 1px; }
-.governance-selected-status small { display: block; margin-top: 3px; font-size: 7px; font-weight: 400; letter-spacing: .2px; text-transform: none; }
 .governance-selected-copy { position: absolute; top: 42%; right: 5%; left: 5%; display: flex; flex-direction: column; align-items: center; gap: 11px; }
-.governance-chairman-badge { position: absolute; bottom: 22px; left: 20px; display: inline-flex; align-items: center; gap: 5px; color: #e8c982; font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 600; letter-spacing: .5px; white-space: nowrap; }
-.governance-chairman-badge span { font-size: 11px; line-height: 1; }
+.governance-role-badge { position: absolute; bottom: 22px; left: 20px; display: inline-flex; align-items: center; gap: 5px; color: #e8c982; font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 600; letter-spacing: .5px; white-space: nowrap; }
+.governance-role-badge span { font-size: 11px; line-height: 1; }
+.governance-card-milestone { position: absolute; bottom: 22px; display: flex; flex-direction: column; gap: 5px; max-width: 45%; color: #f7edf8; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 600; letter-spacing: .5px; line-height: 1.3; text-transform: uppercase; }
+.governance-card-milestone--left { left: 20px; text-align: left; }
+.governance-card-milestone--right { right: 20px; text-align: right; }
 .governance-selected-title { position: relative; max-width: 90%; color: #fff8ff; font-family: var(--font-editorial), Georgia, serif; font-size: clamp(22px, 2.2vw, 32px); font-weight: 500; line-height: 1.08; text-align: center; }
 .governance-selected-subtitle { max-width: 95%; color: #eee2ee; font-family: var(--font-editorial), Georgia, serif; font-size: clamp(17px, 1.5vw, 22px); font-style: italic; line-height: 1.16; text-align: center; }
 .governance-mystery-card--blue { border-color: #749ac0; background: #294969; }
@@ -572,12 +600,35 @@ body:has(.metrics-page) .site-nav a[href="/metrics"] { color: #8e326e; border-co
 .governance-mystery-card--yellow .governance-mystery-inner { border-color: #8f742e99; background: linear-gradient(145deg, #f8e8a7, #e0c365 57%, #bb9942); }
 .governance-mystery-card--yellow .governance-mystery-inner::before { border-color: #8f742e80; }
 .governance-mystery-card--yellow .governance-mystery-code,.governance-mystery-card--yellow .governance-selected-status,.governance-mystery-card--yellow .governance-selected-title,.governance-mystery-card--yellow .governance-selected-subtitle { color: #3c321c; }
+.governance-mystery-card--yellow .governance-role-badge { color: #5b391b; }
+.governance-mystery-card--purple { border-color: #8f5cb6; background: #3b1459; }
+.governance-mystery-card--purple .governance-mystery-inner { background: linear-gradient(145deg, #8654ad, #562677 55%, #24102f); }
+.governance-mystery-card--purple .governance-mystery-inner::before { border-color: #bf96db80; }
+.governance-mystery-card--purple .governance-selected-status { line-height: 1.3; text-align: right; }
+.governance-mystery-card--orange { border-color: #d2965f; background: #975024; }
+.governance-mystery-card--orange .governance-mystery-inner { background: linear-gradient(145deg, #e4a468, #b76631 55%, #6f351b); }
+.governance-mystery-card--orange .governance-mystery-inner::before { border-color: #ffe3bf73; }
+.governance-mystery-card--grey { border-color: #9a969d; background: #6f6b73; }
+.governance-mystery-card--grey .governance-mystery-inner { background: linear-gradient(145deg, #a6a2aa, #77727c 55%, #514d57); }
 .governance-mystery-card--white { border-color: #aaa1a9; background: #ece9e8; }
 .governance-mystery-card--white .governance-mystery-inner { border-color: #81778699; background: linear-gradient(145deg, #fffdf9, #ebe8ea 60%, #d9d5dc); }
 .governance-mystery-card--white .governance-mystery-inner::before { border-color: #8b83935c; }
 .governance-mystery-card--white .governance-mystery-code,.governance-mystery-card--white .governance-selected-status { color: #64576b; }
+.governance-mystery-card--white .governance-selected-status { text-align: right; }
 .governance-mystery-card--white .governance-selected-title { color: #3d3046; }
 .governance-mystery-card--white .governance-selected-subtitle { color: #5a4d61; }
+.lords-roster { margin-top: 48px; }
+.lords-roster-heading { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 13px; border-bottom: 1px solid #785f8066; color: #806b88; font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: 1.2px; }
+.lords-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(62px, 1fr)); gap: 9px; margin: 17px 0 0; padding: 0; list-style: none; }
+.lords-seat { position: relative; display: flex; min-width: 0; min-height: 76px; flex-direction: column; align-items: center; justify-content: center; gap: 7px; border: 1px solid #b9aabf; background: linear-gradient(145deg, #eee7f0, #ddd3e1); color: #a394a9; }
+.lords-seat-number { font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: .8px; }
+.lords-person-icon { position: relative; display: block; width: 28px; height: 34px; color: inherit; }
+.lords-person-icon::before { content: ''; position: absolute; top: 1px; left: 9px; width: 10px; height: 10px; border-radius: 50%; background: currentColor; }
+.lords-person-icon::after { content: ''; position: absolute; bottom: 1px; left: 3px; width: 22px; height: 17px; border-radius: 12px 12px 3px 3px; background: currentColor; }
+.lords-seat--first { grid-column: span 2; grid-row: span 2; gap: 11px; border-color: #19131e; background: linear-gradient(145deg, #3a303f, #130f19); color: #f0e6f2; box-shadow: 0 16px 28px #2a19332b; }
+.lords-seat--first .lords-person-icon { transform: scale(1.35); }
+.lords-seat--first strong { font-family: var(--font-editorial), Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 400; text-align: center; }
+.lords-seat-status { position: absolute; top: 11px; right: 11px; color: #d6b8df; font-family: var(--font-geist-mono), monospace; font-size: 8px; letter-spacing: .9px; }
 .governance-panel-note { margin-top: 22px; color: #88728e; font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: .8px; text-transform: uppercase; }
 @media (min-width: 1600px) { .governance-tabs { padding-left: max(4.5%,calc((100vw - 1500px)/2)); padding-right: max(4.5%,calc((100vw - 1500px)/2)); } }
 @media (max-width: 800px) {
@@ -594,6 +645,7 @@ body:has(.metrics-page) .site-nav a[href="/metrics"] { color: #8e326e; border-co
   .governance-tabs { padding: 34px 6% 55px; }
   .governance-tab-list button { display: block; font-size: 20px; line-height: 1.05; }
   .governance-tab-list button span { display: block; margin: 0 0 8px; }
+  .governance-tab-lock { display: inline-block; width: 13px; height: 13px; margin: 0 0 0 8px; vertical-align: middle; }
   .governance-panel { padding-top: 36px; }
   .governance-panel-heading h2 { font-size: 54px; }
   .governance-panel-aside > p { font-size: 15px; }
@@ -602,15 +654,20 @@ body:has(.metrics-page) .site-nav a[href="/metrics"] { color: #8e326e; border-co
   .governance-card-grid { gap: 12px; margin-top: 32px; }
   .governance-council-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .governance-mystery-card { padding: 6px; }
+  .lords-grid { grid-template-columns: repeat(auto-fill, minmax(49px, 1fr)); gap: 6px; }
+  .lords-seat { min-height: 65px; }
+  .lords-seat--first strong { font-size: 21px; }
   .governance-mystery-code { top: 17px; left: 17px; font-size: 9px; }
   .governance-council-grid .governance-mystery-code { font-size: 8px; }
   .governance-selected-status { top: 17px; right: 13px; font-size: 7px; letter-spacing: .4px; }
-  .governance-selected-status small { font-size: 6px; }
   .governance-mystery-card--black .governance-selected-status { max-width: 58px; }
   .governance-mystery-card--green .governance-selected-status { max-width: 60px; }
   .governance-selected-title { font-size: clamp(19px, 5.5vw, 28px); }
   .governance-selected-subtitle { font-size: clamp(15px, 4.2vw, 19px); }
-  .governance-chairman-badge { bottom: 16px; left: 14px; font-size: 6px; }
-  .governance-chairman-badge span { font-size: 10px; }
+  .governance-role-badge { bottom: 16px; left: 14px; font-size: 6px; }
+  .governance-role-badge span { font-size: 10px; }
+  .governance-card-milestone { bottom: 16px; max-width: 43%; font-size: 6px; letter-spacing: 0; }
+  .governance-card-milestone--left { left: 14px; }
+  .governance-card-milestone--right { right: 14px; }
   .governance-mystery-mark { font-size: clamp(80px, 24vw, 130px); }
 }
