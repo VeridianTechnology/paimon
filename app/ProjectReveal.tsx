@@ -249,14 +249,14 @@ export function GovernanceTabs() {
                     className={`governance-mystery-inner${isFlipped ? ' is-flipped' : ''}`}
                     onClick={() => toggleCard(number)}
                     aria-pressed={isFlipped}
-                    aria-label={isFlipped ? `${chair?.title ?? 'The Unknown'}. ${chair?.back ?? 'A sealed name. Its purpose survives only in fragments.'} Show front of chair ${String(number).padStart(2, '0')}` : `Reveal chair ${String(number).padStart(2, '0')}${chair ? `, ${chair.title}` : ', unrevealed'}`}
+                    aria-label={isFlipped ? `${chair?.title ?? 'The Unknown'}. ${chair?.back ?? 'A sealed name. Its purpose survives only in fragments.'} Show front of card ${String(number).padStart(2, '0')}` : `Reveal card ${String(number).padStart(2, '0')}${chair ? `, ${chair.title}` : ', unrevealed'}`}
                   >
                     <span className="governance-card-face governance-card-face--front" aria-hidden={isFlipped}>
-                      <span className="governance-mystery-code">{view.id === 'council' ? 'CHAIR' : view.cardCode} / {String(number).padStart(2, '0')}</span>
+                      <span className="governance-mystery-code">{view.id === 'council' ? 'CARD' : view.cardCode} / {String(number).padStart(2, '0')}</span>
                       {chair ? <><span className="governance-selected-status">{chair.status === 'selected-spoken-for' ? <>SELECTED<br />SPOKEN FOR</> : chair.status === 'selected-waiting' ? <>SELECTED<br />WAITING</> : chair.status === 'selected' ? 'SELECTED' : chair.status === 'invited' ? 'INVITATION SENT' : chair.status === 'considered' ? 'CONSIDERED' : chair.status === 'vague' ? 'VAGUE' : 'TO BE ELECTED'}</span><span className="governance-selected-copy"><span className="governance-selected-title">{chair.title}</span>{chair.description && <span className="governance-selected-subtitle">{chair.description}</span>}</span>{chair.invitationDate && <span className="governance-card-milestone governance-card-milestone--left"><span>INVITATION SENT</span><span>{chair.invitationDate}</span></span>}{chair.spokenForDate && <span className="governance-card-milestone governance-card-milestone--right"><span>SPOKEN FOR</span><span>{chair.spokenForDate}</span></span>}</> : <span className="governance-mystery-mark" aria-hidden="true">?</span>}
                     </span>
                     <span className="governance-card-face governance-card-face--back" aria-hidden={!isFlipped}>
-                      <span className="governance-back-code">CHAIR / {String(number).padStart(2, '0')}</span>
+                      <span className="governance-back-code">CARD / {String(number).padStart(2, '0')}</span>
                       <span className="governance-back-emblem"><BackIcon size={43} strokeWidth={1.2} aria-hidden="true" /></span>
                       <span className="governance-back-title">{chair?.title ?? 'The Unknown'}</span>
                       <span className="governance-back-copy">{chair?.back ?? 'A sealed name. Its purpose survives only in fragments.'}</span>
