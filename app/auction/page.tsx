@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { NftCarousel } from '../ProjectReveal';
+import { LockMark } from '../LockedSection';
 
 export const metadata: Metadata = {
   title: 'Auction — Paimon Labs',
@@ -14,7 +15,7 @@ export default function AuctionPage() {
       </main>
       <footer className="subpage-footer">
         <span>© {new Date().getFullYear()} PAIMON LABS</span>
-        <a href="/governance">Cards <span aria-hidden="true">↗</span></a>
+        <span className="sealed-footer-note">Cards sealed <LockMark /></span>
       </footer>
     </>
   );

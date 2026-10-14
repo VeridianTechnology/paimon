@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Geist, Geist_Mono } from 'next/font/google';
+import { LockMark } from './LockedSection';
 import './globals.css';
 
 const serif = Cormorant_Garamond({ variable: '--font-editorial', subsets: ['latin'], weight: ['400', '500', '600'], style: ['normal', 'italic'] });
@@ -26,7 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <a className="wordmark" href="/" aria-label="Paimon Labs home">Paimon <em>Labs</em><img className="wordmark-logo" src="/images/paimon-shield-logo.png" alt="" width="1249" height="1399" /></a>
       <nav className="site-nav" aria-label="Main navigation">
         <a href="/">Home</a>
-        <a href="/governance">Cards</a>
+        <span className="site-nav-locked" aria-label="Cards, locked">Cards <LockMark /></span>
         <a href="/metrics">Metrics</a>
       </nav>
     </header>
