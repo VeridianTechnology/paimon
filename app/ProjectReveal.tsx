@@ -114,7 +114,7 @@ const governanceViews = [
     title: 'Lords.',
     description: '',
     cardCode: 'L',
-    locked: true,
+    locked: false,
   },
   {
     id: 'si-governance',
@@ -223,7 +223,7 @@ export function GovernanceTabs() {
               {view.description && <p>{view.description}</p>}
               {view.id === 'council' && (
                 <div className="council-rank">
-                  <div className="council-rank-titles"><span className="council-rank-duke">The Grand Duke</span><span>The Grand Mace</span></div>
+                  <div className="council-rank-titles"><span className="council-rank-duke">The Grand Duke</span><span className="council-rank-disgraced">Disgraced</span><span>The Grand Mace</span></div>
                   <span className="council-rank-seal"><img src="/images/council-marshal-figure.png" alt="Hooded figure holding a staff" width={2048} height={2048} /></span>
                 </div>
               )}

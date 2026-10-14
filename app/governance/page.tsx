@@ -1,11 +1,21 @@
 import type { Metadata } from 'next';
-import LockedSection from '../LockedSection';
+import { GovernanceTabs } from '../ProjectReveal';
 
 export const metadata: Metadata = {
-  title: 'Cards — Sealed — Paimon Labs',
-  description: 'The Paimon Labs Cards section is sealed for now.',
+  title: 'Cards — Paimon Labs',
+  description: 'The Paimon Labs cards and proposed governance structure.',
 };
 
 export default function GovernancePage() {
-  return <LockedSection name="Cards" theme="dark" />;
+  return (
+    <>
+      <main id="main" className="governance-page">
+        <GovernanceTabs />
+      </main>
+      <footer className="subpage-footer">
+        <span>© {new Date().getFullYear()} PAIMON LABS</span>
+        <a href="/auction">Auction <span aria-hidden="true">↗</span></a>
+      </footer>
+    </>
+  );
 }

@@ -645,6 +645,7 @@ body:has(.governance-page) .subpage-footer a { color: #ecd4b6; }
 .council-rank { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: min(100%, 460px); margin: 25px 0 0 auto; padding: 18px 24px; border: 1px solid #a88a6f; background: linear-gradient(135deg, #2c2033, #483043 58%, #211a2a); box-shadow: 0 17px 32px #281b3426, inset 0 0 0 1px #d6b39430; color: #d9bea3; font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: 1.3px; text-transform: uppercase; }
 .council-rank-titles { display: flex; flex: 1; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
 .council-rank-duke { color: #f0ddc3; font-family: var(--font-editorial), Georgia, serif; font-size: 23px; font-weight: 600; letter-spacing: .2px; text-transform: none; }
+.council-rank-disgraced { margin-top: -8px; color: #d8a7a4; font-family: var(--font-editorial), Georgia, serif; font-size: 15px; font-style: italic; letter-spacing: .3px; text-transform: none; }
 .council-rank-seal { display: block; flex: none; width: 102px; height: 102px; overflow: hidden; border: 1px solid #c6aa88; border-radius: 50%; outline: 1px solid #9b7f68; outline-offset: 4px; box-shadow: 0 7px 19px #100d16a3; }
 .council-rank-seal img { display: block; width: 100%; height: 100%; object-fit: cover; transform: translate(-4%, 8%) scale(1.6); }
 .governance-card-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 2vw, 32px); margin-top: 36px; }

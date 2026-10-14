@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import LockedSection from '../LockedSection';
 
 export const metadata: Metadata = {
-  title: 'Metrics — Sealed — Paimon Labs',
-  description: 'The Paimon Labs Metrics section is sealed for now.',
+  title: 'Metrics — Paimon Labs',
+  description: 'Paimon Labs indicators for AI and the human condition.',
 };
 
 const metrics = [
@@ -149,6 +148,5 @@ function MetricsContentPage() {
 }
 
 export default function MetricsPage() {
-  const locked = true;
-  return locked ? <LockedSection name="Metrics" theme="light" /> : <MetricsContentPage />;
+  return <MetricsContentPage />;
 }

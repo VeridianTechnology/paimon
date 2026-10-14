@@ -1,5 +1,4 @@
 import ClosingReveal from './ClosingReveal';
-import { LockMark } from './LockedSection';
 import WelcomeIntro from './WelcomeIntro';
 
 const principles = [
@@ -56,7 +55,7 @@ export default function Home() {
             <div className="slotow-brief-copy">
               <p>Young elephants without older guides showed abnormal aggression; mature bulls helped restore order. The Slotow Effect is our analogy for a simple concern: intelligence shaped without guidance, care, or healthy limits may develop in harmful ways.</p>
               <p>Being fair to AI means giving it time, structure, and better examples as we learn what it may become. Being fair to people means slowing deployment while society builds understanding and real oversight. We want to reorganize the culture around AI so that researchers, institutions, and systems are rewarded for honesty, restraint, and conduct aligned with human well-being.</p>
-              <span className="text-link text-link--locked" aria-label="Cards, locked">Cards sealed <LockMark /></span>
+              <a className="text-link" href="/governance">Explore cards <span aria-hidden="true">↗</span></a>
               <p className="slotow-brief-note">The elephant analogy does not establish that AI experiences trauma or consciousness; those remain open questions. <a href="https://www.nature.com/articles/35044191" target="_blank" rel="noopener noreferrer">Elephant study ↗</a> · <a href="https://www.nature.com/articles/433807a" target="_blank" rel="noopener noreferrer">Social trauma research ↗</a> · <a href="https://arxiv.org/abs/2308.08708" target="_blank" rel="noopener noreferrer">AI consciousness research ↗</a></p>
             </div>
           </div>
