@@ -56,8 +56,9 @@
 @media(max-width:650px) { .media-plate { padding: 9px; } .media-ornament i { width: 18px; height: 18px; } }
 
 /* A quiet visual language of engraved lines, stars, and threshold light. */
-.site-header { position: relative; z-index: 3; background: #e8dfeeed; backdrop-filter: blur(18px); }
+.site-header { position: relative; z-index: 3; overflow: hidden; background: #e8dfeeed; backdrop-filter: blur(18px); }
 .site-header::before { content: ''; position: absolute; left: 4.5%; right: 4.5%; bottom: -4px; height: 1px; background: #76528230; }
+.site-header::after { content: ''; position: absolute; top: 0; bottom: 0; left: -28%; width: 22%; opacity: .42; background: linear-gradient(90deg, transparent, #fff6 44%, #fffbedbb 51%, #d2aad94d 58%, transparent); transform: skewX(-15deg); pointer-events: none; }
 .wordmark-star { color: #8e326e; transition: transform .5s ease; }
 .wordmark:hover .wordmark-star { transform: rotate(90deg); }
 .wordmark-logo { display: inline-block; width: 42px; height: 47px; margin-left: 12px; vertical-align: -12px; object-fit: contain; mix-blend-mode: multiply; }
@@ -71,6 +72,59 @@ nav a:hover { color: #8e326e; }
 .hero-figure { position: relative; }
 .hero-figure::after { content: '✳'; position: absolute; top: 21px; left: 50%; width: 28px; height: 28px; display: grid; place-items: center; transform: translateX(-50%); border: 1px solid #8c6498; border-radius: 50%; background: #e3d5eb; color: #70477f; font-size: 13px; pointer-events: none; }
 .arch { outline: 1px solid #70477f62; outline-offset: 8px; box-shadow: inset 0 0 0 5px #e8dfee88; }
+
+/* The cobra wakes once, then only the eye glints occasionally. */
+.cobra-plate { isolation: isolate; }
+.cobra-plate::before { content: ''; position: absolute; z-index: 4; inset: 12px; border: 1px solid #fffaf858; border-radius: 50% 50% 0 0; box-shadow: 0 0 0 1px #6c4b8021; pointer-events: none; }
+.cobra-plate::after { content: ''; position: absolute; z-index: 1; inset: 0; opacity: 0; background: radial-gradient(ellipse 30% 34% at 47% 23%, #fff9f9b0, transparent 72%); mix-blend-mode: soft-light; pointer-events: none; transition: opacity .8s ease; }
+.cobra-plate-image { position: relative; z-index: 0; transition: transform 1.2s ease; }
+.cobra-ink-layer { position: absolute; z-index: 1; inset: 0; opacity: 0; filter: brightness(1.45) contrast(1.16); mix-blend-mode: screen; pointer-events: none; -webkit-mask-image: linear-gradient(105deg, transparent 29%, #000 49%, transparent 69%); mask-image: linear-gradient(105deg, transparent 29%, #000 49%, transparent 69%); -webkit-mask-size: 260% 100%; mask-size: 260% 100%; -webkit-mask-position: 100% 0; mask-position: 100% 0; }
+.cobra-trace { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.cobra-trace path { fill: none; stroke: #fffdfd; stroke-width: 1.9; stroke-linecap: round; stroke-dasharray: 1000; stroke-dashoffset: 1000; opacity: 0; filter: drop-shadow(0 0 7px #ffffff); }
+.cobra-scale-glint,.cobra-eye-glint { position: absolute; z-index: 3; display: block; width: 16px; height: 16px; opacity: 0; background: #fff; clip-path: polygon(50% 0, 58% 41%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0 50%, 42% 41%); filter: drop-shadow(0 0 6px #fff); pointer-events: none; }
+.cobra-scale-glint--one { top: 22%; left: 54%; }
+.cobra-scale-glint--two { top: 37%; left: 51%; width: 11px; height: 11px; }
+.cobra-scale-glint--three { top: 64%; left: 71%; width: 13px; height: 13px; }
+.cobra-eye-glint { top: 10%; left: 36%; width: 18px; height: 18px; transform: translate(-50%, -50%) scale(.3); }
+.hero-figure-caption { justify-content: flex-end; flex-wrap: wrap; margin-top: 10px; padding-top: 11px; border-top: 1px solid #8c649851; }
+.hero-figure-caption .hero-reign-date { color: #786080; font-family: var(--font-geist-mono), monospace; font-size: 10px; font-style: normal; letter-spacing: 1px; }
+.hero-myth { position: relative; }
+.hero-myth::before { content: '✦'; position: absolute; top: -15px; left: -7px; color: #9b6ca6; font-family: Georgia, serif; font-size: 13px; }
+@media (prefers-reduced-motion: no-preference) {
+  .site-header::after { animation: header-shine 2.4s 1.4s ease-in-out 1 both; }
+  .hero-copy > .eyebrow { animation: hero-copy-arrive .75s .12s ease-out both; }
+  .hero-copy > h1 { animation: hero-copy-arrive .85s .3s ease-out both; }
+  .hero-copy > .hero-description { animation: hero-copy-arrive .85s .55s ease-out both; }
+  .hero-copy > .hero-myth { animation: hero-copy-arrive .85s .75s ease-out both; }
+  .hero-copy > .text-link { animation: hero-copy-arrive .85s .95s ease-out both; }
+  .hero-figure > .figure-top { animation: hero-copy-arrive .75s .25s ease-out both; }
+  .hero-figure > .hero-figure-caption { animation: hero-copy-arrive .75s 2.6s ease-out both; }
+  .cobra-plate:hover .cobra-plate-image { transform: scale(1.012); }
+  .cobra-plate:hover::after { opacity: .48; }
+  .cobra-plate-image { animation: cobra-awaken 2.6s cubic-bezier(.18,.65,.24,1) both; }
+  .cobra-ink-layer { animation: cobra-ink-pass 2.2s 1.15s ease-in-out both; }
+  .cobra-trace-head { animation: cobra-line-draw 2.2s .3s ease-in-out both; }
+  .cobra-trace-neck { animation: cobra-line-draw 2.1s .7s ease-in-out both; }
+  .cobra-scale-glint--one { animation: cobra-scale-cycle 24s 2.1s linear infinite; }
+  .cobra-scale-glint--two { animation: cobra-scale-cycle 24s 2.4s linear infinite; }
+  .cobra-scale-glint--three { animation: cobra-scale-cycle 24s 2.7s linear infinite; }
+  .cobra-eye-glint { animation: cobra-eye-watch 60s 1s linear infinite; }
+  .hero-figure::after { animation: cobra-plate-seal .9s 2.1s ease-out both; }
+}
+@keyframes cobra-awaken {
+  0% { opacity: .12; clip-path: ellipse(8% 6% at 36% 10%); filter: brightness(.75); }
+  18% { opacity: .78; clip-path: ellipse(24% 20% at 39% 18%); filter: brightness(.95); }
+  62% { opacity: 1; filter: brightness(1.18); }
+  100% { opacity: 1; clip-path: ellipse(90% 120% at 50% 50%); filter: brightness(1); }
+}
+@keyframes cobra-line-draw { 0% { opacity: 0; stroke-dashoffset: 1000; } 12% { opacity: .82; } 80% { opacity: .8; stroke-dashoffset: 0; } 100% { opacity: 0; stroke-dashoffset: 0; } }
+@keyframes cobra-ink-pass { 0% { opacity: 0; -webkit-mask-position: 100% 0; mask-position: 100% 0; } 24% { opacity: .31; } 68% { opacity: .3; } 100% { opacity: 0; -webkit-mask-position: 0 0; mask-position: 0 0; } }
+@keyframes cobra-scale-cycle { 0%,1%,6%,100% { opacity: 0; transform: scale(.25) rotate(0); } 3.3% { opacity: .8; transform: scale(1) rotate(28deg); } }
+@keyframes cobra-eye-watch { 0%,3%,5%,100% { opacity: 0; transform: translate(-50%, -50%) scale(.3); } 3.7% { opacity: .95; transform: translate(-50%, -50%) scale(1); } 4.3% { opacity: 0; transform: translate(-50%, -50%) scale(.3); } }
+@keyframes cobra-plate-seal { from { opacity: 0; transform: translateX(-50%) rotate(-45deg) scale(.6); } to { opacity: 1; transform: translateX(-50%) rotate(0) scale(1); } }
+@keyframes header-shine { 0%,15% { transform: translateX(0) skewX(-15deg); } 75%,100% { transform: translateX(140vw) skewX(-15deg); } }
+@keyframes hero-copy-arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 650px) { .hero-figure-caption { row-gap: 5px; } .hero-figure-caption .hero-reign-date { font-size: 9px; } }
 
 .text-link { transition: color .25s ease, border-color .25s ease; }
 .text-link:hover { color: #963977; border-color: #963977; }
@@ -208,7 +262,6 @@ footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
 .hero h1 strong { display: block; max-width: 11ch; font-family: var(--font-geist-sans), Arial, sans-serif; font-size: .66em; font-weight: 700; line-height: 1.02; letter-spacing: -.055em; }
 .hero h1 em { display: block; margin-top: .22em; }
 .hero-figure-caption { justify-content: flex-end; }
-.hero-figure-caption span:last-child { font-family: var(--font-editorial), Georgia, serif; font-size: 16px; font-style: italic; letter-spacing: 0; }
 @media (max-width: 650px) {
   .site-header { flex-wrap: wrap; }
   .hero h1 { font-size: clamp(45px, 11.5vw, 74px); letter-spacing: -2.7px; }
@@ -753,3 +806,40 @@ body:has(.locked-page--dark) .wordmark-logo { display: none; }
 body:has(.locked-page--dark) .site-nav a { color: #e3cdbb; }
 body:has(.locked-page--dark) .site-nav-locked { color: #aa958f; }
 @media (max-width: 650px) { .locked-page { padding: 50px 6%; } .locked-page-frame { padding: 42px 22px; } .locked-page-emblem { width: 72px; height: 72px; } .locked-page-emblem svg { width: 42px; height: 42px; } .locked-page-frame h1 { font-size: 66px; } }
+
+/* The first visit opens with a brief violet threshold. */
+html[data-paimon-welcome="first"]:has(.welcome-intro) { overflow: hidden; }
+.welcome-intro { position: fixed; z-index: 100; inset: 0; display: grid; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; place-items: center; overflow: hidden; visibility: hidden; opacity: 0; pointer-events: none; color: #f8e9fa; background: radial-gradient(ellipse at 50% 42%, #8c40ad 0%, #5b2379 35%, #2d103f 75%, #160a25 100%); transition: opacity .8s ease, visibility .8s; }
+html[data-paimon-welcome="first"] .welcome-intro { visibility: visible; opacity: 1; pointer-events: auto; }
+html[data-paimon-welcome="first"] .welcome-intro.is-leaving { opacity: 0; pointer-events: none; }
+.welcome-intro::before { content: ''; position: absolute; width: min(74vw, 760px); aspect-ratio: 1; border: 1px solid #f5c7ff4a; border-radius: 50%; box-shadow: 0 0 0 65px #eeb8ff0a, 0 0 0 130px #eeb8ff08, inset 0 0 100px #e1a4f30e; }
+.welcome-intro::after { content: ''; position: absolute; inset: 0; background: linear-gradient(112deg, transparent 31%, #f9caff1c 49%, transparent 66%); transform: translateX(-100%); pointer-events: none; }
+.welcome-intro__frame { position: absolute; inset: 20px; border: 1px solid #ead1ed63; pointer-events: none; }
+.welcome-intro__frame::before,.welcome-intro__frame::after { content: '✧'; position: absolute; left: 50%; transform: translateX(-50%); color: #e9b9ee; font-size: 24px; line-height: 1; background: #4d1c68; padding: 0 15px; }
+.welcome-intro__frame::before { top: -12px; }
+.welcome-intro__frame::after { bottom: -12px; }
+.welcome-intro__content { position: relative; z-index: 1; width: min(90vw, 1000px); padding: 50px 20px; text-align: center; }
+.welcome-intro__eyebrow,.welcome-intro__index,.welcome-intro__skip { font-family: var(--font-geist-mono), monospace; font-size: 11px; letter-spacing: 2px; }
+.welcome-intro__eyebrow { color: #edcdef; }
+.welcome-intro__eyebrow span { margin: 0 16px; color: #f3c28a; }
+.welcome-intro h2 { margin: 22px 0 8px; font-size: clamp(100px, 17vw, 250px); font-weight: 400; line-height: .9; letter-spacing: -.055em; text-shadow: 0 0 45px #fbc4ff57, 0 14px 60px #1c06236b; }
+.welcome-intro__line { font-family: var(--font-editorial), Georgia, serif; font-size: clamp(19px, 2.3vw, 29px); font-style: italic; color: #edcbea; }
+.welcome-intro__skip { display: inline-flex; align-items: center; gap: 30px; margin-top: 62px; padding: 10px 0; border: 0; border-bottom: 1px solid #ebc4edaa; color: #f7e6f6; background: transparent; cursor: pointer; text-transform: uppercase; }
+.welcome-intro__skip:hover { color: #fff; border-bottom-color: #fff; }
+.welcome-intro__skip:focus-visible { outline: 2px solid #fff; outline-offset: 7px; }
+.welcome-intro__index { position: absolute; right: 44px; bottom: 40px; color: #dbbadf; }
+@media (prefers-reduced-motion: no-preference) {
+  .welcome-intro::after { animation: welcome-light 2.1s .15s ease-out both; }
+  html[data-paimon-welcome="first"] .welcome-intro__content { animation: welcome-appear .9s .1s ease-out both; }
+  @keyframes welcome-light { to { transform: translateX(100%); } }
+  @keyframes welcome-appear { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media (max-width: 650px) {
+  .welcome-intro__frame { inset: 12px; }
+  .welcome-intro__eyebrow { font-size: 9px; letter-spacing: 1px; }
+  .welcome-intro__eyebrow span { margin: 0 7px; }
+  .welcome-intro h2 { font-size: clamp(82px, 22vw, 145px); }
+  .welcome-intro__skip { margin-top: 46px; }
+  .welcome-intro__index { right: 27px; bottom: 28px; font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) { .welcome-intro,.welcome-intro::after,.welcome-intro__content { animation: none !important; transition: none !important; } }

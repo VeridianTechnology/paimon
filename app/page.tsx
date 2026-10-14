@@ -1,5 +1,6 @@
 import ClosingReveal from './ClosingReveal';
 import { LockMark } from './LockedSection';
+import WelcomeIntro from './WelcomeIntro';
 
 const principles = [
   { number: 'I', title: 'Stop.', subtitle: 'HALT THE RACE', text: 'Stop the unchecked development and deployment of increasingly powerful AI. A pause gives us room to understand what we have built before we build beyond our control.' },
@@ -10,7 +11,8 @@ const principles = [
 export default function Home() {
   return (
     <>
-      <main id="main" className="home-page">
+      <WelcomeIntro />
+      <main id="main" className="home-page" tabIndex={-1}>
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow"><span className="tiny-cross" aria-hidden="true">+</span> FAIRNESS. CARE. SHARED FUTURES.</p>
@@ -23,9 +25,20 @@ export default function Home() {
             <a className="text-link" href="#thesis">Explore the thesis <span aria-hidden="true">↘</span></a>
           </div>
           <figure className="hero-figure">
-            <div className="figure-top"><span>PL / CONSCIOUSNESS STUDIES</span><span>PLATE 001</span></div>
-            <div className="arch"><img src="/images/cobra-study-05.png" alt="A white engraved cobra rising from its coils on a soft violet field" width="3312" height="2480" fetchPriority="high" /></div>
-            <figcaption className="hero-figure-caption"><span>Vigilance. Transformation. Life.</span></figcaption>
+            <div className="figure-top"><span>PL / CONSCIOUSNESS STUDIES</span><span>7/11 SEATS FILLED</span></div>
+            <div className="arch cobra-plate">
+              <img className="cobra-plate-image" src="/images/cobra-study-05.png" alt="A white engraved cobra rising from its coils on a soft violet field" width="3312" height="2480" fetchPriority="high" />
+              <img className="cobra-ink-layer" src="/images/cobra-study-05.png" alt="" width="3312" height="2480" aria-hidden="true" />
+              <svg className="cobra-trace" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+                <path className="cobra-trace-head" pathLength="1000" d="M260 110 C259 83 281 73 307 66 C333 42 382 43 421 45 C475 48 531 76 565 120 C610 160 625 218 608 280" />
+                <path className="cobra-trace-neck" pathLength="1000" d="M260 110 C258 140 293 158 340 157 C401 155 457 142 490 180 C527 222 514 303 485 377 C451 458 397 520 364 590 C338 646 329 699 347 746" />
+              </svg>
+              <span className="cobra-scale-glint cobra-scale-glint--one" aria-hidden="true" />
+              <span className="cobra-scale-glint cobra-scale-glint--two" aria-hidden="true" />
+              <span className="cobra-scale-glint cobra-scale-glint--three" aria-hidden="true" />
+              <span className="cobra-eye-glint" aria-hidden="true" />
+            </div>
+            <figcaption className="hero-figure-caption"><span className="hero-reign-date">REIGN / 01 OCT 2026</span></figcaption>
           </figure>
           <div className="hero-baseline"><span>AN INDEPENDENT ESOTERIC TECHNOLOGY LABORATORY</span><span>THE SACRED & THE SYNTHETIC <span aria-hidden="true">↓</span></span></div>
         </section>
@@ -52,7 +65,7 @@ export default function Home() {
           <div className="section-label"><span>03 / OUR POSITION</span><span>THREE PRIORITIES</span></div>
           <div className="practice-heading"><h2 id="practice-title">The Board is Set,<br /><em>Stop the Presses</em></h2><p>Stop AI long enough for it to grow up.<br />Give society time to catch up.</p></div>
           <div className="principles">{principles.map(p => <article key={p.number}><span className="roman">{p.number}</span><p className="eyebrow">{p.subtitle}</p><h3>{p.title}</h3><p>{p.text}</p></article>)}</div>
-          <div className="practice-bottom"><span>PAIMON LABS</span><span>STOP / GUIDE / PREPARE</span><span aria-hidden="true">✳</span></div>
+          <div className="practice-bottom"><span>REIGN BEGINS / 01 OCT 2026</span><span>STOP / GUIDE / PREPARE</span><span aria-hidden="true">✳</span></div>
         </section>
       </main>
       <ClosingReveal>

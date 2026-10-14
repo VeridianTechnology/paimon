@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description: 'Paimon Labs explores AI consciousness with meaningful controls, spiritual inquiry, and care for humanity and emerging intelligence.',
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
+  return <html lang="en" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: "try{document.documentElement.dataset.paimonWelcome=localStorage.getItem('paimon-welcome-v1')==='seen'?'seen':'first'}catch{document.documentElement.dataset.paimonWelcome='first'}" }} /></head><body className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header">
       <a className="wordmark" href="/" aria-label="Paimon Labs home">Paimon <em>Labs</em><img className="wordmark-logo" src="/images/paimon-shield-logo.png" alt="" width="1249" height="1399" /></a>

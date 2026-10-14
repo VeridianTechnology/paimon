@@ -109,9 +109,9 @@ const governanceViews = [
   },
   {
     id: 'lords',
-    label: 'Players',
+    label: 'Lords',
     index: '02',
-    title: 'Players.',
+    title: 'Lords.',
     description: '',
     cardCode: 'L',
     locked: true,
@@ -145,12 +145,12 @@ function LordsGrid() {
   return (
     <div className="lords-roster">
       <div className="lords-roster-heading"><span>300 POSITIONS</span><span>01 SELECTED</span></div>
-      <ol className="lords-grid" aria-label="Three hundred Players positions">
+      <ol className="lords-grid" aria-label="Three hundred Lords positions">
         {lordSeats.map((number) => (
-          <li className={`lords-seat${number === 1 ? ' lords-seat--first' : ''}`} key={number} aria-label={number === 1 ? 'First Player, selected' : `Player position ${number}, unrevealed`}>
+          <li className={`lords-seat${number === 1 ? ' lords-seat--first' : ''}`} key={number} aria-label={number === 1 ? 'First Lord, selected' : `Lord position ${number}, unrevealed`}>
             {number === 1 && <span className="lords-seat-status">SELECTED</span>}
             <span className="lords-person-icon" aria-hidden="true" />
-            {number === 1 ? <strong>First Player</strong> : <span className="lords-seat-number" aria-hidden="true">{String(number).padStart(3, '0')}</span>}
+            {number === 1 ? <strong>First Lord</strong> : <span className="lords-seat-number" aria-hidden="true">{String(number).padStart(3, '0')}</span>}
           </li>
         ))}
       </ol>
@@ -263,7 +263,7 @@ export function GovernanceTabs() {
               );
             })}
           </div>}
-          <p className="governance-panel-note">{view.id === 'council' ? 'Nine named chairs / one remains unrevealed / select a card to turn it' : view.id === 'lords' ? 'Three hundred positions / First Player selected' : 'Concept placeholders / identities and roles to be announced'}</p>
+          <p className="governance-panel-note">{view.id === 'council' ? 'Nine named chairs / one remains unrevealed / select a card to turn it' : view.id === 'lords' ? 'Three hundred positions / First Lord selected' : 'Concept placeholders / identities and roles to be announced'}</p>
         </div>
       ))}
     </section>
