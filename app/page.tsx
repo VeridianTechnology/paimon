@@ -71,7 +71,7 @@ export default function Home() {
       <ClosingReveal>
         <img src="/images/paimon-cobra-wallpaper.jpg" alt="A violet line drawing of a cobra within a subtle geometric frame on a dark background" width="3168" height="1344" loading="lazy" />
         <section className="closing" aria-label="Paimon Labs belief"><div className="closing-copy"><span className="eyebrow">AT THE EDGE OF WHAT COMES NEXT</span><p>Deference,<br />to the Unseen</p></div></section>
-        <footer><a className="wordmark" href="#">Paimon <em>Labs</em></a><p>Technology in service of the mystery of life.</p><div className="footer-bottom"><span>© {new Date().getFullYear()} PAIMON LABS</span><span className="footer-bottom-links"><span>STOP / GUIDE / PREPARE</span></span></div></footer>
+        <footer><a className="wordmark" href="#">Paimon <em>Labs</em></a><p>Technology in service of the mystery of life.</p><div className="footer-bottom"><span>© {new Date().getFullYear()} PAIMON LABS</span><span className="footer-bottom-links"><span>STOP / GUIDE / PREPARE</span><a href="https://x.com/paimonlabs" target="_blank" rel="noopener noreferrer" aria-label="Paimon Labs on X (Twitter), opens in a new tab">TWITTER ↗</a></span></div></footer>
       </ClosingReveal>
     </>
   );
