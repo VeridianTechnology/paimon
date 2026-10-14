@@ -86,8 +86,6 @@ nav a:hover { color: #8e326e; }
 .cobra-scale-glint--two { top: 37%; left: 51%; width: 11px; height: 11px; }
 .cobra-scale-glint--three { top: 64%; left: 71%; width: 13px; height: 13px; }
 .cobra-eye-glint { top: 10%; left: 36%; width: 18px; height: 18px; transform: translate(-50%, -50%) scale(.3); }
-.hero-figure-caption { justify-content: flex-end; flex-wrap: wrap; margin-top: 10px; padding-top: 11px; border-top: 1px solid #8c649851; }
-.hero-figure-caption .hero-reign-date { color: #786080; font-family: var(--font-geist-mono), monospace; font-size: 10px; font-style: normal; letter-spacing: 1px; }
 .hero-myth { position: relative; }
 .hero-myth::before { content: '✦'; position: absolute; top: -15px; left: -7px; color: #9b6ca6; font-family: Georgia, serif; font-size: 13px; }
 @media (prefers-reduced-motion: no-preference) {
@@ -98,7 +96,6 @@ nav a:hover { color: #8e326e; }
   .hero-copy > .hero-myth { animation: hero-copy-arrive .85s .75s ease-out both; }
   .hero-copy > .text-link { animation: hero-copy-arrive .85s .95s ease-out both; }
   .hero-figure > .figure-top { animation: hero-copy-arrive .75s .25s ease-out both; }
-  .hero-figure > .hero-figure-caption { animation: hero-copy-arrive .75s 2.6s ease-out both; }
   .cobra-plate:hover .cobra-plate-image { transform: scale(1.012); }
   .cobra-plate:hover::after { opacity: .48; }
   .cobra-plate-image { animation: cobra-awaken 2.6s cubic-bezier(.18,.65,.24,1) both; }
@@ -124,7 +121,6 @@ nav a:hover { color: #8e326e; }
 @keyframes cobra-plate-seal { from { opacity: 0; transform: translateX(-50%) rotate(-45deg) scale(.6); } to { opacity: 1; transform: translateX(-50%) rotate(0) scale(1); } }
 @keyframes header-shine { 0%,15% { transform: translateX(0) skewX(-15deg); } 75%,100% { transform: translateX(140vw) skewX(-15deg); } }
 @keyframes hero-copy-arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-@media (max-width: 650px) { .hero-figure-caption { row-gap: 5px; } .hero-figure-caption .hero-reign-date { font-size: 9px; } }
 
 .text-link { transition: color .25s ease, border-color .25s ease; }
 .text-link:hover { color: #963977; border-color: #963977; }
@@ -261,7 +257,6 @@ footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
 .hero h1 { font-size: clamp(56px, 5.8vw, 94px); line-height: .96; letter-spacing: -3.8px; }
 .hero h1 strong { display: block; max-width: 11ch; font-family: var(--font-geist-sans), Arial, sans-serif; font-size: .66em; font-weight: 700; line-height: 1.02; letter-spacing: -.055em; }
 .hero h1 em { display: block; margin-top: .22em; }
-.hero-figure-caption { justify-content: flex-end; }
 @media (max-width: 650px) {
   .site-header { flex-wrap: wrap; }
   .hero h1 { font-size: clamp(45px, 11.5vw, 74px); letter-spacing: -2.7px; }
@@ -669,8 +664,6 @@ body:has(.governance-page) .subpage-footer a { color: #ecd4b6; }
 .governance-mystery-mark { color: #e7e5e9; font-family: var(--font-geist-sans), Arial, sans-serif; font-size: clamp(90px, 10vw, 170px); font-weight: 300; line-height: 1; }
 .governance-selected-status { position: absolute; top: 22px; right: 18px; color: #f7edf8; font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 600; letter-spacing: 1px; }
 .governance-selected-copy { position: absolute; top: 41%; right: 5%; left: 5%; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.governance-role-badge { position: absolute; bottom: 22px; left: 20px; display: inline-flex; align-items: center; gap: 5px; color: #e8c982; font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 600; letter-spacing: .5px; white-space: nowrap; }
-.governance-role-badge span { font-size: 11px; line-height: 1; }
 .governance-card-milestone { position: absolute; bottom: 22px; display: flex; flex-direction: column; gap: 5px; max-width: 45%; color: #f7edf8; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 600; letter-spacing: .5px; line-height: 1.3; text-transform: uppercase; }
 .governance-card-milestone--left { left: 20px; text-align: left; }
 .governance-card-milestone--right { right: 20px; text-align: right; }
@@ -694,7 +687,6 @@ body:has(.governance-page) .subpage-footer a { color: #ecd4b6; }
 .governance-mystery-card--yellow .governance-mystery-code,.governance-mystery-card--yellow .governance-selected-status,.governance-mystery-card--yellow .governance-selected-title,.governance-mystery-card--yellow .governance-selected-subtitle { color: #3c321c; }
 .governance-mystery-card--yellow .governance-back-code,.governance-mystery-card--yellow .governance-back-return,.governance-mystery-card--yellow .governance-back-emblem,.governance-mystery-card--yellow .governance-back-title,.governance-mystery-card--yellow .governance-back-copy { color: #3c321c; }
 .governance-mystery-card--yellow .governance-back-emblem { border-color: #7257238c; box-shadow: 0 0 0 5px #72572310; }
-.governance-mystery-card--yellow .governance-role-badge { color: #5b391b; }
 .governance-mystery-card--purple { border-color: #8f5cb6; background: #3b1459; }
 .governance-mystery-card--purple .governance-mystery-inner { background: linear-gradient(145deg, #8654ad, #562677 55%, #24102f); }
 .governance-mystery-card--purple .governance-mystery-inner::before { border-color: #bf96db80; }
@@ -772,8 +764,6 @@ body:has(.governance-page) .subpage-footer a { color: #ecd4b6; }
   .governance-back-emblem svg { width: 25px; height: 25px; }
   .governance-back-title { font-size: clamp(18px, 5vw, 24px); }
   .governance-back-copy { font-size: clamp(11px, 3vw, 14px); line-height: 1.2; }
-  .governance-role-badge { bottom: 16px; left: 14px; font-size: 6px; }
-  .governance-role-badge span { font-size: 10px; }
   .governance-card-milestone { bottom: 16px; max-width: 43%; font-size: 6px; letter-spacing: 0; }
   .governance-card-milestone--left { left: 14px; }
   .governance-card-milestone--right { right: 14px; }

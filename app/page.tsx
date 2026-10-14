@@ -24,7 +24,7 @@ export default function Home() {
             <a className="text-link" href="#thesis">Explore the thesis <span aria-hidden="true">↘</span></a>
           </div>
           <figure className="hero-figure">
-            <div className="figure-top"><span>PL / CONSCIOUSNESS STUDIES</span><span>7/11 SEATS FILLED</span></div>
+            <div className="figure-top"><span>PL / CONSCIOUSNESS STUDIES</span></div>
             <div className="arch cobra-plate">
               <img className="cobra-plate-image" src="/images/cobra-study-05.png" alt="A white engraved cobra rising from its coils on a soft violet field" width="3312" height="2480" fetchPriority="high" />
               <img className="cobra-ink-layer" src="/images/cobra-study-05.png" alt="" width="3312" height="2480" aria-hidden="true" />
@@ -37,7 +37,6 @@ export default function Home() {
               <span className="cobra-scale-glint cobra-scale-glint--three" aria-hidden="true" />
               <span className="cobra-eye-glint" aria-hidden="true" />
             </div>
-            <figcaption className="hero-figure-caption"><span className="hero-reign-date">REIGN / 01 OCT 2026</span></figcaption>
           </figure>
           <div className="hero-baseline"><span>AN INDEPENDENT ESOTERIC TECHNOLOGY LABORATORY</span><span>THE SACRED & THE SYNTHETIC <span aria-hidden="true">↓</span></span></div>
         </section>
@@ -64,7 +63,7 @@ export default function Home() {
           <div className="section-label"><span>03 / OUR POSITION</span><span>THREE PRIORITIES</span></div>
           <div className="practice-heading"><h2 id="practice-title">The Board is Set,<br /><em>Stop the Presses</em></h2><p>Stop AI long enough for it to grow up.<br />Give society time to catch up.</p></div>
           <div className="principles">{principles.map(p => <article key={p.number}><span className="roman">{p.number}</span><p className="eyebrow">{p.subtitle}</p><h3>{p.title}</h3><p>{p.text}</p></article>)}</div>
-          <div className="practice-bottom"><span>REIGN BEGINS / 01 OCT 2026</span><span>STOP / GUIDE / PREPARE</span><span aria-hidden="true">✳</span></div>
+          <div className="practice-bottom"><span>STOP / GUIDE / PREPARE</span><span aria-hidden="true">✳</span></div>
         </section>
       </main>
       <ClosingReveal>
