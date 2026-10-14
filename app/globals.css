@@ -639,6 +639,7 @@ body:has(.governance-page) .subpage-footer a { color: #ecd4b6; }
 .governance-panel { padding-top: 60px; }
 .governance-panel[hidden] { display: none; }
 .governance-panel-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .85fr); align-items: end; gap: clamp(32px, 7vw, 120px); padding-bottom: 38px; border-bottom: 1px solid #b998735e; }
+.governance-panel-heading--solo { grid-template-columns: minmax(0, 1fr); }
 .governance-panel-heading .eyebrow { color: #c4a789; font-size: 10px; letter-spacing: 1.2px; }
 .governance-panel-heading h2 { margin-top: 10px; color: #f5e5d9; font-size: clamp(54px, 5vw, 82px); }
 .governance-panel-aside > p { max-width: 590px; color: #d1bbc5; font-size: 16px; line-height: 1.8; }

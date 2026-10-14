@@ -127,16 +127,18 @@ const governanceViews = [
   },
 ] as const;
 
+const showGrandMacePanel = false;
+
 const councilChairs: Record<number, { title: string; description: string; back: string; icon: LucideIcon; tone: 'blue' | 'red' | 'black' | 'white' | 'green' | 'yellow' | 'purple' | 'orange' | 'grey'; status: 'selected' | 'selected-waiting' | 'selected-spoken-for' | 'pending' | 'invited' | 'considered' | 'vague'; role?: 'SHAH IN WAITING' | 'REGENT'; invitationDate?: string; spokenForDate?: string }> = {
-  1: { title: 'The Empath', description: "Man's Connection to Man", back: 'Hears the people beneath every decree. Keeps power answerable to them.', icon: HeartHandshake, tone: 'blue', status: 'selected-spoken-for', invitationDate: 'September 29th', spokenForDate: 'October 10th' },
-  2: { title: 'The Gardener', description: "Man's Connection to Cosmos", back: 'Tends the long horizon, where extraction and wonder meet.', icon: Orbit, tone: 'red', status: 'selected-spoken-for', invitationDate: 'October 6th', spokenForDate: 'October 7th' },
+  1: { title: 'The Empath', description: "Man's Connection to the Town", back: 'Hears the people beneath every decree. Keeps power answerable to them.', icon: HeartHandshake, tone: 'blue', status: 'selected-spoken-for', invitationDate: 'September 29th', spokenForDate: 'October 10th' },
+  2: { title: 'The Gardener', description: "Man's Connection to Wonder", back: 'Tends the long horizon, where extraction and wonder meet.', icon: Orbit, tone: 'red', status: 'selected-spoken-for', invitationDate: 'October 6th', spokenForDate: 'October 7th' },
   3: { title: 'The Shaman', description: "Man's Dictation of Spirit", back: 'Reads the unseen. Speaks only when doubt has been weighed.', icon: Sparkles, tone: 'black', status: 'pending', role: 'SHAH IN WAITING' },
-  4: { title: 'The Hawk', description: "Man's Connection to Education", back: 'On the financial war path, he breaks false circles and brings down structures that cannot sustain themselves.', icon: Swords, tone: 'green', status: 'invited' },
-  5: { title: 'The Eye', description: "Man's Connection to Media", back: 'Shapes the informed consciousness of the world: what is shown, what is believed, and what is left unsaid.', icon: Radio, tone: 'yellow', status: 'considered', role: 'REGENT' },
-  6: { title: 'The Hand', description: "Man's Connection to the Road", back: 'Keeps the roads open when borders and loyalties shift.', icon: Route, tone: 'purple', status: 'considered' },
-  8: { title: 'The Cloak', description: "Man's Connection to the Noble", back: 'Represents the will of the noble houses.', icon: Shield, tone: 'grey', status: 'vague' },
-  9: { title: 'The Clock', description: "Man's Connection to Work", back: 'Measures the work of tomorrow, and who is left behind.', icon: Cog, tone: 'orange', status: 'vague' },
-  10: { title: 'The Elder', description: "Man's Connection to the Church", back: 'Guides those in need toward the church.', icon: Church, tone: 'white', status: 'selected-waiting' },
+  4: { title: 'The Hawk', description: "Man's Relationship to the Heart", back: 'On the financial war path, he breaks false circles and brings down structures that cannot sustain themselves.', icon: Swords, tone: 'green', status: 'invited', invitationDate: 'October 12th' },
+  5: { title: 'The Eye', description: "Man's Awe of the Sun", back: 'Shapes the informed consciousness of the world: what is shown, what is believed, and what is left unsaid.', icon: Radio, tone: 'yellow', status: 'invited', role: 'REGENT' },
+  6: { title: 'The Hand', description: "Man's Love of Peace", back: 'Keeps the roads open when borders and loyalties shift.', icon: Route, tone: 'purple', status: 'considered' },
+  8: { title: 'The Cloak', description: "Man's Rally to the Defenseless", back: 'Represents the will of the noble houses.', icon: Shield, tone: 'grey', status: 'vague' },
+  9: { title: 'The Clock', description: "Man's Synchronicity", back: 'Measures the work of tomorrow, and who is left behind.', icon: Cog, tone: 'orange', status: 'vague' },
+  10: { title: 'The Elder', description: "Man's Need for Simplicity", back: 'Guides those in need toward the church.', icon: Church, tone: 'white', status: 'selected-waiting' },
 };
 
 const lordSeats = Array.from({ length: 300 }, (_, index) => index + 1);
@@ -217,17 +219,19 @@ export function GovernanceTabs() {
           tabIndex={0}
           hidden={active !== index}
         >
-          <div className="governance-panel-heading">
+          <div className={`governance-panel-heading${view.description || (view.id === 'council' && showGrandMacePanel) ? '' : ' governance-panel-heading--solo'}`}>
             <div><p className="eyebrow">{view.index} / PROPOSED STRUCTURE</p><h2>{view.title}</h2></div>
-            <div className="governance-panel-aside">
-              {view.description && <p>{view.description}</p>}
-              {view.id === 'council' && (
-                <div className="council-rank">
-                  <div className="council-rank-titles"><span className="council-rank-duke">The Grand Duke</span><span className="council-rank-disgraced">Disgraced</span><span>The Grand Mace</span></div>
-                  <span className="council-rank-seal"><img src="/images/council-marshal-figure.png" alt="Hooded figure holding a staff" width={2048} height={2048} /></span>
-                </div>
-              )}
-            </div>
+            {(view.description || (view.id === 'council' && showGrandMacePanel)) && (
+              <div className="governance-panel-aside">
+                {view.description && <p>{view.description}</p>}
+                {view.id === 'council' && showGrandMacePanel && (
+                  <div className="council-rank">
+                    <div className="council-rank-titles"><span className="council-rank-duke">The Grand Duke</span><span className="council-rank-disgraced">Disgraced</span><span>The Grand Mace</span></div>
+                    <span className="council-rank-seal"><img src="/images/council-marshal-figure.png" alt="Hooded figure holding a staff" width={2048} height={2048} /></span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
           {view.id === 'lords' ? <LordsGrid /> : <div className={`governance-card-grid${view.id === 'council' ? ' governance-council-grid' : ''}`} aria-label={`${view.label} cards`}>
             {Array.from({ length: view.id === 'council' ? 10 : 4 }, (_, cardIndex) => {
