@@ -23,7 +23,6 @@ export default function Home() {
               <p className="eyebrow">OUR APPROACH</p>
               <p>Stop unchecked AI development. Build a culture that rewards restraint, honest oversight, and care for emerging intelligence and the people affected by it.</p>
             </div>
-            <a className="hero-journal-link" href="/conversations" target="_blank" rel="noopener noreferrer" aria-label="Conversations, opens in a new tab">Conversations <span aria-hidden="true">↗</span></a>
           </div>
           <FieldStatus />
           <figure className="hero-figure">
