@@ -22,10 +22,10 @@ export default function Home() {
               <p className="eyebrow">OUR APPROACH</p>
               <p>Stop unchecked AI development. Build a culture that rewards restraint, honest oversight, and care for emerging intelligence and the people affected by it.</p>
             </div>
-            <a className="hero-journal-link" href="/conversations" target="_blank" rel="noopener noreferrer" aria-label="Conversations — The very first conversation is out, view it now! Opens in a new tab">
-              <span className="hero-journal-kicker">NEW JOURNAL / 01</span>
-              <span className="hero-journal-title">Conversations <span aria-hidden="true">↗</span></span>
-              <span className="hero-journal-description">The very first conversation is out, view it now!</span>
+            <a className="hero-journal-link" href="/conversations" target="_blank" rel="noopener noreferrer" aria-label="The First Council Letter — Now available for public reading. Opens in a new tab">
+              <span className="hero-journal-kicker">PAIMON LABS / PUBLIC LETTER 001</span>
+              <span className="hero-journal-title">The First Council Letter <span aria-hidden="true">↗</span></span>
+              <span className="hero-journal-description">Now available for public reading.</span>
             </a>
           </div>
           <figure className="hero-figure">

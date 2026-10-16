@@ -364,15 +364,18 @@ footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
 .conversations-heading .eyebrow { color: #80558d; font-size: 11px; letter-spacing: 1.5px; }
 .conversations-heading h1 { margin: 9px 0 5px; font-size: clamp(54px, 6vw, 82px); line-height: 1; letter-spacing: -2px; }
 .conversations-heading p:last-child { color: #63526d; font-size: 15px; }
-.conversations-heading-mark { color: #8f6797; font-size: 36px; }
-.conversations-viewer { width: min(100%, 1060px); height: max(68vh, 650px); margin: 0 auto; padding: 9px; border: 1px solid #6c4c74; background: #32213a; box-shadow: 0 20px 55px #39224038; }
-.conversations-viewer iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
-.conversations-fallback { margin: 20px auto 0; width: min(100%, 1060px); color: #63526d; font-size: 13px; }
-.conversations-fallback a { text-decoration: underline; text-underline-offset: 3px; }
+.conversations-reader { width: min(100%, 1060px); margin: 0 auto; }
+.conversations-zoom { display: flex; justify-content: flex-end; align-items: center; gap: 9px; margin-bottom: 12px; color: #4b2b55; font-family: var(--font-geist-mono), monospace; font-size: 12px; }
+.conversations-zoom button { width: 34px; height: 34px; border: 1px solid #a987b3; background: #f7f0f8; color: #4b2b55; font: inherit; font-size: 20px; cursor: pointer; }
+.conversations-zoom button:hover:not(:disabled) { background: #4b2b55; color: #fff; }
+.conversations-zoom button:disabled { opacity: .4; cursor: default; }
+.conversations-zoom output { min-width: 48px; text-align: center; }
+.conversations-viewer { overflow-x: auto; border: 1px solid #9f7bab; background: #fff; box-shadow: 0 20px 55px #39224026; }
+.conversations-viewer img { display: block; max-width: none; height: auto; margin-inline: auto; }
 .conversations-download { position: fixed; z-index: 5; right: 4.5%; bottom: 28px; display: inline-flex; align-items: center; gap: 22px; padding: 14px 19px; border: 1px solid #a886aa; background: #33223c; box-shadow: 0 10px 24px #25152d4d; color: #f8eefa; font-family: var(--font-geist-mono), monospace; font-size: 12px; letter-spacing: .6px; transition: background .2s ease, transform .2s ease; }
 .conversations-download:hover { background: #5c3569; transform: translateY(-2px); }
 .conversations-download span { font-size: 18px; }
-@media (max-width: 650px) { .conversations-page { padding: 86px 6% 100px; } .conversations-close { left: 6%; } .conversations-heading { align-items: flex-start; } .conversations-heading h1 { font-size: 55px; } .conversations-heading-mark { font-size: 24px; } .conversations-viewer { height: 68vh; min-height: 460px; } .conversations-back { left: 6%; bottom: 18px; } .conversations-download { right: 6%; bottom: 18px; } }
+@media (max-width: 650px) { .conversations-page { padding: 86px 6% 100px; } .conversations-close { left: 6%; } .conversations-heading { align-items: flex-start; } .conversations-heading h1 { font-size: 55px; } .conversations-back { left: 6%; bottom: 18px; } .conversations-download { right: 6%; bottom: 18px; } }
 @media (prefers-reduced-motion: reduce) { .conversations-page { transition: none; } }
 
 @media (prefers-reduced-motion: no-preference) {

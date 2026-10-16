@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import ExitControls from './ExitControls';
+import JournalViewer from './JournalViewer';
 
-const pdfUrl = '/journal/conversations-journal-1.pdf?v=9cee223a';
+const pdfUrl = '/journal/conversations-journal-1.pdf?v=236f6b04';
 
 export const metadata: Metadata = {
-  title: 'Conversations — Paimon Labs',
-  description: 'Read the first Conversations journal from Paimon Labs.',
+  title: 'The First Council Letter — Paimon Labs',
+  description: 'The first council letter from Paimon Labs, now available for public reading.',
 };
 
 export default function Conversations() {
@@ -14,16 +15,12 @@ export default function Conversations() {
       <ExitControls />
       <div className="conversations-heading">
         <div>
-          <p className="eyebrow">PAIMON LABS / JOURNAL 01</p>
-          <h1>Conversations</h1>
-          <p>The very first conversation is out, view it now!</p>
+          <p className="eyebrow">PAIMON LABS / PUBLIC LETTER 001</p>
+          <h1>The First Council Letter</h1>
+          <p>Now available for public reading.</p>
         </div>
-        <span className="conversations-heading-mark" aria-hidden="true">✦</span>
       </div>
-      <div className="conversations-viewer">
-        <iframe src={pdfUrl} title="Conversations, the first Paimon Labs journal" />
-      </div>
-      <p className="conversations-fallback">If the journal does not appear, <a href={pdfUrl} target="_blank" rel="noopener noreferrer">open the PDF directly ↗</a></p>
+      <JournalViewer />
       <a className="conversations-download" href={pdfUrl} download="Conversations Journal 1.pdf">Download PDF <span aria-hidden="true">↓</span></a>
     </main>
   );
