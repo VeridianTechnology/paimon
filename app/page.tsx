@@ -1,4 +1,5 @@
 import ClosingReveal from './ClosingReveal';
+import FieldStatus from './FieldStatus';
 import { LockMark } from './LockedSection';
 import WelcomeIntro from './WelcomeIntro';
 
@@ -24,8 +25,8 @@ export default function Home() {
             </div>
             <a className="hero-journal-link" href="/conversations" target="_blank" rel="noopener noreferrer" aria-label="Conversations, opens in a new tab">Conversations <span aria-hidden="true">↗</span></a>
           </div>
+          <FieldStatus />
           <figure className="hero-figure">
-            <div className="figure-top"><span>PL / CONSCIOUSNESS STUDIES</span></div>
             <div className="arch cobra-plate">
               <img className="cobra-plate-image" src="/images/cobra-study-05.png" alt="A white engraved cobra rising from its coils on a soft violet field" width="3312" height="2480" fetchPriority="high" />
               <img className="cobra-ink-layer" src="/images/cobra-study-05.png" alt="" width="3312" height="2480" aria-hidden="true" />

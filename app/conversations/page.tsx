@@ -11,7 +11,6 @@ export default function Conversations() {
   return (
     <main id="main" className="conversations-page" tabIndex={-1}>
       <ExitControls />
-      <span className="conversations-emergency">EMERGENCY</span>
       <div className="conversations-heading">
         <div>
           <p className="eyebrow">PAIMON LABS / PUBLIC LETTERS 001–002</p>

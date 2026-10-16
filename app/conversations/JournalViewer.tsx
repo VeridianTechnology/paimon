@@ -29,6 +29,7 @@ export default function JournalViewer() {
 
   return (
     <div className="conversations-reader" ref={readerRef}>
+      {pageIndex === 0 && <span className="conversations-emergency">EMERGENCY</span>}
       <div className="conversations-zoom" role="group" aria-label="Journal zoom">
         <button type="button" aria-label="Zoom out" onClick={() => setZoom(value => Math.max(minZoom, value - zoomStep))} disabled={zoom === minZoom}>−</button>
         <output aria-live="polite">{zoom}%</output>

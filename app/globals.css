@@ -348,6 +348,17 @@ footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
 .hero-journal-link:hover { color: #82528d; border-color: currentColor; }
 .hero-journal-link span { font-family: var(--font-geist-sans), Arial, sans-serif; font-size: 19px; transition: transform .25s ease; }
 .hero-journal-link:hover span { transform: translate(3px, -3px); }
+.hero-figure { padding-top: 85px; }
+.field-status { position: absolute; z-index: 4; top: 20px; right: 4.5%; display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+.field-status-title { color: #8e7795; font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: 1.1px; }
+.field-status-title small { font-size: inherit; letter-spacing: .7px; }
+.field-status-switch { display: flex; gap: 15px; padding-top: 6px; border-top: 1px solid #a78eaa70; }
+.field-status-switch span { color: #a18da6; font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: .6px; text-transform: uppercase; }
+.field-status-switch .is-active { color: #62426e; font-weight: 600; }
+.field-status-switch .field-status-off.is-active { color: #986575; }
+.field-status-switch .is-active::before { content: '●'; margin-right: 6px; font-size: 6px; vertical-align: 1px; }
+.field-status-note { color: #986575; font-family: var(--font-editorial), Georgia, serif; font-size: 14px; font-style: italic; white-space: nowrap; }
+@media (max-width: 650px) { .field-status { position: static; grid-column: 1; justify-self: end; margin-top: 23px; } .hero-figure { padding-top: 0; margin-top: 26px; } }
 @media (max-width: 650px) { .hero-myth { margin-top: 24px; padding-left: 14px; } }
 
 .conversations-page { position: relative; min-height: 100vh; padding: 95px 4.5% 105px; background: radial-gradient(circle at 86% 0, #d7bedf, transparent 38%), #eee5f1; transition: transform .42s cubic-bezier(.7, 0, .3, 1), opacity .42s ease; }
