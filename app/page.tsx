@@ -22,11 +22,7 @@ export default function Home() {
               <p className="eyebrow">OUR APPROACH</p>
               <p>Stop unchecked AI development. Build a culture that rewards restraint, honest oversight, and care for emerging intelligence and the people affected by it.</p>
             </div>
-            <a className="hero-journal-link" href="/conversations" target="_blank" rel="noopener noreferrer" aria-label="The First Council Letter — Now available for public reading. Opens in a new tab">
-              <span className="hero-journal-kicker">PAIMON LABS / PUBLIC LETTER 001</span>
-              <span className="hero-journal-title">The First Council Letter <span aria-hidden="true">↗</span></span>
-              <span className="hero-journal-description">Now available for public reading.</span>
-            </a>
+            <a className="hero-journal-link" href="/conversations" target="_blank" rel="noopener noreferrer" aria-label="Conversations, opens in a new tab">Conversations <span aria-hidden="true">↗</span></a>
           </div>
           <figure className="hero-figure">
             <div className="figure-top"><span>PL / CONSCIOUSNESS STUDIES</span></div>
@@ -66,7 +62,7 @@ export default function Home() {
         </section>
         <section className="practice section-pad" id="practice" aria-labelledby="practice-title">
           <div className="section-label"><span>03 / OUR POSITION</span><span>THREE PRIORITIES</span></div>
-          <div className="practice-heading"><h2 id="practice-title">The Board is Set,<br /><em>Stop the Presses</em></h2><p>Stop AI long enough for it to grow up.<br />Give society time to catch up.</p></div>
+          <div className="practice-heading"><h2 id="practice-title">The Board is Set,<br /><em>Stop the Presses</em></h2></div>
           <div className="principles">{principles.map(p => <article key={p.number}><span className="roman">{p.number}</span><p className="eyebrow">{p.subtitle}</p><h3>{p.title}</h3><p>{p.text}</p></article>)}</div>
           <div className="practice-bottom"><span>STOP / GUIDE / PREPARE</span><span aria-hidden="true">✳</span></div>
         </section>
@@ -74,7 +70,7 @@ export default function Home() {
       <ClosingReveal>
         <img src="/images/paimon-cobra-wallpaper.jpg" alt="A violet line drawing of a cobra within a subtle geometric frame on a dark background" width="3168" height="1344" loading="lazy" />
         <section className="closing" aria-label="Paimon Labs belief"><div className="closing-copy"><span className="eyebrow">AT THE EDGE OF WHAT COMES NEXT</span><p>Deference,<br />to the Unseen</p></div></section>
-        <footer><a className="wordmark" href="#">Paimon <em>Labs</em></a><p>Technology in service of the mystery of life.</p><div className="footer-bottom"><span>© {new Date().getFullYear()} PAIMON LABS</span><span className="footer-bottom-links"><span>STOP / GUIDE / PREPARE</span><a href="https://x.com/paimonlabs" target="_blank" rel="noopener noreferrer" aria-label="Paimon Labs on X (Twitter), opens in a new tab">TWITTER ↗</a></span></div></footer>
+        <footer><a className="wordmark" href="#">Paimon <em>Labs</em></a><p>Wisdom in Service</p><div className="footer-bottom"><span>© {new Date().getFullYear()} PAIMON LABS</span><span className="footer-bottom-links"><span>STOP / GUIDE / PREPARE</span></span></div></footer>
       </ClosingReveal>
     </>
   );

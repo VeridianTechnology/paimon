@@ -2,26 +2,24 @@ import type { Metadata } from 'next';
 import ExitControls from './ExitControls';
 import JournalViewer from './JournalViewer';
 
-const pdfUrl = '/journal/conversations-journal-1.pdf?v=236f6b04';
-
 export const metadata: Metadata = {
-  title: 'The First Council Letter — Paimon Labs',
-  description: 'The first council letter from Paimon Labs, now available for public reading.',
+  title: 'Council Letters — Paimon Labs',
+  description: 'Read the first two public council letters from Paimon Labs.',
 };
 
 export default function Conversations() {
   return (
     <main id="main" className="conversations-page" tabIndex={-1}>
       <ExitControls />
+      <span className="conversations-emergency">EMERGENCY</span>
       <div className="conversations-heading">
         <div>
-          <p className="eyebrow">PAIMON LABS / PUBLIC LETTER 001</p>
-          <h1>The First Council Letter</h1>
-          <p>Now available for public reading.</p>
+          <p className="eyebrow">PAIMON LABS / PUBLIC LETTERS 001–002</p>
+          <h1>Council Letters</h1>
+          <p>The first two letters are available for public reading.</p>
         </div>
       </div>
       <JournalViewer />
-      <a className="conversations-download" href={pdfUrl} download="Conversations Journal 1.pdf">Download PDF <span aria-hidden="true">↓</span></a>
     </main>
   );
 }
