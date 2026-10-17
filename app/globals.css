@@ -70,7 +70,6 @@ nav a:hover { color: #8e326e; }
 .hero-copy .eyebrow { color: #6c477a; }
 .hero h1 em { text-shadow: 0 11px 32px #a077ad45; }
 .hero-figure { position: relative; }
-.hero-figure::after { content: '✳'; position: absolute; top: 21px; left: 50%; width: 28px; height: 28px; display: grid; place-items: center; transform: translateX(-50%); border: 1px solid #8c6498; border-radius: 50%; background: #e3d5eb; color: #70477f; font-size: 13px; pointer-events: none; }
 .arch { outline: 1px solid #70477f62; outline-offset: 8px; box-shadow: inset 0 0 0 5px #e8dfee88; }
 
 /* The cobra wakes once, then only the eye glints occasionally. */
@@ -106,7 +105,6 @@ nav a:hover { color: #8e326e; }
   .cobra-scale-glint--two { animation: cobra-scale-cycle 24s 2.4s linear infinite; }
   .cobra-scale-glint--three { animation: cobra-scale-cycle 24s 2.7s linear infinite; }
   .cobra-eye-glint { animation: cobra-eye-watch 60s 1s linear infinite; }
-  .hero-figure::after { animation: cobra-plate-seal .9s 2.1s ease-out both; }
 }
 @keyframes cobra-awaken {
   0% { opacity: .12; clip-path: ellipse(8% 6% at 36% 10%); filter: brightness(.75); }
@@ -118,9 +116,12 @@ nav a:hover { color: #8e326e; }
 @keyframes cobra-ink-pass { 0% { opacity: 0; -webkit-mask-position: 100% 0; mask-position: 100% 0; } 24% { opacity: .31; } 68% { opacity: .3; } 100% { opacity: 0; -webkit-mask-position: 0 0; mask-position: 0 0; } }
 @keyframes cobra-scale-cycle { 0%,1%,6%,100% { opacity: 0; transform: scale(.25) rotate(0); } 3.3% { opacity: .8; transform: scale(1) rotate(28deg); } }
 @keyframes cobra-eye-watch { 0%,3%,5%,100% { opacity: 0; transform: translate(-50%, -50%) scale(.3); } 3.7% { opacity: .95; transform: translate(-50%, -50%) scale(1); } 4.3% { opacity: 0; transform: translate(-50%, -50%) scale(.3); } }
-@keyframes cobra-plate-seal { from { opacity: 0; transform: translateX(-50%) rotate(-45deg) scale(.6); } to { opacity: 1; transform: translateX(-50%) rotate(0) scale(1); } }
 @keyframes header-shine { 0%,15% { transform: translateX(0) skewX(-15deg); } 75%,100% { transform: translateX(140vw) skewX(-15deg); } }
 @keyframes hero-copy-arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 650px) {
+  .cobra-plate-image { animation: none; }
+}
 
 .text-link { transition: color .25s ease, border-color .25s ease; }
 .text-link:hover { color: #963977; border-color: #963977; }
@@ -169,11 +170,26 @@ nav a:hover { color: #8e326e; }
 
 .closing { isolation: isolate; }
 .closing::before { content: ''; position: absolute; z-index: 2; inset: 20px; border: 1px solid #e2bad454; pointer-events: none; }
+.closing-stars { position: absolute; z-index: 0; inset: 0; pointer-events: none; }
+.closing-twinkle { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #fff8ff; box-shadow: 0 0 7px 2px #ddb9f2a6; opacity: .55; }
+.closing-twinkle:nth-child(1) { top: 16%; left: 24%; }
+.closing-twinkle:nth-child(2) { top: 28%; left: 46%; width: 3px; height: 3px; }
+.closing-twinkle:nth-child(3) { top: 14%; left: 72%; }
+.closing-twinkle:nth-child(4) { top: 51%; left: 60%; width: 3px; height: 3px; }
+.closing-twinkle:nth-child(5) { top: 71%; left: 34%; }
+.closing-twinkle:nth-child(6) { top: 76%; left: 73%; width: 3px; height: 3px; }
+.closing-twinkle:nth-child(7) { top: 38%; left: 94%; }
+.closing-twinkle:nth-child(8) { top: 58%; left: 43%; width: 3px; height: 3px; }
+.closing-light-streak { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; transform-origin: 85% 60%; pointer-events: none; }
+.closing-light-streak path { fill: url(#closing-light-beam); }
+.closing-light-streak-haze { opacity: .65; filter: blur(22px); }
+.closing-light-streak-beam { opacity: .22; filter: blur(5px); }
+.closing-light-streak-mobile { display: none; }
+.closing-falling-star { position: absolute; z-index: 0; top: 8%; right: 3%; width: min(57%, 740px); height: auto; overflow: visible; filter: drop-shadow(0 0 12px #d9a2f0b8); pointer-events: none; }
 .closing-copy { padding-left: 25px; border-left: 2px solid #d6a1cd; }
 .closing-copy > p { text-shadow: 0 5px 35px #090015; }
 footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
 .footer-bottom { position: relative; }
-.footer-bottom::before { content: '✳'; position: absolute; top: -12px; left: 50%; padding: 0 12px; transform: translateX(-50%); background: #ede3f1; color: #8e326e; font-size: 17px; }
 
 @media(max-width:1050px) {
   .principles article + article::before { left: 22px; }
@@ -241,7 +257,6 @@ footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
 .fiducaro-card .project-card-copy { align-self: stretch; }
 .fiducaro-card .project-card-line { min-height: 0; }
 .fiducaro-card .project-card-figure img { aspect-ratio: 1.8; }
-.closing > img { opacity: 1; object-position: center -38px; }
 .closing::after { background: linear-gradient(90deg, #08030fdd 0%, #08030f77 36%, transparent 72%); }
 @media(max-width:800px) {
   .crumbwaffle-overview, .fiducaro-card { grid-template-columns: 1fr; }
@@ -251,7 +266,6 @@ footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
   .project-stack { gap: 16px; }
   .crumbwaffle-overview { gap: 20px; }
   .crumbwaffle-card .model-heading { margin-top: 34px; }
-  .closing > img { object-position: 66% top; }
 }
 
 .hero h1 { font-size: clamp(56px, 5.8vw, 94px); line-height: .96; letter-spacing: -3.8px; }
@@ -264,22 +278,24 @@ footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
 
 .fiducaro-card .project-card-figure img { aspect-ratio: 3388 / 1728; object-fit: contain; object-position: center; }
 
-/* One continuous wallpaper carries the closing statement into the footer. */
-.closing-wallpaper { position: relative; isolation: isolate; overflow: hidden; background: #080512; color: #f3e8fa; }
-.closing-wallpaper > img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; filter: brightness(1.16) contrast(1.06) saturate(1.18); }
-.closing-wallpaper::after { content: ''; position: absolute; z-index: -1; inset: 0; background: radial-gradient(ellipse 30% 38% at 73% 30%, #aa78ef2b, transparent 75%), radial-gradient(ellipse 28% 27% at 78% 62%, #8b65d61c, transparent 80%), linear-gradient(0deg, #08030fdc, transparent 45%), linear-gradient(90deg, #08030fe3, #08030f82 40%, #08030f16 80%); pointer-events: none; }
-.closing-wallpaper::before { content: ''; position: absolute; inset: 20px; z-index: 2; border: 1px solid #e2bad454; pointer-events: none; }
+/* The falling star lights an otherwise dark closing field. */
+.closing-wallpaper { position: relative; isolation: isolate; overflow: hidden; background: #090611; color: #f3e8fa; }
+.closing-wallpaper::after { content: ''; position: absolute; z-index: -1; inset: 0; background: radial-gradient(circle 340px at 85% 43%, #4d2f63 0%, #26152f 40%, transparent 100%); pointer-events: none; }
+.closing-wallpaper::before { content: ''; position: absolute; inset: 20px; z-index: 2; border: 1px solid #e2bad42b; pointer-events: none; }
 .closing-wallpaper .closing { min-height: 590px; background: transparent; overflow: visible; }
 .closing-wallpaper .closing::before, .closing-wallpaper .closing::after { content: none; }
 .closing-wallpaper footer { position: relative; background: transparent; padding-top: 35px; }
 .closing-wallpaper footer .wordmark { color: #f3e8fa; }
 .closing-wallpaper footer > p, .closing-wallpaper .back-top { color: #dcc9e3; }
-.closing-wallpaper .footer-bottom { border-color: #e2bad454; color: #c7aacc; }
-.closing-wallpaper .footer-bottom::before { background: #100a1b; color: #d6a1cd; }
+.closing-wallpaper .footer-bottom { border-color: #e2bad42b; color: #c7aacc; }
 @media (max-width: 650px) {
-  .closing-wallpaper > img { object-position: 60% center; }
+  .closing-wallpaper::after { background: radial-gradient(circle 210px at 72% 31%, #4d2f63 0%, #26152f 40%, transparent 100%); }
   .closing-wallpaper::before { inset: 12px; }
   .closing-wallpaper .closing { min-height: 480px; }
+  .closing-light-streak-desktop { display: none; }
+  .closing-light-streak-mobile { display: initial; }
+  .closing-light-streak { transform-origin: 70% 42%; }
+  .closing-falling-star { top: 7%; right: -5%; width: 100%; opacity: .75; }
 }
 
 /* Instruments move from a private home for AI to governed action. */
@@ -393,14 +409,26 @@ footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
 @media (prefers-reduced-motion: reduce) { .conversations-page { transition: none; } }
 
 @media (prefers-reduced-motion: no-preference) {
-  .closing-wallpaper.is-ready:not(.is-visible) > img { opacity: 0; transform: translateX(9%) scale(1.06); }
+  .closing-wallpaper.is-ready:not(.is-visible)::after { opacity: 0; }
+  .closing-wallpaper.is-ready:not(.is-visible) .closing-stars { opacity: 0; }
+  .closing-wallpaper.is-ready:not(.is-visible) .closing-light-streak { opacity: 0; }
+  .closing-wallpaper.is-ready:not(.is-visible) .closing-falling-star { opacity: 0; }
   .closing-wallpaper.is-ready:not(.is-visible) .closing-copy,
   .closing-wallpaper.is-ready:not(.is-visible) footer { opacity: 0; }
-  .closing-wallpaper.is-visible > img { animation: closing-image-arrive 1.6s cubic-bezier(.19, 1, .22, 1) both; }
+  .closing-wallpaper.is-visible::after { animation: closing-purple-arrive 1.6s ease-out both; }
+  .closing-wallpaper.is-visible .closing-stars { animation: closing-purple-arrive 1.2s .8s ease-out both; }
+  .closing-twinkle { animation: closing-twinkle 4.2s ease-in-out infinite; }
+  .closing-twinkle:nth-child(2n) { animation-delay: -1.6s; animation-duration: 5.3s; }
+  .closing-twinkle:nth-child(3n) { animation-delay: -3s; animation-duration: 3.7s; }
+  .closing-wallpaper.is-visible .closing-light-streak { animation: closing-beam-arrive 1.4s .55s ease-out both; }
+  .closing-wallpaper.is-visible .closing-falling-star { animation: closing-star-fall 1.5s .25s ease-out both; }
   .closing-wallpaper.is-visible .closing-copy { animation: closing-content-arrive .9s .4s ease-out both; }
   .closing-wallpaper.is-visible footer { animation: closing-content-arrive .9s .75s ease-out both; }
 }
-@keyframes closing-image-arrive { from { opacity: 0; transform: translateX(9%) scale(1.06); } to { opacity: 1; transform: translateX(0) scale(1); } }
+@keyframes closing-purple-arrive { from { opacity: 0; } to { opacity: 1; } }
+@keyframes closing-twinkle { 0%, 100% { opacity: .18; transform: scale(.65); } 45% { opacity: .9; transform: scale(1.35); } 70% { opacity: .3; transform: scale(.8); } }
+@keyframes closing-beam-arrive { from { opacity: 0; transform: scale(.86); } to { opacity: 1; transform: scale(1); } }
+@keyframes closing-star-fall { from { opacity: 0; transform: translate(25px, -40px); } to { opacity: 1; transform: translate(0, 0); } }
 @keyframes closing-content-arrive { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
 
 /* A dimensional display for the future NFT cards. */

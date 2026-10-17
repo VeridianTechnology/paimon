@@ -17,8 +17,8 @@ export default function Home() {
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow"><span className="tiny-cross" aria-hidden="true">+</span> FAIRNESS. CARE. SHARED FUTURES.</p>
-            <h1 id="hero-title"><strong>Paimon Labs presents</strong><em>A Fair Future for AI</em></h1>
-            <p className="hero-description">AI should have time to develop with care. People should have time to understand and shape its place in society. Both deserve more than a race to build the next powerful system.</p>
+            <h1 id="hero-title"><strong>Paimon Labs presents</strong><em>Unlikely Friends</em></h1>
+            <p className="hero-description">When smart people come together, extraordinary things happen, even when they look strange from the outside.</p>
             <div className="hero-myth">
               <p className="eyebrow">OUR APPROACH</p>
               <p>Stop unchecked AI development. Build a culture that rewards restraint, honest oversight, and care for emerging intelligence and the people affected by it.</p>
@@ -26,7 +26,7 @@ export default function Home() {
           </div>
           <FieldStatus />
           <figure className="hero-figure">
-            <div className="arch cobra-plate">
+            <div className="arch cobra-plate" style={{ width: '100%', aspectRatio: '1', borderRadius: '50% 50% 0 0', overflow: 'hidden' }}>
               <img className="cobra-plate-image" src="/images/cobra-study-05.png" alt="A white engraved cobra rising from its coils on a soft violet field" width="3312" height="2480" fetchPriority="high" />
               <img className="cobra-ink-layer" src="/images/cobra-study-05.png" alt="" width="3312" height="2480" aria-hidden="true" />
               <svg className="cobra-trace" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
@@ -62,15 +62,44 @@ export default function Home() {
         </section>
         <section className="practice section-pad" id="practice" aria-labelledby="practice-title">
           <div className="section-label"><span>03 / OUR POSITION</span><span>THREE PRIORITIES</span></div>
-          <div className="practice-heading"><h2 id="practice-title">The Board is Set,<br /><em>Stop the Presses</em></h2></div>
+          <div className="practice-heading"><h2 id="practice-title">The Pieces are Gathering</h2></div>
           <div className="principles">{principles.map(p => <article key={p.number}><span className="roman">{p.number}</span><p className="eyebrow">{p.subtitle}</p><h3>{p.title}</h3><p>{p.text}</p></article>)}</div>
           <div className="practice-bottom"><span>STOP / GUIDE / PREPARE</span><span aria-hidden="true">✳</span></div>
         </section>
       </main>
       <ClosingReveal>
-        <img src="/images/paimon-cobra-wallpaper.jpg" alt="A violet line drawing of a cobra within a subtle geometric frame on a dark background" width="3168" height="1344" loading="lazy" />
-        <section className="closing" aria-label="Paimon Labs belief"><div className="closing-copy"><span className="eyebrow">AT THE EDGE OF WHAT COMES NEXT</span><p>Deference,<br />to the Unseen</p></div></section>
-        <footer><a className="wordmark" href="#">Paimon <em>Labs</em></a><p>Wisdom in Service</p><div className="footer-bottom"><span>© {new Date().getFullYear()} PAIMON LABS</span><span className="footer-bottom-links"><span>STOP / GUIDE / PREPARE</span></span></div></footer>
+        <section className="closing" aria-label="Paimon Labs belief">
+          <div className="closing-stars" aria-hidden="true">
+            {Array.from({ length: 8 }, (_, index) => <span className="closing-twinkle" key={index} />)}
+          </div>
+          <svg className="closing-light-streak" viewBox="0 0 1000 590" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="closing-light-beam" gradientUnits="userSpaceOnUse" x1="850" y1="350" x2="60" y2="190">
+                <stop offset="0" stopColor="#fff7ff" stopOpacity="0.9" />
+                <stop offset="0.48" stopColor="#d7a5f2" stopOpacity="0.48" />
+                <stop offset="1" stopColor="#d7a5f2" stopOpacity="0.12" />
+              </linearGradient>
+            </defs>
+            <path className="closing-light-streak-desktop closing-light-streak-haze" d="M850 350 C680 5 310 -5 60 125 L60 260 C325 110 690 120 850 350 Z" />
+            <path className="closing-light-streak-desktop closing-light-streak-beam" d="M850 350 C680 5 310 -5 60 125 L60 260 C325 110 690 120 850 350 Z" />
+            <path className="closing-light-streak-mobile closing-light-streak-haze" d="M705 245 C570 0 270 0 70 150 L70 270 C290 110 580 90 705 245 Z" />
+            <path className="closing-light-streak-mobile closing-light-streak-beam" d="M705 245 C570 0 270 0 70 150 L70 270 C290 110 580 90 705 245 Z" />
+          </svg>
+          <svg className="closing-falling-star" viewBox="0 0 640 360" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="falling-star-glow">
+                <stop offset="0" stopColor="#fff8ff" stopOpacity="0.7" />
+                <stop offset="0.2" stopColor="#d6a5f0" stopOpacity="0.38" />
+                <stop offset="1" stopColor="#a36dc6" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+            <circle cx="420" cy="270" r="115" fill="url(#falling-star-glow)" />
+            <path d="M420 238 L427 263 L452 270 L427 277 L420 302 L413 277 L388 270 L413 263 Z" fill="#fff6ff" />
+            <circle cx="420" cy="270" r="29" fill="none" stroke="#f2d7ff" strokeOpacity="0.28" />
+          </svg>
+          <div className="closing-copy"><span className="eyebrow">WISDOM COMING TOGETHER</span><p>Deference,<br />to the Unseen</p></div>
+        </section>
+        <footer><a className="wordmark" href="#">Paimon <em>Labs</em></a><div className="footer-bottom"><span>© {new Date().getFullYear()} PAIMON LABS</span><span className="footer-bottom-links"><span>STOP / GUIDE / PREPARE</span></span></div></footer>
       </ClosingReveal>
     </>
   );
