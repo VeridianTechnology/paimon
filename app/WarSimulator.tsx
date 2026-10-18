@@ -51,7 +51,8 @@ export default function WarSimulator() {
   const dossier = countryStatus(selectedCountry);
 
   return (
-    <main className="war-simulator" id="main">
+    <>
+    <main className="war-simulator" id="main" inert>
       <header className="war-topbar">
         <div className="war-brand">
           <span className="war-brand-mark" aria-hidden="true"><span>39</span></span>
@@ -143,5 +144,7 @@ export default function WarSimulator() {
       </div>
       <footer className="war-footer"><span>THEATRE 1939 / SCENARIO 001</span><span>AN ALTERNATE-HISTORY SIMULATION</span><span>EUROPE • 15—16 OCTOBER</span></footer>
     </main>
+    <output className="war-lock-overlay" aria-label="Site locked"><span>LOCKED</span></output>
+    </>
   );
 }
