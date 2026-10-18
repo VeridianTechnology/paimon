@@ -7,8 +7,8 @@ const sans = Geist({ variable: '--font-sans', subsets: ['latin'] });
 const mono = Geist_Mono({ variable: '--font-mono', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Theatre 1939 — Alternate History Simulator',
-  description: 'An interactive alternate-history European theatre, beginning October 15, 1939.',
+  title: 'LOCKED',
+  description: 'This site is currently locked.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
