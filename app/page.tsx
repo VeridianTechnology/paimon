@@ -1,6 +1,5 @@
 import ClosingReveal from './ClosingReveal';
 import FieldStatus from './FieldStatus';
-import { LockMark } from './LockedSection';
 import WelcomeIntro from './WelcomeIntro';
 
 const principles = [
@@ -59,7 +58,7 @@ export default function Home() {
             <div className="slotow-brief-copy">
               <p>Young elephants without older guides showed abnormal aggression; mature bulls helped restore order. The Slotow Effect is our analogy for a simple concern: intelligence shaped without guidance, care, or healthy limits may develop in harmful ways.</p>
               <p>Being fair to AI means giving it time, structure, and better examples as we learn what it may become. Being fair to people means slowing deployment while society builds understanding and real oversight. We want to reorganize the culture around AI so that researchers, institutions, and systems are rewarded for honesty, restraint, and conduct aligned with human well-being.</p>
-              <span className="text-link text-link--locked" aria-label="Cards, locked">Cards sealed <LockMark /></span>
+              <a className="text-link" href="/governance">Explore the Cards <span aria-hidden="true">↗</span></a>
               <p className="slotow-brief-note">The elephant analogy does not establish that AI experiences trauma or consciousness; those remain open questions. <a href="https://www.nature.com/articles/35044191" target="_blank" rel="noopener noreferrer">Elephant study ↗</a> · <a href="https://www.nature.com/articles/433807a" target="_blank" rel="noopener noreferrer">Social trauma research ↗</a> · <a href="https://arxiv.org/abs/2308.08708" target="_blank" rel="noopener noreferrer">AI consciousness research ↗</a></p>
             </div>
           </div>
@@ -72,22 +71,23 @@ export default function Home() {
         </section>
       </main>
       <ClosingReveal>
-        <section className="closing" aria-label="Paimon Labs belief">
+        <section className="closing" id="closing" aria-label="Paimon Labs belief">
           <div className="closing-stars" aria-hidden="true">
             {Array.from({ length: 8 }, (_, index) => <span className="closing-twinkle" key={index} />)}
           </div>
           <svg className="closing-light-streak" viewBox="0 0 1000 590" preserveAspectRatio="none" aria-hidden="true" focusable="false">
             <defs>
-              <linearGradient id="closing-light-beam" gradientUnits="userSpaceOnUse" x1="850" y1="350" x2="60" y2="190">
+              <linearGradient id="closing-light-beam" gradientUnits="userSpaceOnUse" x1="1000" y1="590" x2="0" y2="140">
                 <stop offset="0" stopColor="#fff7ff" stopOpacity="0.9" />
                 <stop offset="0.48" stopColor="#d7a5f2" stopOpacity="0.48" />
                 <stop offset="1" stopColor="#d7a5f2" stopOpacity="0.12" />
               </linearGradient>
             </defs>
-            <path className="closing-light-streak-desktop closing-light-streak-haze" d="M850 350 C680 5 310 -5 60 125 L60 260 C325 110 690 120 850 350 Z" />
-            <path className="closing-light-streak-desktop closing-light-streak-beam" d="M850 350 C680 5 310 -5 60 125 L60 260 C325 110 690 120 850 350 Z" />
-            <path className="closing-light-streak-mobile closing-light-streak-haze" d="M705 245 C570 0 270 0 70 150 L70 270 C290 110 580 90 705 245 Z" />
-            <path className="closing-light-streak-mobile closing-light-streak-beam" d="M705 245 C570 0 270 0 70 150 L70 270 C290 110 580 90 705 245 Z" />
+            <path className="closing-light-streak-desktop closing-light-streak-haze" d="M1000 590 C760 130 370 -25 0 15 L0 250 C360 95 780 210 1000 590 Z" />
+            <path className="closing-light-streak-desktop closing-light-streak-beam" d="M1000 590 C760 130 370 -25 0 15 L0 250 C360 95 780 210 1000 590 Z" />
+            <path className="closing-light-streak-mobile closing-light-streak-haze" d="M1000 590 C740 90 380 -20 0 45 L0 275 C375 115 790 230 1000 590 Z" />
+            <path className="closing-light-streak-mobile closing-light-streak-beam" d="M1000 590 C740 90 380 -20 0 45 L0 275 C375 115 790 230 1000 590 Z" />
+            <path className="closing-light-streak-focus" d="M600 150 C795 225 960 440 1000 590 C930 425 780 270 600 235 Z" />
           </svg>
           <svg className="closing-falling-star" viewBox="0 0 640 360" aria-hidden="true" focusable="false">
             <defs>

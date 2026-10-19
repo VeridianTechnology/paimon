@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { Church, CircleHelp, Cog, HeartHandshake, Orbit, Radio, Route, Shield, Sparkles, Swords, type LucideIcon } from 'lucide-react';
+import Image from 'next/image';
+import { Brain, Church, CircleHelp, Cog, HeartHandshake, Orbit, Radio, Route, Sparkles, Sprout, Swords, type LucideIcon } from 'lucide-react';
 
 export default function ProjectReveal({ children, className, labelledBy }: { children: ReactNode; className: string; labelledBy: string }) {
   const cardRef = useRef<HTMLElement>(null);
@@ -129,14 +130,14 @@ const governanceViews = [
 
 const showGrandMacePanel = false;
 
-const councilChairs: Record<number, { title: string; description: string; back: string; icon: LucideIcon; tone: 'blue' | 'red' | 'black' | 'white' | 'green' | 'yellow' | 'purple' | 'orange' | 'grey'; status: 'selected' | 'selected-waiting' | 'selected-spoken-for' | 'pending' | 'invited' | 'considered' | 'vague'; invitationDate?: string; spokenForDate?: string }> = {
+const councilChairs: Record<number, { title: string; description: string; back: string; icon: LucideIcon; tone: 'blue' | 'red' | 'black' | 'white' | 'green' | 'yellow' | 'purple' | 'orange' | 'grey'; status: 'selected' | 'selected-waiting' | 'selected-spoken-for' | 'pending' | 'invited' | 'considered' | 'vague' | 'disbarred'; invitationDate?: string; spokenForDate?: string }> = {
   1: { title: 'The Empath', description: "Man's Connection to the Town", back: 'Hears the people beneath every decree. Keeps power answerable to them.', icon: HeartHandshake, tone: 'blue', status: 'selected-spoken-for', invitationDate: 'September 29th', spokenForDate: 'October 10th' },
   2: { title: 'The Gardener', description: "Man's Connection to Wonder", back: 'Tends the long horizon, where extraction and wonder meet.', icon: Orbit, tone: 'red', status: 'selected-spoken-for', invitationDate: 'October 6th', spokenForDate: 'October 7th' },
   3: { title: 'The Shaman', description: "Man's Dictation of Spirit", back: 'Reads the unseen. Speaks only when doubt has been weighed.', icon: Sparkles, tone: 'black', status: 'pending' },
   4: { title: 'The Hawk', description: "Man's Relationship to the Heart", back: 'On the financial war path, he breaks false circles and brings down structures that cannot sustain themselves.', icon: Swords, tone: 'green', status: 'invited', invitationDate: 'October 12th' },
   5: { title: 'The Eye', description: "Man's Awe of the Sun", back: 'Shapes the informed consciousness of the world: what is shown, what is believed, and what is left unsaid.', icon: Radio, tone: 'yellow', status: 'invited' },
-  6: { title: 'The Hand', description: "Man's Love of Peace", back: 'Keeps the roads open when borders and loyalties shift.', icon: Route, tone: 'purple', status: 'considered' },
-  8: { title: 'The Cloak', description: "Man's Rally to the Defenseless", back: 'Represents the will of the noble houses.', icon: Shield, tone: 'grey', status: 'vague' },
+  6: { title: 'The Hand', description: "Man's Love of Peace", back: 'Keeps the roads open when borders and loyalties shift.', icon: Route, tone: 'purple', status: 'disbarred' },
+  8: { title: 'The Thinker', description: "Man's Relationship to Science", back: 'Tests each claim with patience, evidence, and an open mind.', icon: Brain, tone: 'grey', status: 'vague' },
   9: { title: 'The Clock', description: "Man's Synchronicity", back: 'Measures the work of tomorrow, and who is left behind.', icon: Cog, tone: 'orange', status: 'vague' },
   10: { title: 'The Elder', description: "Man's Need for Simplicity", back: 'Guides those in need toward the church.', icon: Church, tone: 'white', status: 'selected-waiting' },
 };
@@ -227,7 +228,7 @@ export function GovernanceTabs() {
                 {view.id === 'council' && showGrandMacePanel && (
                   <div className="council-rank">
                     <div className="council-rank-titles"><span className="council-rank-duke">The Grand Duke</span><span className="council-rank-disgraced">Disgraced</span><span>The Grand Mace</span></div>
-                    <span className="council-rank-seal"><img src="/images/council-marshal-figure.png" alt="Hooded figure holding a staff" width={2048} height={2048} /></span>
+                    <span className="council-rank-seal"><Image src="/images/council-marshal-figure.png" alt="Hooded figure holding a staff" width={2048} height={2048} unoptimized /></span>
                   </div>
                 )}
               </div>
@@ -237,23 +238,26 @@ export function GovernanceTabs() {
             {Array.from({ length: view.id === 'council' ? 10 : 4 }, (_, cardIndex) => {
               const number = cardIndex + 1;
               const chair = view.id === 'council' ? councilChairs[number] : undefined;
-              const isFlipped = view.id === 'council' && flippedCards.has(number);
+              const isDisbarred = view.id === 'council' && number === 6;
+              const isFlipped = view.id === 'council' && !isDisbarred && flippedCards.has(number);
               const BackIcon = chair?.icon ?? CircleHelp;
               return (
                 <article
-                  className={`governance-mystery-card${chair ? ` governance-mystery-card--${chair.tone}` : ''}`}
+                  className={`governance-mystery-card${chair ? ` governance-mystery-card--${chair.tone}` : ''}${isDisbarred ? ' governance-mystery-card--disbarred' : ''}`}
                   key={cardIndex}
+                  id={view.id === 'council' ? `card-${number}` : undefined}
                 >
                   <button
                     type="button"
                     className={`governance-mystery-inner${isFlipped ? ' is-flipped' : ''}`}
                     onClick={() => toggleCard(number)}
+                    disabled={isDisbarred}
                     aria-pressed={isFlipped}
-                    aria-label={isFlipped ? `${chair?.title ?? 'The Unknown'}. ${chair?.back ?? 'A sealed name. Its purpose survives only in fragments.'} Show front of card ${String(number).padStart(2, '0')}` : `Reveal card ${String(number).padStart(2, '0')}${chair ? `, ${chair.title}` : ', unrevealed'}`}
+                    aria-label={isDisbarred ? 'The Hand. Disbarred for conduct.' : isFlipped ? `${chair?.title ?? 'The Unknown'}. ${chair?.back ?? 'A sealed name. Its purpose survives only in fragments.'} Show front of card ${String(number).padStart(2, '0')}` : `Reveal card ${String(number).padStart(2, '0')}${chair ? `, ${chair.title}` : ', unrevealed'}`}
                   >
                     <span className="governance-card-face governance-card-face--front" aria-hidden={isFlipped}>
                       <span className="governance-mystery-code">{view.id === 'council' ? 'CARD' : view.cardCode} / {String(number).padStart(2, '0')}</span>
-                      {chair ? <><span className="governance-selected-status">{chair.status === 'selected-spoken-for' ? <>SELECTED<br />SPOKEN FOR</> : chair.status === 'selected-waiting' ? <>SELECTED<br />WAITING</> : chair.status === 'selected' ? 'SELECTED' : chair.status === 'invited' ? 'INVITATION SENT' : chair.status === 'considered' ? 'CONSIDERED' : chair.status === 'vague' ? 'VAGUE' : 'TO BE ELECTED'}</span><span className="governance-selected-copy"><span className="governance-selected-title">{chair.title}</span>{chair.description && <span className="governance-selected-subtitle">{chair.description}</span>}</span>{chair.invitationDate && <span className="governance-card-milestone governance-card-milestone--left"><span>INVITATION SENT</span><span>{chair.invitationDate}</span></span>}{chair.spokenForDate && <span className="governance-card-milestone governance-card-milestone--right"><span>SPOKEN FOR</span><span>{chair.spokenForDate}</span></span>}</> : <span className="governance-mystery-mark" aria-hidden="true">?</span>}
+                      {chair ? <><span className="governance-selected-status">{chair.status === 'selected-spoken-for' ? <>SELECTED<br />SPOKEN FOR</> : chair.status === 'selected-waiting' ? <>SELECTED<br />WAITING</> : chair.status === 'selected' ? 'SELECTED' : chair.status === 'invited' ? 'INVITATION SENT' : chair.status === 'considered' ? 'CONSIDERED' : chair.status === 'disbarred' ? 'DISBARRED' : chair.status === 'vague' ? 'VAGUE' : 'TO BE ELECTED'}</span>{number === 2 && view.id === 'council' && <span className="governance-gardener-emblem" aria-hidden="true"><Sprout size={28} strokeWidth={1.4} /></span>}{number === 4 && view.id === 'council' && <span className="governance-hawk-timer">48 HOURS</span>}<span className="governance-selected-copy"><span className="governance-selected-title">{chair.title}</span>{chair.description && <span className="governance-selected-subtitle">{chair.description}</span>}</span>{isDisbarred && <span className="governance-disbarred-alert">Disbarred for conduct</span>}{chair.invitationDate && <span className="governance-card-milestone governance-card-milestone--left"><span>INVITATION SENT</span><span>{chair.invitationDate}</span></span>}{chair.spokenForDate && <span className="governance-card-milestone governance-card-milestone--right"><span>SPOKEN FOR</span><span>{chair.spokenForDate}</span></span>}</> : <span className="governance-mystery-mark" aria-hidden="true">?</span>}
                     </span>
                     <span className="governance-card-face governance-card-face--back" aria-hidden={!isFlipped}>
                       <span className="governance-back-code">CARD / {String(number).padStart(2, '0')}</span>

@@ -180,10 +180,11 @@ nav a:hover { color: #8e326e; }
 .closing-twinkle:nth-child(6) { top: 76%; left: 73%; width: 3px; height: 3px; }
 .closing-twinkle:nth-child(7) { top: 38%; left: 94%; }
 .closing-twinkle:nth-child(8) { top: 58%; left: 43%; width: 3px; height: 3px; }
-.closing-light-streak { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; transform-origin: 85% 60%; pointer-events: none; }
+.closing-light-streak { position: absolute; z-index: 0; top: 0; left: 0; width: calc(97% - min(19.59375vw, 254.375px)); height: calc(8% + min(24.046875vw, 312.1875px)); transform-origin: 100% 100%; pointer-events: none; }
 .closing-light-streak path { fill: url(#closing-light-beam); }
 .closing-light-streak-haze { opacity: .65; filter: blur(22px); }
 .closing-light-streak-beam { opacity: .22; filter: blur(5px); }
+.closing-light-streak-focus { opacity: .68; filter: blur(9px); }
 .closing-light-streak-mobile { display: none; }
 .closing-falling-star { position: absolute; z-index: 0; top: 8%; right: 3%; width: min(57%, 740px); height: auto; overflow: visible; filter: drop-shadow(0 0 12px #d9a2f0b8); pointer-events: none; }
 .closing-copy { padding-left: 25px; border-left: 2px solid #d6a1cd; }
@@ -294,7 +295,7 @@ footer { background: radial-gradient(circle at 50% 0, #f2e8f4, #e8dfee 70%); }
   .closing-wallpaper .closing { min-height: 480px; }
   .closing-light-streak-desktop { display: none; }
   .closing-light-streak-mobile { display: initial; }
-  .closing-light-streak { transform-origin: 70% 42%; }
+  .closing-light-streak { width: 70.625%; height: calc(7% + 42.1875vw); transform-origin: 100% 100%; }
   .closing-falling-star { top: 7%; right: -5%; width: 100%; opacity: .75; }
 }
 
@@ -756,12 +757,14 @@ body:has(.governance-page) .subpage-footer a { color: #ecd4b6; }
 .governance-mystery-card--red { border-color: #b97b83; background: #77343f; }
 .governance-mystery-card--red .governance-mystery-inner { background: linear-gradient(145deg, #b47d83, #823c4c 55%, #51202f); }
 .governance-mystery-card--red .governance-selected-status { line-height: 1.5; text-align: right; }
+.governance-gardener-emblem { position: absolute; top: 22%; left: 50%; display: grid; width: 50px; height: 50px; place-items: center; transform: translateX(-50%); border: 1px solid #ffe5a3; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff2c1, #c59635 55%, #79501f); box-shadow: 0 0 0 5px #edc76b24, 0 0 22px #e9bd5b8c; color: #614018; }
 .governance-mystery-card--black { border-color: #5b5360; background: #17131c; }
 .governance-mystery-card--black .governance-mystery-inner { background: linear-gradient(145deg, #4a424e, #211b27 57%, #100d16); }
 .governance-mystery-card--black .governance-selected-status { max-width: 78px; line-height: 1.3; text-align: right; }
 .governance-mystery-card--green { border-color: #7f9e86; background: #31553e; }
 .governance-mystery-card--green .governance-mystery-inner { background: linear-gradient(145deg, #8bad88, #426f53 55%, #214b36); }
 .governance-mystery-card--green .governance-selected-status { max-width: 90px; line-height: 1.3; text-align: right; }
+.governance-hawk-timer { position: absolute; top: 29%; left: 50%; padding: 7px 11px; transform: translateX(-50%); border: 1px solid #f4e0b894; background: #203f31c9; box-shadow: 0 0 18px #f2db9b36; color: #fff0cf; font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 700; letter-spacing: 1.4px; white-space: nowrap; }
 .governance-mystery-card--yellow { border-color: #c4a54f; background: #e5c76d; }
 .governance-mystery-card--yellow .governance-mystery-inner { border-color: #8f742e99; background: linear-gradient(145deg, #f8e8a7, #e0c365 57%, #bb9942); }
 .governance-mystery-card--yellow .governance-mystery-inner::before { border-color: #8f742e80; }
@@ -772,11 +775,16 @@ body:has(.governance-page) .subpage-footer a { color: #ecd4b6; }
 .governance-mystery-card--purple .governance-mystery-inner { background: linear-gradient(145deg, #8654ad, #562677 55%, #24102f); }
 .governance-mystery-card--purple .governance-mystery-inner::before { border-color: #bf96db80; }
 .governance-mystery-card--purple .governance-selected-status { line-height: 1.3; text-align: right; }
+.governance-mystery-card--disbarred .governance-mystery-inner { cursor: default; opacity: 1; }
+.governance-mystery-card--disbarred .governance-selected-status { color: #ff9a9f; }
+.governance-disbarred-alert { position: absolute; top: 70%; right: 6%; left: 6%; padding: 10px 7px; transform: rotate(-5deg); border: 2px solid #fb5868; background: #280f2dd9; box-shadow: 0 0 20px #f04d6050; color: #ff8f99; font-family: var(--font-geist-mono), monospace; font-size: clamp(9px, .8vw, 12px); font-weight: 700; letter-spacing: .6px; line-height: 1.25; text-align: center; text-transform: uppercase; }
 .governance-mystery-card--orange { border-color: #d2965f; background: #975024; }
 .governance-mystery-card--orange .governance-mystery-inner { background: linear-gradient(145deg, #e4a468, #b76631 55%, #6f351b); }
 .governance-mystery-card--orange .governance-mystery-inner::before { border-color: #ffe3bf73; }
-.governance-mystery-card--grey { border-color: #9a969d; background: #6f6b73; }
-.governance-mystery-card--grey .governance-mystery-inner { background: linear-gradient(145deg, #a6a2aa, #77727c 55%, #514d57); }
+.governance-mystery-card--grey { border-color: #d5d0d9; background: #a7a3ad; }
+.governance-mystery-card--grey .governance-mystery-inner { background: linear-gradient(145deg, #dedbe2, #bab5c0 55%, #8e8895); }
+.governance-mystery-card--grey .governance-mystery-code,.governance-mystery-card--grey .governance-selected-status,.governance-mystery-card--grey .governance-selected-title,.governance-mystery-card--grey .governance-selected-subtitle { color: #342c3a; }
+.governance-mystery-card--grey .governance-back-code,.governance-mystery-card--grey .governance-back-return,.governance-mystery-card--grey .governance-back-emblem,.governance-mystery-card--grey .governance-back-title,.governance-mystery-card--grey .governance-back-copy { color: #342c3a; }
 .governance-mystery-card--white { border-color: #aaa1a9; background: #ece9e8; }
 .governance-mystery-card--white .governance-mystery-inner { border-color: #81778699; background: linear-gradient(145deg, #fffdf9, #ebe8ea 60%, #d9d5dc); }
 .governance-mystery-card--white .governance-mystery-inner::before { border-color: #8b83935c; }
@@ -836,6 +844,10 @@ body:has(.governance-page) .subpage-footer a { color: #ecd4b6; }
   .governance-selected-status { top: 17px; right: 13px; font-size: 7px; letter-spacing: .4px; }
   .governance-mystery-card--black .governance-selected-status { max-width: 58px; }
   .governance-mystery-card--green .governance-selected-status { max-width: 60px; }
+  .governance-gardener-emblem { top: 20%; width: 34px; height: 34px; }
+  .governance-gardener-emblem svg { width: 20px; height: 20px; }
+  .governance-hawk-timer { top: 25%; padding: 5px 7px; font-size: 7px; letter-spacing: .7px; }
+  .governance-disbarred-alert { padding: 7px 4px; font-size: 8px; letter-spacing: 0; }
   .governance-selected-title { font-size: clamp(18px, 5vw, 25px); }
   .governance-selected-subtitle { font-size: clamp(14px, 3.8vw, 18px); }
   .governance-card-face--back { gap: 5px; padding: 30px 9% 25px; }

@@ -15,7 +15,7 @@ export default function AuctionPage() {
       </main>
       <footer className="subpage-footer">
         <span>© {new Date().getFullYear()} PAIMON LABS</span>
-        <span className="sealed-footer-note">Cards sealed <LockMark /></span>
+        <span className="sealed-footer-note">Auction sealed <LockMark /></span>
       </footer>
     </>
   );
