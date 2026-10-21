@@ -3,7 +3,7 @@ import { NftCarousel } from '../ProjectReveal';
 import { LockMark } from '../LockedSection';
 
 export const metadata: Metadata = {
-  title: 'Auction — Paimon Labs',
+  title: '\u200B',
   description: 'A locked preview of seven forthcoming Paimon Labs digital artifacts.',
 };
 

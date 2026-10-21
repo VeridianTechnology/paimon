@@ -3,8 +3,8 @@ import { BackgroundMusic } from './BackgroundMusic';
 import './locked.css';
 
 export const metadata: Metadata = {
-  title: 'Thank You',
-  description: 'Thank you.',
+  title: '\u200B',
+  icons: { icon: 'data:,' },
 };
 
 export default function RootLayout() {
@@ -12,8 +12,9 @@ export default function RootLayout() {
     <html lang="en">
       <body>
         <main className="thank-you-screen">
-          <h1>Thank You</h1>
-          <p>Special thanks to da hottie :P</p>
+          <a className="letter-download" href="/journal/council-letter-4.pdf" download="Council Letter IV.pdf">
+            Download Council Letter IV
+          </a>
           <BackgroundMusic />
         </main>
       </body>

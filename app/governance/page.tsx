@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { GovernanceTabs } from '../ProjectReveal';
 
 export const metadata: Metadata = {
-  title: 'Cards — Paimon Labs',
+  title: '\u200B',
   description: 'Explore the Paimon Labs cards and proposed governance structure.',
 };
 

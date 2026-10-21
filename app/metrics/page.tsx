@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Metrics — Paimon Labs',
+  title: '\u200B',
   description: 'Paimon Labs indicators for AI and the human condition.',
 };
 

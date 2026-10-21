@@ -39,13 +39,13 @@ export function BackgroundMusic() {
     <div className="music-control" aria-label="Background music controls">
       <audio
         ref={audioRef}
-        src="/audio/yanix-moskva-slowed-reverb.mp3"
+        src="/audio/dark-red-instrumental-slowed.mp3"
         loop
         preload="auto"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
       >
-        <track kind="captions" src="/audio/yanix-moskva-slowed-reverb.vtt" srcLang="en" label="Music" />
+        <track kind="captions" src="/audio/dark-red-instrumental-slowed.vtt" srcLang="en" label="Music" />
       </audio>
       <button type="button" onClick={togglePlayback} aria-label={playing ? 'Pause music' : 'Play music'}>
         {playing ? 'Pause' : 'Play'}

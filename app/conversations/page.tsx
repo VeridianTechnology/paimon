@@ -3,7 +3,7 @@ import ExitControls from './ExitControls';
 import JournalViewer from './JournalViewer';
 
 export const metadata: Metadata = {
-  title: 'Ceasefire — Paimon Labs',
+  title: '\u200B',
   description: 'Read Ceasefire, the third council letter from Paimon Labs.',
 };
 
