@@ -32,6 +32,42 @@ body { overflow: hidden; }
 
 .letter-download:hover, .letter-download:focus-visible { background: #171717; border-color: #fff; }
 
+.vostok-downloads {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  width: min(550px, calc(100% - 48px));
+  color: #ddd;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+.vostok-dedication {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.vostok-links { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.vostok-links a {
+  padding: 9px 12px;
+  border: 1px solid #666;
+  border-radius: 3px;
+  color: #eee;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.vostok-links a:hover, .vostok-links a:focus-visible { background: #171717; border-color: #fff; }
+
+.vostok-note {
+  margin: 11px 0 0;
+  color: #999;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
 .music-control {
   position: absolute;
   right: 24px;
@@ -58,5 +94,7 @@ body { overflow: hidden; }
 .music-control output { min-width: 30px; text-align: left; }
 
 @media (max-width: 600px) {
+  .letter-download { top: 28%; }
+  .vostok-downloads { right: 20px; bottom: 100px; left: 20px; width: auto; }
   .music-control { right: 50%; bottom: 24px; transform: translateX(50%); }
 }
