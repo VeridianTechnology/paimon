@@ -10,6 +10,7 @@ function SleepingTurtle() {
         width="1536"
         height="1024"
         priority
+        unoptimized
       />
       <span className="sleepy-z sleepy-z-one" aria-hidden="true">Z</span>
       <span className="sleepy-z sleepy-z-two" aria-hidden="true">Z</span>
