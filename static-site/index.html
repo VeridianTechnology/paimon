@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>&#8203;</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/black.css" />
+    <link rel="preload" as="image" href="/images/sleeping-turtle.png" />
+    <script src="/player.js" defer></script>
+  </head>
+  <body>
+    <main class="night-screen">
+      <fieldset class="field-switch" aria-label="Field status">
+        <span>On the Field</span>
+        <span class="selected">Off the Field</span>
+      </fieldset>
+      <section class="signoff" aria-label="Signed off message">
+        <h1>Signed Off till <span>12/24/2026</span></h1>
+        <figure class="turtle-scene">
+          <img src="/images/sleeping-turtle.png" width="1536" height="1024" alt="A little turtle dozing on its back in autumn grass, belly shell facing up" />
+          <span class="sleepy-z sleepy-z-one" aria-hidden="true">Z</span>
+          <span class="sleepy-z sleepy-z-two" aria-hidden="true">Z</span>
+          <span class="sleepy-z sleepy-z-three" aria-hidden="true">Z</span>
+        </figure>
+        <p>Have a blessed Fall</p>
+      </section>
+      <section class="fever-player" aria-label="Fever music player">
+        <p>Fever (Instrumental Ultra Slowed)</p>
+        <audio id="fever-audio" src="/audio/fever-instrumental-ultra-slowed.mp3" loop preload="metadata">
+          <track kind="captions" src="/audio/fever-instrumental-ultra-slowed.vtt" srclang="en" label="Music" />
+        </audio>
+        <div class="fever-controls">
+          <button id="fever-toggle" type="button" aria-label="Play Fever">Play</button>
+          <label for="fever-volume">Volume</label>
+          <input id="fever-volume" type="range" min="0" max="100" value="30" aria-valuetext="30%" />
+          <output id="fever-volume-output" for="fever-volume">30%</output>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

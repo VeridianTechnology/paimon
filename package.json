@@ -9,7 +9,7 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "build:netlify": "STATIC_EXPORT=1 vinext build",
-    "build:vercel": "npm run build:netlify && cp dist/client/index.html dist/client/home.html",
+    "build:vercel": "node scripts/build-vercel.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt"
