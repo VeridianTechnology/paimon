@@ -5,7 +5,11 @@ export default function HomePage() {
         VI
       </a>
       <section className="audio-card" aria-label="Music player">
-        <p>Yeat — If We Being Real <span>(Instrumental Slowed + Reverb)</span></p>
+        <p>
+          <a href="https://www.youtube.com/watch?v=mDzUZKnvn2I&list=RDmDzUZKnvn2I" target="_blank" rel="noopener noreferrer">
+            Yeat — If We Being Real ↗ <span>(Instrumental Slowed + Reverb)</span>
+          </a>
+        </p>
         <audio controls autoPlay loop preload="metadata" src="/audio/yeat-if-we-being-real-instrumental-slowed-reverb.mp3">
           <track kind="captions" src="/audio/yeat-if-we-being-real-instrumental-slowed-reverb.vtt" srcLang="en" label="Music" />
         </audio>

@@ -53,6 +53,16 @@ html, body { min-height: 100%; margin: 0; background: #000; }
   color: #aaa;
   font-size: 11px;
 }
+.audio-card a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #777;
+  text-underline-offset: 3px;
+}
+.audio-card a:hover, .audio-card a:focus-visible {
+  color: #fff;
+  text-decoration-color: #fff;
+}
 .audio-card audio {
   display: block;
   width: 100%;
