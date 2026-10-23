@@ -6,18 +6,15 @@
     <title>&#8203;</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="/black.css" />
-    <script src="/player.js" defer></script>
   </head>
   <body>
     <main class="music-page">
+      <img class="corner-seal" src="/images/council-letter-v-seal.png" alt="White castle seal" width="2688" height="1520" />
+      <a class="letter-download" href="/letters/council-letter-v.pdf" download="Council Letter 5.pdf">Download Council Letter 5</a>
       <section class="music-player" aria-label="Music player">
-        <div class="track-list">
-          <a id="first-track" class="track-name is-current" href="https://www.youtube.com/watch?v=mDzUZKnvn2I" target="_blank" rel="noopener noreferrer" aria-current="true">If We Being Real (Instrumental Slowed + Reverb) ↗</a>
-          <button id="skip-track" class="skip-button" type="button" aria-label="Skip to the other track">Skip</button>
-          <span id="second-track" class="track-name">gravitational forces (slowed + reverb)</span>
-        </div>
-        <audio id="playlist-audio" controls autoplay preload="metadata" src="/audio/yeat-if-we-being-real-instrumental-slowed-reverb.mp3">
-          <track id="playlist-captions" kind="captions" src="/audio/yeat-if-we-being-real-instrumental-slowed-reverb.vtt" srclang="en" label="Music" />
+        <p class="song-title">gravitational forces (slowed + reverb)</p>
+        <audio controls autoplay loop preload="metadata" src="/audio/gravitational-forces-slowed-reverb.mp3">
+          <track kind="captions" src="/audio/gravitational-forces-slowed-reverb.vtt" srclang="en" label="Music" />
         </audio>
       </section>
     </main>

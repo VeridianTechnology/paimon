@@ -7,45 +7,48 @@ html, body { min-height: 100%; margin: 0; background: #000; }
   position: relative;
   color: #fff;
 }
+.corner-seal {
+  position: absolute;
+  top: clamp(18px, 3vw, 48px);
+  left: clamp(18px, 3vw, 48px);
+  width: clamp(180px, 22vw, 320px);
+  height: auto;
+}
+.letter-download {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  max-width: calc(100vw - 40px);
+  padding: 15px 24px;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  background: #0d0d0d;
+  color: #fff;
+  font: 13px Arial, Helvetica, sans-serif;
+  letter-spacing: .04em;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.letter-download:hover, .letter-download:focus-visible {
+  background: #fff;
+  color: #000;
+}
 .music-player {
   position: absolute;
   right: clamp(20px, 4vw, 64px);
   bottom: clamp(20px, 4vw, 48px);
   width: min(360px, calc(100vw - 40px));
   display: grid;
-  gap: 16px;
-}
-.track-list {
-  display: grid;
-  justify-items: end;
   gap: 10px;
   text-align: right;
 }
-.track-name {
-  color: #868686;
-  font: 12px/1.4 Arial, Helvetica, sans-serif;
-}
-.track-name.is-current {
-  color: #fff;
-}
-.track-list a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.track-list a:hover, .track-list a:focus-visible {
-  color: #fff;
-}
-.skip-button {
-  border: 1px solid #666;
-  border-radius: 999px;
-  padding: 6px 14px;
-  background: #151515;
-  color: #fff;
+.song-title {
+  margin: 0;
+  color: #aaa;
   font: 12px Arial, Helvetica, sans-serif;
-  cursor: pointer;
-}
-.skip-button:hover, .skip-button:focus-visible {
-  background: #303030;
 }
 .music-player audio {
   width: 100%;
