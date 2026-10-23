@@ -7,7 +7,7 @@ cpSync('static-site/index.html', `${output}/index.html`);
 cpSync('static-site/music.js', `${output}/music.js`);
 cpSync('app/black.css', `${output}/black.css`);
 mkdirSync(`${output}/letters`, { recursive: true });
-cpSync('public/letters/council-letter-v.pdf', `${output}/letters/council-letter-v.pdf`);
+cpSync('public/letters/council-letter-vi.pdf', `${output}/letters/council-letter-vi.pdf`);
 mkdirSync(`${output}/audio`, { recursive: true });
 cpSync('public/audio/gravitational-forces-slowed-reverb.mp3', `${output}/audio/gravitational-forces-slowed-reverb.mp3`);
 cpSync('public/audio/gravitational-forces-slowed-reverb.vtt', `${output}/audio/gravitational-forces-slowed-reverb.vtt`);
