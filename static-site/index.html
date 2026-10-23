@@ -6,17 +6,14 @@
     <title>&#8203;</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="/black.css" />
+    <script src="/music.js" defer></script>
   </head>
   <body>
     <main class="music-page">
-      <img class="corner-seal" src="/images/council-letter-v-seal.png" alt="White castle seal" width="2688" height="1520" />
-      <a class="letter-download" href="/letters/council-letter-v.pdf" download="Council Letter 5.pdf">Download Council Letter 5</a>
-      <section class="music-player" aria-label="Music player">
-        <p class="song-title">gravitational forces (slowed + reverb)</p>
-        <audio controls autoplay loop preload="metadata" src="/audio/gravitational-forces-slowed-reverb.mp3">
-          <track kind="captions" src="/audio/gravitational-forces-slowed-reverb.vtt" srclang="en" label="Music" />
-        </audio>
-      </section>
+      <a class="letter-download" href="/letters/council-letter-v.pdf" download="Council Letter 5.pdf" aria-label="Download Council Letter 5">V</a>
+      <audio id="background-audio" autoplay loop preload="auto" src="/audio/gravitational-forces-slowed-reverb.mp3">
+        <track kind="captions" src="/audio/gravitational-forces-slowed-reverb.vtt" srclang="en" label="Music" />
+      </audio>
     </main>
   </body>
 </html>
