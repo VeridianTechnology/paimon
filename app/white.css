@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  background: #fff;
+}
+
+.video-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.video-page iframe {
+  display: block;
+  width: min(960px, 100%);
+  aspect-ratio: 16 / 9;
+  border: 0;
+}

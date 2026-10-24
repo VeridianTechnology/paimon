@@ -1,5 +1,5 @@
-# Signed-off page
+# Video page
 
-A minimal black page with a field status switch, a sleeping turtle illustration, a seasonal message, and a music player.
+A white page with a centered YouTube video.
 
 Run `npm install` and `npm run dev` for local development. Use `npm run build` to create the production bundle.

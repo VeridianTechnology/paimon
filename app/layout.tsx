@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import './black.css';
+import './white.css';
 
 export const metadata: Metadata = {
   title: '\u200B',
