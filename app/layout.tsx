@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import './white.css';
+import './black.css';
 
 export const metadata: Metadata = {
-  title: 'Epistula VII | Paimon Labs',
+  title: 'Paimon Labs',
   icons: { icon: 'data:,' },
 };
 

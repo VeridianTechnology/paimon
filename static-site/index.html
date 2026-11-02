@@ -3,34 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Epistula VII | Paimon Labs</title>
+    <title>Paimon Labs</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="/white.css" />
+    <link rel="stylesheet" href="/black.css" />
   </head>
   <body>
-    <main class="letter-page">
-      <div class="page-border" aria-hidden="true"></div>
-      <header class="site-header"><span class="site-sigil" aria-hidden="true">✦</span><span>PAIMON LABS</span></header>
-      <section class="letter-content" aria-labelledby="letter-title">
-        <p class="overline">EX ARCHIVO · CONSILIVM</p>
-        <div class="ornament" aria-hidden="true"><span>✦</span></div>
-        <h1 id="letter-title">EPISTVLA SEPTIMA</h1>
-        <p class="motto">VERBA SCRIPTA MANENT</p>
-        <a class="letter-download" href="/letters/council-letter-vii.pdf" download="Council Letter VII.pdf" aria-label="Download Council Letter VII PDF">
-          <span class="download-roman">VII</span>
-          <span class="download-caption">DOWNLOAD PDF <span aria-hidden="true">↗</span></span>
-        </a>
-      </section>
-      <footer class="site-footer">ANNO MMXXVI <span aria-hidden="true">·</span> LITTERAE VII</footer>
+    <main class="black-page">
       <div class="audio-control">
-        <audio id="letter-audio" src="/audio/interstellar-organ.mp3" preload="none"></audio>
+        <audio id="site-audio" src="/audio/interstellar-organ.mp3" preload="none"></audio>
         <button id="audio-toggle" type="button" aria-label="Play music" aria-pressed="false">
           <span class="audio-icon" aria-hidden="true">▶</span><span class="audio-label">PLAY SOUND</span>
         </button>
       </div>
     </main>
     <script>
-      const audio = document.getElementById('letter-audio');
+      const audio = document.getElementById('site-audio');
       const button = document.getElementById('audio-toggle');
       const icon = button.querySelector('.audio-icon');
       const label = button.querySelector('.audio-label');

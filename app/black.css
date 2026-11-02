@@ -1,0 +1,36 @@
+* { box-sizing: border-box; }
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  background: #000;
+}
+
+.black-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #000;
+}
+
+.audio-control {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+}
+
+.audio-control button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #555;
+  background: #000;
+  color: #eee;
+  padding: 11px 13px;
+  font: 11px Arial, sans-serif;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+
+.audio-control button:hover { border-color: #eee; }
+.audio-control button:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.audio-icon { min-width: 11px; font-size: 10px; }
