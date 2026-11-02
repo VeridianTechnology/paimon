@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './white.css';
 
 export const metadata: Metadata = {
-  title: '\u200B',
+  title: 'Epistula VII | Paimon Labs',
   icons: { icon: 'data:,' },
 };
 
