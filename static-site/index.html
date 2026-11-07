@@ -9,33 +9,7 @@
   </head>
   <body>
     <main class="black-page">
-      <div class="audio-control">
-        <audio id="site-audio" src="/audio/interstellar-organ.mp3" preload="none"></audio>
-        <button id="audio-toggle" type="button" aria-label="Play music" aria-pressed="false">
-          <span class="audio-icon" aria-hidden="true">▶</span><span class="audio-label">PLAY SOUND</span>
-        </button>
-      </div>
+      <span>0xb65343F33c76922B90749eDC2b3F75FE0980108D</span>
     </main>
-    <script>
-      const audio = document.getElementById('site-audio');
-      const button = document.getElementById('audio-toggle');
-      const icon = button.querySelector('.audio-icon');
-      const label = button.querySelector('.audio-label');
-      function setPlaying(playing) {
-        button.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
-        button.setAttribute('aria-pressed', String(playing));
-        icon.textContent = playing ? 'Ⅱ' : '▶';
-        label.textContent = playing ? 'PAUSE SOUND' : 'PLAY SOUND';
-      }
-      button.addEventListener('click', async () => {
-        if (audio.paused) {
-          try { await audio.play(); setPlaying(true); } catch { setPlaying(false); }
-        } else {
-          audio.pause();
-          setPlaying(false);
-        }
-      });
-      audio.addEventListener('ended', () => setPlaying(false));
-    </script>
   </body>
 </html>
